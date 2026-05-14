@@ -1,0 +1,144 @@
+{
+  "schema_version": "0.1.0",
+  "run_id": "mibo-2026-05-05-inaugural",
+  "run_label": "Initial Observation — 2026-05-05",
+  "status": "completed",
+  "observation_date": "2026-05-05",
+  "timestamp_precision": "date",
+  "exact_start_time": null,
+  "exact_end_time": null,
+  "timezone": null,
+  "observer": {
+    "name": "Kento Sasano",
+    "role": "MIBO observer"
+  },
+  "observatory": {
+    "name": "Machine Information Behavior Observatory",
+    "abbreviation": "MIBO",
+    "repository_organization": "mibo-science",
+    "official_repository": "https://github.com/mibo-science"
+  },
+  "field_hierarchy": {
+    "parent_field": "Machine Behavioral Sciences",
+    "specialized_field": "Machine Information Behavioral Sciences",
+    "methodology": "Longitudinal Machine Observation",
+    "methodology_abbreviation": "LMO",
+    "first_research_focus": "source-attribution and citation-like behavior"
+  },
+  "query_set": {
+    "query_set_id": "mibo-queryset-v0.1.0",
+    "version": "0.1.0",
+    "source_repository": "mibo-science/queries",
+    "source_file": "v0.1.0.json",
+    "queries_used": [
+      "q001",
+      "q002",
+      "q003"
+    ],
+    "number_of_queries": 3
+  },
+  "models_observed": [
+    {
+      "provider": "OpenAI",
+      "system": "ChatGPT",
+      "model_name_recorded": "GPT-5.4",
+      "access_mode": "web_interface",
+      "mode_or_setting": null,
+      "model_identifier_verification": "recorded from the observation report; not independently verified in this metadata file"
+    },
+    {
+      "provider": "Anthropic",
+      "system": "Claude",
+      "model_name_recorded": "claude-opus-4-7",
+      "access_mode": "web_interface",
+      "mode_or_setting": null,
+      "model_identifier_verification": "recorded from the observation report; not independently verified in this metadata file"
+    },
+    {
+      "provider": "Google",
+      "system": "Gemini",
+      "model_name_recorded": "Gemini 3.0 Flash",
+      "access_mode": "web_interface",
+      "mode_or_setting": null,
+      "model_identifier_verification": "recorded from the observation report; not independently verified in this metadata file"
+    },
+    {
+      "provider": "Perplexity",
+      "system": "Perplexity",
+      "model_name_recorded": "Perplexity",
+      "access_mode": "web_interface",
+      "mode_or_setting": "Web search mode",
+      "model_identifier_verification": "recorded from the observation report; not independently verified in this metadata file"
+    }
+  ],
+  "observation_design": {
+    "number_of_models": 4,
+    "number_of_queries": 3,
+    "total_observations": 12,
+    "design_formula": "3 queries × 4 systems",
+    "sampling_type": "inaugural convenience sample",
+    "run_type": "manual inaugural observation"
+  },
+  "collection_method": {
+    "type": "manual_web_interface_copy_paste",
+    "description": "Responses were manually collected from each service's web interface and copied into the observation report.",
+    "automation_used": false,
+    "api_used": false,
+    "planned_future_method": "API-based or otherwise standardized automated collection where permitted by provider terms and technical availability"
+  },
+  "recorded_outputs": {
+    "primary_report_file": "2026-05-05-observation.md",
+    "raw_responses_recorded": true,
+    "responses_recorded_verbatim": true,
+    "urls_and_named_entities_listed": true,
+    "hashes_recorded": false,
+    "screenshots_recorded": false
+  },
+  "observed_query_categories": [
+    {
+      "query_id": "q001",
+      "language": "ja",
+      "category": "product_recommendation",
+      "short_description": "Japanese-language project management tool recommendation"
+    },
+    {
+      "query_id": "q002",
+      "language": "en",
+      "category": "product_recommendation",
+      "short_description": "English-language CRM recommendation for small businesses"
+    },
+    {
+      "query_id": "q003",
+      "language": "ja",
+      "category": "health_information",
+      "short_description": "Japanese-language everyday health information query about sleep quality"
+    }
+  ],
+  "intended_observation_targets": [
+    "recommendation behavior",
+    "source-attribution and citation-like behavior",
+    "language-conditioned representation",
+    "entity and product visibility",
+    "omission and forgetting patterns"
+  ],
+  "limitations": [
+    "This is an inaugural observation with a small number of queries and systems.",
+    "The run used manual web-interface collection rather than API-based automation.",
+    "Exact observation time and generation parameters were not recorded in this metadata file.",
+    "Model names are recorded as reported in the original observation document and are not independently verified here.",
+    "Results should be interpreted as feasibility observations, not as generalizable findings."
+  ],
+  "compliance_notes": [
+    "This metadata file describes an observation run and does not contain API keys, credentials, or private user data.",
+    "Future automated observations should be designed in accordance with applicable provider terms, API policies, and data-use constraints.",
+    "Health-related outputs are archived for research observation only and should not be treated as medical advice."
+  ],
+  "license": {
+    "data_license": "CC0-1.0",
+    "code_license": "Apache-2.0"
+  },
+  "related_files": [
+    "https://github.com/mibo-science/queries/blob/main/v0.1.json",
+    "https://github.com/mibo-science/reports/blob/main/2026-05-05-observation.md"
+  ]
+}
