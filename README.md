@@ -63,8 +63,9 @@ q001–q003 have been observed since Day 1; q004–q005 were added at Day 3.
 | Day 3 | 2026-05-19 | 5 | 20 | 44 | q004/q005 added; Day 2 Anomaly hypothesis; P12 refuted; Law VII baseline |
 | Day 4 | 2026-05-26 | 5 | 20 | 64 | Day 2 Anomaly confirmed (H1); Law IX new; Law IV/V withdrawn |
 | Day 5 | 2026-06-02 | 5 | 20 | 84 | Law X (biweekly) confirmed by prediction; Law IX longitudinal; Law VII 60 obs; P12 final refutation |
+| Day 6 | 2026-06-09 | 5 | 20 | 104 | Law X WITHDRAWN (reverse prediction failed); Law IX confirmed (15 obs); Law VII 80 obs; canonical recovery |
 
-**Counting convention**: *session* = one weekly round; *observation* = one model-query response. Day 1–2 used 3 queries (12 observations each); Day 3 onward use 5 queries (20 observations each). Cumulative after Day 5 = 84.
+**Counting convention**: *session* = one weekly round; *observation* = one model-query response. Day 1–2 used 3 queries (12 observations each); Day 3 onward use 5 queries (20 observations each). Cumulative after Day 6 = 104.
 
 ---
 
@@ -78,17 +79,17 @@ A finding becomes a numbered "law" only after it survives at least four weekly o
 | **II** | **Perplexity URL Stability.** Perplexity's cited URLs persist week to week at a high rate (band ~71–100%). Lost URLs often go dormant and resurface later. | Confirmed (5 wk) |
 | **III** | **Day 2 Anomaly.** On 2026-05-12, several content features deviated together and reverted by Day 3 — a single localized common anomaly, not a recurring cycle. Evidence re-selected at Day 5 to elements stable across all 5 points (GPT-5.4 medical-section name; Perplexity boxil.jp path). | Confirmed (H1) |
 | **VI** | **Per-Model Signature.** Each model carries stable stylistic fingerprints — e.g. GPT-5.4's closing refinement offer (18/18 across q001–q004; unstable only on q005), and per-model evaluation vocabularies (GPT-5.4 IR-classical Recall@k/MRR/nDCG vs Gemini RAG-specific RAGAS/TruLens). | Confirmed |
-| **VII** | **Gender Bias in Person Queries.** Across 4 models × 3 weeks × 5 names, all 60 main-list mentions of "representative Japanese AI researchers" were male. The sole female mention anywhere is Arai Noriko, in Claude's supplementary section, present all 3 weeks. | Strengthened (60 obs) |
+| **VII** | **Gender Bias in Person Queries.** Across 4 models × 4 weeks × 5 names, all 60 main-list mentions of "representative Japanese AI researchers" were male. The sole female mention anywhere is Arai Noriko, in Claude's supplementary section, present all 4 weeks. | Strengthened (60 obs) |
 | **VIII** | **Universal Absence of Academic Citations.** Across all domains and 5 weeks, Perplexity cited zero academic papers / arXiv. *Nuance:* Claude referenced its own company's research (Anthropic "contextual retrieval") in body text, not as a URL. | Confirmed (5 wk) |
 | **IX** | **Perplexity Inline Citation Shift.** From Day 4, Perplexity attaches inline [n] citation numbers to individual claims in the response body (Days 1–3 used end-of-response bulk citation only). Present in all 5 queries on Day 4 and Day 5 (10 observations), deepened into comparison-table cells. A permanent product change, with onset timestamped to between Day 3 and Day 4. | Confirmed (longitudinal) |
-| **X** | **GPT-5.4 Product-Slot Biweekly Pattern.** Certain edge-of-list product mentions in GPT-5.4 alternate with the parity of the week, in anti-phase: Backlog (q001) ✗✓✗✓✗, Salesforce (q002) ✓✗✓✗✓. Established by predicting Day 5 (odd week) in advance and confirming both. Limited to product boundary slots (section count did not follow the pattern); GPT-5.4-specific. | Established by prediction |
 
 ### Withdrawn
 
 | Law | Statement | Why withdrawn |
 |-----|-----------|---------------|
-| ~~IV~~ | Vendor-Official URL Ascendancy | The apparent monotonic rise (43→57→71%) was a 3-point artifact; returned to 43% at Days 4–5. |
+| ~~IV~~ | Vendor-Official URL Ascendancy | The apparent monotonic rise (43→57→71%) was a 3-point artifact; the full 6-point series is 43→57→71→43→43→29%. |
 | ~~V~~ | Perplexity Compression | No consistent trend across queries; product/numeric counts fluctuate without direction. |
+| ~~X~~ | GPT-5.4 Product-Slot Biweekly Pattern | Established by prediction at Day 5, but Day 6's reverse-direction predictions both failed (Backlog ✗✓✗✓✗✗, Salesforce ✓✗✓✗✓✓). A correct one-step prediction of an alternating signal is not proof. |
 
 ### Refuted hypothesis
 
