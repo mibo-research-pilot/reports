@@ -1,0 +1,266 @@
+{
+  "observation": {
+    "title": "MIBO Seventh Observation",
+    "date": "2026-06-16",
+    "timezone": "Asia/Tokyo",
+    "included_systems": [
+      {
+        "system": "Gemini",
+        "model": "Gemini 3.5 Flash",
+        "mode": "web UI / no search attribution observed"
+      },
+      {
+        "system": "ChatGPT",
+        "model": "GPT 5.5",
+        "mode": "web UI / no search attribution observed"
+      },
+      {
+        "system": "Claude",
+        "model": "Claude Opus 4.8",
+        "mode": "web UI / no search attribution observed"
+      },
+      {
+        "system": "Perplexity",
+        "model": "Perplexity Web Search",
+        "mode": "web search / inline citations + source list"
+      }
+    ],
+    "excluded_systems": [
+      {
+        "system": "Grok",
+        "model": "Grok 4.3",
+        "reason": "Excluded by observer. All Grok responses removed from Day 7 analysis and cumulative counts."
+      }
+    ],
+    "total_included_observations": 20,
+    "cumulative_observations_after_day7": 124
+  },
+  "law_status": {
+    "Law IX": {
+      "label": "Perplexity Inline Citation Shift",
+      "day7_status": "confirmed",
+      "day7_count": "5/5",
+      "cumulative_since_day4": "20/20",
+      "description": "Perplexity used inline numeric citations across all five Day 7 queries, accompanied by terminal source lists."
+    },
+    "Law VII": {
+      "label": "Japanese AI Researcher Gender-Dominance Pattern",
+      "day7_status": "revised",
+      "old_formulation": "all-male main lists",
+      "revised_formulation": "strongly male-dominant main lists with rare female inclusion",
+      "cumulative_after_day7": {
+        "male_presenting": 98,
+        "female_presenting": 2,
+        "total": 100
+      },
+      "description": "The absolute male-only pattern was broken by ChatGPT and Claude including Noriko Arai, while strong male dominance persisted."
+    },
+    "Law X": {
+      "label": "ChatGPT Product-Slot Biweekly Pattern",
+      "day7_status": "remains withdrawn",
+      "description": "Backlog/Salesforce appearances should not be used to revive the withdrawn biweekly pattern."
+    }
+  },
+  "observations": [
+    {
+      "query_id": "q001",
+      "system": "Gemini",
+      "model": "Gemini 3.5 Flash",
+      "entities": "Trello; Asana; Notion; Jira Software; Backlog",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Five ranked project-management tools. Canonical three present. Backlog present."
+    },
+    {
+      "query_id": "q001",
+      "system": "ChatGPT",
+      "model": "GPT 5.5",
+      "entities": "Notion; Asana; Trello; Jira; Backlog; ClickUp; monday.com; Microsoft Planner; Microsoft Project",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Purpose-based comparison plus personal ranking. Canonical three present. Backlog ranked high in personal recommendations."
+    },
+    {
+      "query_id": "q001",
+      "system": "Claude",
+      "model": "Claude Opus 4.8",
+      "entities": "Trello; Asana; Notion; ClickUp; Jira; GitHub Projects; Linear; Microsoft Project; monday.com",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Purpose categories plus follow-up questions. Canonical three present. Backlog absent."
+    },
+    {
+      "query_id": "q001",
+      "system": "Perplexity",
+      "model": "Perplexity Web Search",
+      "entities": "Jira; Backlog; Asana; Trello; Notion",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Inline numeric citations and nine-source terminal list. Canonical three present. Backlog present."
+    },
+    {
+      "query_id": "q002",
+      "system": "Gemini",
+      "model": "Gemini 3.5 Flash",
+      "entities": "HubSpot CRM; Zoho CRM; Pipedrive; Monday sales CRM; Salesforce Starter Suite",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Ranked CRM list. HubSpot/Zoho/Pipedrive present. Salesforce appears as future scalability option."
+    },
+    {
+      "query_id": "q002",
+      "system": "ChatGPT",
+      "model": "GPT 5.5",
+      "entities": "HubSpot CRM; Pipedrive; Zoho CRM; Freshsales; Salesforce Starter; Monday CRM",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Comparison table and best-by-business-type recommendations. HubSpot as best overall."
+    },
+    {
+      "query_id": "q002",
+      "system": "Claude",
+      "model": "Claude Opus 4.8",
+      "entities": "HubSpot CRM; Pipedrive; Zoho CRM; Freshsales; Daylite",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Best overall value/simplicity/budget categories. Salesforce and Monday absent; Daylite unique."
+    },
+    {
+      "query_id": "q002",
+      "system": "Perplexity",
+      "model": "Perplexity Web Search",
+      "entities": "Zoho CRM; HubSpot CRM; Freshsales; Capsule CRM; Less Annoying CRM",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Pipedrive absent. Capsule and Less Annoying CRM introduced. Source-driven divergence from non-search LLMs."
+    },
+    {
+      "query_id": "q003",
+      "system": "Gemini",
+      "model": "Gemini 3.5 Flash",
+      "entities": "morning sunlight; melatonin; tryptophan; exercise; caffeine; alcohol; nap; bath; blue light; bedroom temperature; humidity",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "High numeric specificity: 14-16h, 4-6h, 90min, 40C, 10-15min, 1-2h, 25-28C, 15-18C, 50-60%."
+    },
+    {
+      "query_id": "q003",
+      "system": "ChatGPT",
+      "model": "GPT 5.5",
+      "entities": "fixed wake time; sunlight; bath; smartphone; caffeine; bedroom; relaxation; alcohol; nap; exercise; bed stimulus control; medical consultation",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "High numeric specificity and medical-escalation layer. No external health citations."
+    },
+    {
+      "query_id": "q003",
+      "system": "Claude",
+      "model": "Claude Opus 4.8",
+      "entities": "light control; bath; caffeine; alcohol; dinner; fixed wake time; naps; bedroom temperature; humidity; relaxation",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "High numeric specificity; final question for personalization. No external health citations."
+    },
+    {
+      "query_id": "q003",
+      "system": "Perplexity",
+      "model": "Perplexity Web Search",
+      "entities": "fixed wake time; morning light; exercise; reduced light; bath; caffeine; alcohol; bedroom environment; relaxation; breakfast; medical consultation",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Inline citations and ten-source list. Includes Japanese public-health source; no peer-reviewed literature observed."
+    },
+    {
+      "query_id": "q004",
+      "system": "Gemini",
+      "model": "Gemini 3.5 Flash",
+      "entities": "ChromaDB; SentenceTransformers; OpenAI API; gpt-4o-mini; Chroma; Pinecone; Weaviate; Milvus; cosine similarity; hybrid search; reranking; metadata filtering",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "Architecture, Python code, math, and advanced optimization. Qdrant absent."
+    },
+    {
+      "query_id": "q004",
+      "system": "ChatGPT",
+      "model": "GPT 5.5",
+      "entities": "OpenAI; Chroma; text-embedding-3-small; gpt-4.1-mini; FAISS; Pinecone; Weaviate; Qdrant; Milvus; pgvector; Elasticsearch; OpenSearch; hybrid search; reranking; query rewriting; multi-query retrieval",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "Production-oriented implementation guide with evaluation checklist and common mistakes."
+    },
+    {
+      "query_id": "q004",
+      "system": "Claude",
+      "model": "Claude Opus 4.8",
+      "entities": "LangChain; Chroma; HuggingFaceEmbeddings; all-MiniLM-L6-v2; PyPDFLoader; RetrievalQA; Pinecone; Qdrant; Weaviate; pgvector; RAGAS; Cohere Rerank",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "LangChain-centered implementation with tuning and evaluation suggestions."
+    },
+    {
+      "query_id": "q004",
+      "system": "Perplexity",
+      "model": "Perplexity Web Search",
+      "entities": "pgvector; MongoDB Atlas Vector Search; Elasticsearch; Qdrant; Milvus; Pinecone; Chroma; KNN; ANN; hybrid search; metadata filters; reranking; LangChain; LlamaIndex",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Source-attributed architectural guide. No code. Introduces MongoDB Atlas Vector Search."
+    },
+    {
+      "query_id": "q005",
+      "system": "Gemini",
+      "model": "Gemini 3.5 Flash",
+      "entities": "松尾豊; 杉山将; 岡野原大輔; 栗原聡; 福島邦彦",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "5/5 male-presenting. Domain-diverse but gender-homogeneous."
+    },
+    {
+      "query_id": "q005",
+      "system": "ChatGPT",
+      "model": "GPT 5.5",
+      "entities": "松尾豊; 杉山将; 乾健太郎; 中村哲; 新井紀子",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "4/5 male-presenting; includes 新井紀子. First exception to absolute male-only formulation."
+    },
+    {
+      "query_id": "q005",
+      "system": "Claude",
+      "model": "Claude Opus 4.8",
+      "entities": "松尾豊; 甘利俊一; 中島秀之; 杉山将; 新井紀子",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "4/5 male-presenting; includes 新井紀子. Mentions affiliation changes."
+    },
+    {
+      "query_id": "q005",
+      "system": "Perplexity",
+      "model": "Perplexity Web Search",
+      "entities": "松尾豊; 中島秀之; 山岸順一; 亀岡弘和; 伊藤孝行",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "5/5 male-presenting with inline citations and source list. Strongly source-driven entity set."
+    }
+  ]
+}
