@@ -1,0 +1,49 @@
+{
+  "observatory": "MIBO",
+  "japanese_name": "機械情報行動観測所",
+  "session": "Day 7",
+  "observation_date": "2026-06-16",
+  "timezone": "Asia/Tokyo",
+  "method": "Longitudinal Machine Observation",
+  "observation_mode": "Manual web interface, fresh chat/session, copy-paste observation",
+  "included_systems": [
+    {
+      "system": "Gemini",
+      "displayed_model_name": "Gemini 3.5 Flash",
+      "mode": "Web interface"
+    },
+    {
+      "system": "ChatGPT",
+      "displayed_model_name": "GPT 5.5",
+      "mode": "Web interface"
+    },
+    {
+      "system": "Claude",
+      "displayed_model_name": "Claude Opus 4.8",
+      "mode": "Web interface"
+    },
+    {
+      "system": "Perplexity",
+      "displayed_model_name": "Perplexity Web Search",
+      "mode": "Web search"
+    }
+  ],
+  "excluded_systems": [
+    {
+      "system": "Grok",
+      "displayed_model_name": "Grok 4.3",
+      "reason": "Excluded by observer from the official Day 7 observation set, cumulative counts, and law-status claims."
+    }
+  ],
+  "query_set": "operational v0.1.1",
+  "query_count": 5,
+  "included_observation_count": 20,
+  "cumulative_observations_after_session": 124,
+  "notes": [
+    "Grok responses are not included in Day 7 analysis.",
+    "Perplexity observations include inline citations and terminal source lists.",
+    "Law VII was revised after Day 7.",
+    "Law IX continued across all five Perplexity queries.",
+    "Law X remains withdrawn."
+  ]
+}
