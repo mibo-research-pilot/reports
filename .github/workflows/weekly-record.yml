@@ -82,7 +82,9 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          DATE_JST="$(TZ=Asia/Tokyo date +%F)"
+          # Use the observation date (OBS_DATE when dispatched with one, else today in JST)
+          # so the commit message matches the record's observation_date.
+          OBS_DATE_MSG="${OBS_DATE:-$(TZ=Asia/Tokyo date +%F)}"
           git add -A
-          git commit -m "Weekly MIBO record for ${DATE_JST} (automated API collection)"
+          git commit -m "Weekly MIBO record for ${OBS_DATE_MSG} (automated API collection)"
           git push
