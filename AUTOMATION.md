@@ -61,6 +61,26 @@ intend to observe** — the defaults mirror the latest report and may need adjus
    → *Read and write permissions*. (The workflow already declares `permissions: contents: write`.)
 3. Ensure the workflow file is on the repository's **default branch** so the schedule takes effect.
 
+## Slack notifications (optional)
+
+Each run posts a one-line summary to Slack when finished — on both success and failure.
+To enable it:
+
+1. Create a **Slack Incoming Webhook** for the channel you want:
+   Slack → the channel's target app / <https://api.slack.com/messaging/webhooks> → create an
+   app, enable *Incoming Webhooks*, *Add New Webhook to Workspace*, pick the channel, and copy
+   the webhook URL (`https://hooks.slack.com/services/…`).
+2. Add it as a repository secret named **`SLACK_WEBHOOK_URL`**
+   (Settings → Secrets and variables → Actions).
+
+If `SLACK_WEBHOOK_URL` is not set, the step is skipped silently — notifications are entirely
+optional. Example message:
+
+> ✅ MIBO weekly record — 2026-08-04: Day 14 — 20/20 observations (Gemini 5/5, ChatGPT 5/5, Claude 5/5, Perplexity 5/5). committed. `<run URL>`
+
+To notify only on failure, change the Notify Slack step's `if: always()` to `if: failure()`
+in [`.github/workflows/weekly-record.yml`](.github/workflows/weekly-record.yml).
+
 ## Running it manually
 
 - **From GitHub**: Actions tab → *Weekly MIBO record* → **Run workflow**. Optionally pass a

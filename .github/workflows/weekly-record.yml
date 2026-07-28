@@ -88,3 +88,43 @@ jobs:
           git add -A
           git commit -m "Weekly MIBO record for ${OBS_DATE_MSG} (automated API collection)"
           git push
+
+      - name: Notify Slack
+        if: always()  # notify on both success and failure
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL" ]; then
+            echo "SLACK_WEBHOOK_URL not set; skipping Slack notification."
+            exit 0
+          fi
+          OBS_DATE_MSG="${OBS_DATE:-$(TZ=Asia/Tokyo date +%F)}"
+          python3 - "$SLACK_WEBHOOK_URL" "$OBS_DATE_MSG" "$JOB_STATUS" "$RUN_URL" <<'PY'
+          import json, sys, pathlib, urllib.request
+          url, date, status, run_url = sys.argv[1:5]
+
+          summary = "no run_metadata.json (collection may not have produced a record)"
+          meta_path = pathlib.Path(date) / "run_metadata.json"
+          if meta_path.exists():
+              m = json.loads(meta_path.read_text(encoding="utf-8"))
+              inc = m.get("included_observation_count", "?")
+              exp = m.get("expected_observation_count", "?")
+              day = m.get("session", "")
+              per = ", ".join(f"{s['system']} {s.get('ok_count','?')}/{s.get('total_queries','?')}"
+                              for s in m.get("systems", []))
+              summary = f"{day} — {inc}/{exp} observations ({per})"
+
+          icon = "✅" if status == "success" else "❌"
+          verb = "committed" if status == "success" else f"run {status}"
+          text = f"{icon} MIBO weekly record — {date}: {summary}. {verb}. {run_url}"
+
+          data = json.dumps({"text": text}).encode()
+          req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print("Slack notified:", r.status)
+          except Exception as e:
+              print("Slack notification failed:", e)
+          PY
