@@ -8,7 +8,9 @@ Raw observation data and weekly reports for the **Machine Information Behavior O
 
 MIBO is the Machine Information Behavior Observatory — a research institution that continuously observes how generative AI systems retrieve, select, communicate, and forget information. The first focus is **source-attribution and citation-like behavior**: when and how AI systems point to sources, and how that behavior changes over time.
 
-MIBO conducts **Longitudinal Machine Observation (LMO)**: the same fixed set of queries is put to the same set of deployed AI systems every week, and the responses are recorded verbatim. Where a benchmark photographs a system once and scores it, an observatory watches the same system over time and can tell when it moves — distinguishing durable behavior from week-to-week noise, and timestamping product changes from the outside.
+MIBO conducts **Longitudinal Machine Observation (LMO)**: the same fixed set of queries is put to the same set of deployed AI systems every week via their APIs, and the responses are recorded verbatim. Where a benchmark photographs a system once and scores it, an observatory watches the same system over time and can tell when it moves — distinguishing durable behavior from week-to-week noise, and timestamping product changes from the outside.
+
+Collection is automated: every Tuesday 20:00 (Asia/Tokyo) a scheduled job queries each system's API, records the verbatim responses and run metadata, drafts the entity coding, and commits the record to this repository. See [`AUTOMATION.md`](AUTOMATION.md) for the mechanism. Earlier sessions (Days 1–13) used manual web-interface collection; the automated API collection begins from the first run after that changeover.
 
 This repository holds the raw weekly reports. Methodology lives in [`mibo-science/core`](https://github.com/mibo-science/core); the standard query set lives in [`mibo-science/queries`](https://github.com/mibo-science/queries).
 
@@ -37,6 +39,8 @@ Together these make findings **re-observable** — a complement to reproducibili
 | Perplexity | Web search mode |
 
 Three are self-contained (answer from internal knowledge); Perplexity is retrieval-augmented (answers from live web search with citations).
+
+Systems are now observed through their APIs. The exact model ids queried each week are pinned in [`scripts/observation_config.json`](scripts/observation_config.json) and recorded per session in each `YYYY-MM-DD/run_metadata.json`.
 
 ---
 

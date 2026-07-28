@@ -12,7 +12,9 @@ APIs and commits the result, so the weekly record is collected without manual co
      query set (q001–q005) to each system's API and records the **verbatim** responses.
   2. [`scripts/scaffold_weekly_record.py`](scripts/scaffold_weekly_record.py) builds the
      analysis workspace on top of the collected data.
-  3. The workflow commits and pushes the week's record to the default branch.
+  3. [`scripts/code_observations.py`](scripts/code_observations.py) LLM-drafts the entity
+     coding for each response (entities, citation/source/code flags, a note).
+  4. The workflow commits and pushes the week's record to the default branch.
 
 ## What each run produces
 
@@ -24,15 +26,19 @@ Both parts of the record for the observation Tuesday:
 - `raw-responses.md` — human-readable verbatim transcript.
 - `run_metadata.json` — run metadata: models, collection window, per-system status.
 
-**2. Analysis workspace (scaffold, filled in by the observer)**:
+**2. Analysis workspace (scaffold + drafted coding, reviewed by the observer)**:
 - `YYYY-MM-DD-observation.md` — the narrative report (front matter and model ids pre-filled;
   analysis sections left as `TODO`).
-- `YYYY-MM-DD/analysis.json`, `coded-observations.csv` — coding skeletons with the query ×
-  system rows and real model ids pre-filled; entity/flag coding left blank.
+- `YYYY-MM-DD/coded-observations.csv`, `analysis.json` — coding of each response:
+  entities plus `inline_citations` / `terminal_sources` / `code` flags and a note. These
+  are **LLM-drafted** (`analysis.json` carries `coding_status: auto_draft`) and must be
+  reviewed and corrected by the observer before publishing.
 - `YYYY-MM-DD/law-updates.md` — law-status template.
 
-The collection is fully automatic. Coding and interpretation (entities, law status,
-executive summary) remain the observer's analytic work; the scaffold just lays them out.
+Collection and a first-pass entity coding are automatic. Interpretation — law status,
+executive summary, and verifying/correcting the drafted coding — remains the observer's
+analytic work. The coder only fills rows that are empty, so it never overwrites your
+manual corrections on a re-run (use `--force` to re-draft).
 
 ## Configuration
 
@@ -63,9 +69,13 @@ intend to observe** — the defaults mirror the latest report and may need adjus
 
   ```bash
   export OPENAI_API_KEY=... ANTHROPIC_API_KEY=... GEMINI_API_KEY=... PERPLEXITY_API_KEY=...
-  python3 scripts/collect_observations.py --date 2026-08-04   # collect
+  python3 scripts/collect_observations.py --date 2026-08-04   # collect verbatim responses
   python3 scripts/scaffold_weekly_record.py --date 2026-08-04 # analysis workspace
+  python3 scripts/code_observations.py --date 2026-08-04      # LLM-draft entity coding
   ```
+
+  The coder (`code_observations.py`) uses the `coder` model in
+  `observation_config.json` and its `api_key_env` (Anthropic by default).
 
 `collect_observations.py` skips a date that already has `responses.json` (use `--force` to
 re-collect). `scaffold_weekly_record.py` never overwrites an existing file. Both are
@@ -73,9 +83,10 @@ therefore safe to re-run.
 
 ## The observer's weekly workflow
 
-1. The scheduled run collects responses and commits them on Tuesday.
+1. The scheduled run collects responses, drafts the coding, and commits on Tuesday.
 2. `git pull`, read `YYYY-MM-DD/raw-responses.md`.
-3. Code the observations (fill `coded-observations.csv` / `analysis.json`) and write the
-   report (`YYYY-MM-DD-observation.md`, `law-updates.md`).
+3. Review and correct the drafted coding in `coded-observations.csv` / `analysis.json`
+   (remove the `auto_draft` marker once verified), and write the report
+   (`YYYY-MM-DD-observation.md`, `law-updates.md`).
 4. Update the observation log and law table in `README.md`.
 5. Commit and push.

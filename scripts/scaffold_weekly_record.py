@@ -269,7 +269,28 @@ def main() -> int:
         default=".",
         help="Repository root to write into (default: current directory).",
     )
+    parser.add_argument(
+        "--config",
+        default="scripts/observation_config.json",
+        help="Observation config; its query set and systems keep the scaffold in sync "
+             "with collect/code (falls back to built-in defaults if absent).",
+    )
     args = parser.parse_args()
+
+    # Keep the scaffold's systems and query set in sync with the collector config so the
+    # coding skeleton always matches what collect_observations.py actually queries.
+    global SYSTEMS, QUERIES
+    config_path = Path(args.config)
+    if config_path.exists():
+        try:
+            cfg = json.loads(config_path.read_text(encoding="utf-8"))
+            if cfg.get("systems"):
+                SYSTEMS = [s["system"] for s in cfg["systems"]]
+            if cfg.get("queries"):
+                QUERIES = cfg["queries"]
+        except (ValueError, OSError, KeyError) as e:
+            print(f"warning: could not read {config_path} ({e}); using built-in defaults.",
+                  file=sys.stderr)
 
     if args.date:
         date = dt.date.fromisoformat(args.date)

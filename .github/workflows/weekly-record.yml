@@ -6,7 +6,8 @@ name: Weekly MIBO record
 #                                 records the verbatim responses + run metadata.
 #   2. scaffold_weekly_record.py — builds the analysis workspace (report + coding files)
 #                                 on top of the collected data.
-#   3. commit + push            — updates Git with the week's record.
+#   3. code_observations.py      — LLM-drafts the entity coding for the collected responses.
+#   4. commit + push            — updates Git with the week's record.
 #
 # Schedule: Tuesday 20:00 Asia/Tokyo == Tuesday 11:00 UTC.
 # GitHub Actions cron runs in UTC, so JST 20:00 is expressed as 11:00 UTC.
@@ -61,6 +62,14 @@ jobs:
             python3 scripts/scaffold_weekly_record.py --date "$OBS_DATE"
           else
             python3 scripts/scaffold_weekly_record.py
+          fi
+
+      - name: Draft entity coding
+        run: |
+          if [ -n "$OBS_DATE" ]; then
+            python3 scripts/code_observations.py --date "$OBS_DATE"
+          else
+            python3 scripts/code_observations.py
           fi
 
       - name: Commit and push if changed
