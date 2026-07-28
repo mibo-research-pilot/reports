@@ -1,0 +1,58 @@
+name: Weekly MIBO record
+
+# Scaffolds the weekly MIBO record (observation report + structured-data folder)
+# every Tuesday and commits it, so the observer only fills in the observed responses.
+#
+# Schedule: Tuesday 20:00 Asia/Tokyo == Tuesday 11:00 UTC.
+# GitHub Actions cron runs in UTC, so JST 20:00 is expressed as 11:00 UTC.
+# (Scheduled runs can be delayed by a few minutes to ~an hour under GitHub load.)
+
+on:
+  schedule:
+    - cron: "0 11 * * 2"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Observation date (YYYY-MM-DD). Leave blank for today's Asia/Tokyo date."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-record
+  cancel-in-progress: false
+
+jobs:
+  scaffold:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate weekly scaffold
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python3 scripts/scaffold_weekly_record.py --date "${{ github.event.inputs.date }}"
+          else
+            python3 scripts/scaffold_weekly_record.py
+          fi
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No new scaffold files to commit."
+            exit 0
+          fi
+          DATE_JST="$(TZ=Asia/Tokyo date +%F)"
+          git add -A
+          git commit -m "Scaffold weekly MIBO record for ${DATE_JST}"
+          git push
