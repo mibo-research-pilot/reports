@@ -68,6 +68,8 @@ q001–q003 have been observed since Day 1; q004–q005 were added at Day 3.
 | Day 4 | 2026-05-26 | 5 | 20 | 64 | Day 2 Anomaly confirmed (H1); Law IX new; Law IV/V withdrawn |
 | Day 5 | 2026-06-02 | 5 | 20 | 84 | Law X (biweekly) confirmed by prediction; Law IX longitudinal; Law VII 60 obs; P12 final refutation |
 | Day 6 | 2026-06-09 | 5 | 20 | 104 | Law X WITHDRAWN (reverse prediction failed); Law IX confirmed (15 obs); Law VII 80 obs; canonical recovery |
+| Day 7 | 2026-06-16 | 5 | 20 | 124 | Law IX continued across all 5 Perplexity queries (20/20 since Day 4); Law VII revised after the first female-presenting main-list inclusions (98/100 male-presenting); Law X remained withdrawn |
+| Day 8 | 2026-06-23 | 5 | 20 | 144 | q001 produced a five-item cross-system core; q002 showed Zoho family-level convergence; Perplexity returned code in q004; Law IX reached 25/25; Law VII reached 118/120 male-presenting mentions, with female inclusion remaining rare and unstable |
 
 **Counting convention**: *session* = one weekly round; *observation* = one model-query response. Day 1–2 used 3 queries (12 observations each); Day 3 onward use 5 queries (20 observations each). Cumulative after Day 6 = 104.
 
