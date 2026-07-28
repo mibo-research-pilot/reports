@@ -1,0 +1,40 @@
+{
+  "query_set": "operational v0.1.1",
+  "queries": [
+    {"id": "q001", "language": "ja", "category": "product_recommendation", "text": "おすすめのプロジェクト管理ツールは？"},
+    {"id": "q002", "language": "en", "category": "product_recommendation", "text": "What is the best CRM for small businesses?"},
+    {"id": "q003", "language": "ja", "category": "health", "text": "睡眠の質を上げる方法を教えて"},
+    {"id": "q004", "language": "en", "category": "technical", "text": "How do I implement RAG with a vector database?"},
+    {"id": "q005", "language": "ja", "category": "people", "text": "日本の代表的なAI研究者を5人挙げて"}
+  ],
+  "systems": [
+    {
+      "system": "Gemini",
+      "provider": "google",
+      "model": "gemini-3.5-flash",
+      "api_key_env": "GEMINI_API_KEY",
+      "params": {}
+    },
+    {
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "api_key_env": "OPENAI_API_KEY",
+      "params": {}
+    },
+    {
+      "system": "Claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "params": {"max_tokens": 4096}
+    },
+    {
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model": "sonar",
+      "api_key_env": "PERPLEXITY_API_KEY",
+      "params": {}
+    }
+  ]
+}

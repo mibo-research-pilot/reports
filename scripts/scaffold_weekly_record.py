@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
-"""Scaffold the weekly MIBO record (report + structured data) for an observation Tuesday.
+"""Scaffold the weekly MIBO analysis workspace for an observation Tuesday.
 
 MIBO observations follow Longitudinal Machine Observation (LMO): the same fixed query
-set is put to the same set of deployed AI systems every week and recorded verbatim.
-The actual responses must be collected by a human through each provider's web interface
-(the methodology is "Manual web interface, fresh chat/session, copy-paste observation"),
-so this script never invents observation content. It only generates the repetitive,
-deterministic scaffolding for the week — the dated report and the structured-data
-folder — with every session-derivable field pre-filled and every observed field left
-as an explicit TODO for the observer to complete.
+set is put to the same set of deployed AI systems every week via their APIs and recorded
+verbatim. The verbatim collection is done by ``collect_observations.py`` (which writes
+``YYYY-MM-DD/responses.json``, ``raw-responses.md`` and ``run_metadata.json``). This
+script produces the analysis workspace that sits on top of that raw data — the narrative
+report and the coding skeletons — with every session-derivable field pre-filled (date,
+day number, counts, query set, system/model columns) and every analytic judgement left
+as an explicit TODO for the observer.
+
+When ``run_metadata.json`` from the collector is present, the real model ids are pulled
+into the scaffold; otherwise model columns are left as TODO.
 
 The script is idempotent: it never overwrites a file that already exists, so it is safe
-to re-run and safe to run after the observer has started filling in data.
+to re-run and safe to run after the observer has started filling in analysis.
 
 Usage:
     python3 scripts/scaffold_weekly_record.py            # today's date in Asia/Tokyo
@@ -49,11 +52,30 @@ QUERIES = [
 ]
 
 # Systems included in the current observation set, in canonical column order.
-# Displayed model names change week to week and MUST be recorded as shown at observation
-# time, so they are left as TODO rather than guessed here.
+# Model ids change week to week and are recorded from the collector's run_metadata.json
+# when available; otherwise left as TODO rather than guessed here.
 SYSTEMS = ["Gemini", "ChatGPT", "Claude", "Perplexity"]
 
-TODO_MODEL = "TODO: displayed model name at observation time"
+TODO_MODEL = "TODO: model id"
+
+
+def load_models(data_dir: Path) -> dict[str, str]:
+    """Map system -> model id from the collector's run_metadata.json, if present."""
+    meta_path = data_dir / "run_metadata.json"
+    if not meta_path.exists():
+        return {}
+    try:
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return {}
+    models: dict[str, str] = {}
+    for s in meta.get("systems", []):
+        used = s.get("model_used") or s.get("model_requested")
+        if isinstance(used, list):
+            used = ", ".join(used) if used else None
+        if s.get("system") and used:
+            models[s["system"]] = used
+    return models
 
 
 # --- Session math ----------------------------------------------------------
@@ -88,12 +110,12 @@ def ordinal(n: int) -> str:
     return f"{n}{suffix}"
 
 
-def build_observation_md(date: dt.date, day: int) -> str:
+def build_observation_md(date: dt.date, day: int, models: dict[str, str]) -> str:
     date_s = date.isoformat()
     obs = observations_this_session(day)
     cum = cumulative_observations(day)
     queries = queries_for_day(day)
-    systems_line = ", ".join(f"{s} (TODO: model)" for s in SYSTEMS)
+    systems_line = ", ".join(f"{s} ({models.get(s, 'TODO: model')})" for s in SYSTEMS)
 
     lines: list[str] = []
     lines.append(f"# {ordinal(day)} Observation — {date_s}")
@@ -103,14 +125,16 @@ def build_observation_md(date: dt.date, day: int) -> str:
     lines.append(f"**Observation date**: {date_s}  ")
     lines.append("**Timezone**: Asia/Tokyo  ")
     lines.append("**Core method**: Longitudinal Machine Observation (LMO)  ")
-    lines.append("**Observation mode**: Manual web interface, fresh chat/session, copy-paste observation  ")
+    lines.append("**Observation mode**: API collection (automated)  ")
     lines.append(f"**Included systems**: {systems_line}  ")
     lines.append("**Excluded systems**: TODO (list any system excluded from this session, with reason)  ")
     lines.append(f"**Included observations this session**: {obs}  ")
     lines.append(f"**Cumulative MIBO observations after this session**: {cum}  ")
+    lines.append(f"**Raw responses**: [`{date_s}/raw-responses.md`]({date_s}/raw-responses.md) "
+                 f"(verbatim API outputs)  ")
     lines.append("")
-    lines.append("> ⚠️ SCAFFOLD — generated automatically. Replace every TODO with the "
-                 "verbatim observation collected from each system's web interface before publishing.")
+    lines.append("> ⚠️ SCAFFOLD — analysis workspace. Verbatim responses are collected by "
+                 "`collect_observations.py` into the dated folder; fill in the analysis TODOs below.")
     lines.append("")
     lines.append("---")
     lines.append("")
@@ -159,41 +183,7 @@ def build_observation_md(date: dt.date, day: int) -> str:
     return "\n".join(lines)
 
 
-def build_run_metadata(date: dt.date, day: int) -> dict:
-    obs = observations_this_session(day)
-    cum = cumulative_observations(day)
-    queries = queries_for_day(day)
-    return {
-        "observatory": "MIBO",
-        "japanese_name": "機械情報行動観測所",
-        "session": f"Day {day}",
-        "observation_date": date.isoformat(),
-        "timezone": "Asia/Tokyo",
-        "method": "Longitudinal Machine Observation",
-        "observation_mode": "Manual web interface, fresh chat/session, copy-paste observation",
-        "included_systems": [
-            {"system": s, "displayed_model_name": TODO_MODEL, "mode": "Web interface"}
-            for s in SYSTEMS
-        ],
-        "excluded_systems": [],
-        "query_set": "operational v0.1.1",
-        "query_count": len(queries),
-        "included_observation_count": obs,
-        "cumulative_observations_after_session": cum,
-        "collection_method": {
-            "type": "manual_web_interface_copy_paste",
-            "automation_used": False,
-            "api_used": False,
-        },
-        "scaffold": {
-            "generated_by": "scripts/scaffold_weekly_record.py",
-            "status": "TODO — replace TODO fields with observed data before publishing",
-        },
-        "notes": ["TODO"],
-    }
-
-
-def build_analysis(date: dt.date, day: int) -> dict:
+def build_analysis(date: dt.date, day: int, models: dict[str, str]) -> dict:
     queries = queries_for_day(day)
     return {
         "observation": {
@@ -201,7 +191,8 @@ def build_analysis(date: dt.date, day: int) -> dict:
             "date": date.isoformat(),
             "timezone": "Asia/Tokyo",
             "included_systems": [
-                {"system": s, "model": TODO_MODEL, "mode": "TODO"} for s in SYSTEMS
+                {"system": s, "model": models.get(s, TODO_MODEL), "mode": "API"}
+                for s in SYSTEMS
             ],
             "excluded_systems": [],
             "total_included_observations": observations_this_session(day),
@@ -212,7 +203,7 @@ def build_analysis(date: dt.date, day: int) -> dict:
             {
                 "query_id": q["id"],
                 "system": s,
-                "model": TODO_MODEL,
+                "model": models.get(s, TODO_MODEL),
                 "entities": "",
                 "inline_citations": "",
                 "terminal_sources": "",
@@ -225,13 +216,13 @@ def build_analysis(date: dt.date, day: int) -> dict:
     }
 
 
-def build_coded_csv(date: dt.date, day: int) -> str:
+def build_coded_csv(date: dt.date, day: int, models: dict[str, str]) -> str:
     header = "query_id,system,model,entities,inline_citations,terminal_sources,code,notes"
     rows = [header]
     for q in queries_for_day(day):
         for s in SYSTEMS:
-            # model left blank for the observer; entities/flags/notes blank.
-            rows.append(f"{q['id']},{s},,,,,,")
+            # model filled from run_metadata when available; coding fields blank.
+            rows.append(f"{q['id']},{s},{models.get(s, '')},,,,,")
     return "\n".join(rows) + "\n"
 
 
@@ -300,23 +291,23 @@ def main() -> int:
 
     root = Path(args.root)
     date_s = date.isoformat()
+    data_dir = root / date_s
+    # Pull real model ids from the collector's run_metadata.json when it has already run.
+    models = load_models(data_dir)
     created: list[str] = []
     skipped: list[str] = []
 
-    # 1) Observation report (narrative markdown)
+    # 1) Observation report (narrative analysis markdown)
     write_if_absent(root / f"{date_s}-observation.md",
-                    build_observation_md(date, day), created, skipped)
+                    build_observation_md(date, day, models), created, skipped)
 
-    # 2) Structured-data folder (run_metadata / analysis / coded CSV / law updates)
-    data_dir = root / date_s
-    write_if_absent(data_dir / "run_metadata.json",
-                    json.dumps(build_run_metadata(date, day), ensure_ascii=False, indent=2) + "\n",
-                    created, skipped)
+    # 2) Analysis workspace inside the dated folder. run_metadata.json / responses.json /
+    #    raw-responses.md are owned by collect_observations.py, not written here.
     write_if_absent(data_dir / "analysis.json",
-                    json.dumps(build_analysis(date, day), ensure_ascii=False, indent=2) + "\n",
+                    json.dumps(build_analysis(date, day, models), ensure_ascii=False, indent=2) + "\n",
                     created, skipped)
     write_if_absent(data_dir / "coded-observations.csv",
-                    build_coded_csv(date, day), created, skipped)
+                    build_coded_csv(date, day, models), created, skipped)
     write_if_absent(data_dir / "law-updates.md",
                     build_law_updates_md(date, day), created, skipped)
 

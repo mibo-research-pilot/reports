@@ -1,7 +1,12 @@
 name: Weekly MIBO record
 
-# Scaffolds the weekly MIBO record (observation report + structured-data folder)
-# every Tuesday and commits it, so the observer only fills in the observed responses.
+# Runs the weekly MIBO observation automatically and commits the result.
+#
+#   1. collect_observations.py  — sends the standard query set to each system's API and
+#                                 records the verbatim responses + run metadata.
+#   2. scaffold_weekly_record.py — builds the analysis workspace (report + coding files)
+#                                 on top of the collected data.
+#   3. commit + push            — updates Git with the week's record.
 #
 # Schedule: Tuesday 20:00 Asia/Tokyo == Tuesday 11:00 UTC.
 # GitHub Actions cron runs in UTC, so JST 20:00 is expressed as 11:00 UTC.
@@ -25,8 +30,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scaffold:
+  observe:
     runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+      OBS_DATE: ${{ github.event.inputs.date }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -36,10 +47,18 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Generate weekly scaffold
+      - name: Collect observations via provider APIs
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            python3 scripts/scaffold_weekly_record.py --date "${{ github.event.inputs.date }}"
+          if [ -n "$OBS_DATE" ]; then
+            python3 scripts/collect_observations.py --date "$OBS_DATE"
+          else
+            python3 scripts/collect_observations.py
+          fi
+
+      - name: Build analysis workspace
+        run: |
+          if [ -n "$OBS_DATE" ]; then
+            python3 scripts/scaffold_weekly_record.py --date "$OBS_DATE"
           else
             python3 scripts/scaffold_weekly_record.py
           fi
@@ -49,10 +68,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git diff --quiet && git diff --cached --quiet; then
-            echo "No new scaffold files to commit."
+            echo "No changes to commit."
             exit 0
           fi
           DATE_JST="$(TZ=Asia/Tokyo date +%F)"
           git add -A
-          git commit -m "Scaffold weekly MIBO record for ${DATE_JST}"
+          git commit -m "Weekly MIBO record for ${DATE_JST} (automated API collection)"
           git push

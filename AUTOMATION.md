@@ -1,63 +1,81 @@
 # Weekly record automation
 
-This repository scaffolds the weekly MIBO record automatically so the observer only
-has to fill in the observed responses.
+Every Tuesday this repository runs the MIBO observation automatically over the provider
+APIs and commits the result, so the weekly record is collected without manual copy-paste.
 
 ## What runs, and when
 
 - **Schedule**: every **Tuesday 20:00 Asia/Tokyo** (= 11:00 UTC).
 - **Where**: GitHub Actions — [`.github/workflows/weekly-record.yml`](.github/workflows/weekly-record.yml).
-- **What it does**: runs [`scripts/scaffold_weekly_record.py`](scripts/scaffold_weekly_record.py),
-  which generates that week's record **scaffold** and commits it directly to the default branch.
+- **Steps**:
+  1. [`scripts/collect_observations.py`](scripts/collect_observations.py) sends the standard
+     query set (q001–q005) to each system's API and records the **verbatim** responses.
+  2. [`scripts/scaffold_weekly_record.py`](scripts/scaffold_weekly_record.py) builds the
+     analysis workspace on top of the collected data.
+  3. The workflow commits and pushes the week's record to the default branch.
 
-Each run produces **both** parts of the record for the observation Tuesday:
+## What each run produces
 
-1. **Observation report** — `YYYY-MM-DD-observation.md` (narrative template).
-2. **Structured data** — `YYYY-MM-DD/` folder containing:
-   - `run_metadata.json`
-   - `analysis.json`
-   - `coded-observations.csv` (20 pre-labelled rows: 5 queries × 4 systems)
-   - `law-updates.md`
+Both parts of the record for the observation Tuesday:
 
-Every field that can be derived from the schedule is pre-filled — the date, the session/day
-number, the observation count, the cumulative total, the query set, and the system columns.
-Everything that must be *observed* is left as an explicit `TODO`.
+**1. Collected observation (automatic, verbatim)** — in `YYYY-MM-DD/`:
+- `responses.json` — structured verbatim results (one entry per query × system: response
+  text, model id used, token usage, latency, and any error).
+- `raw-responses.md` — human-readable verbatim transcript.
+- `run_metadata.json` — run metadata: models, collection window, per-system status.
 
-## Why it scaffolds instead of collecting responses
+**2. Analysis workspace (scaffold, filled in by the observer)**:
+- `YYYY-MM-DD-observation.md` — the narrative report (front matter and model ids pre-filled;
+  analysis sections left as `TODO`).
+- `YYYY-MM-DD/analysis.json`, `coded-observations.csv` — coding skeletons with the query ×
+  system rows and real model ids pre-filled; entity/flag coding left blank.
+- `YYYY-MM-DD/law-updates.md` — law-status template.
 
-MIBO's method is **Longitudinal Machine Observation**: "Manual web interface, fresh
-chat/session, copy-paste observation." The actual responses from ChatGPT, Gemini,
-Perplexity, and Claude are collected by a human through each provider's web interface.
-An unattended job has no authenticated access to those interfaces, and generating
-plausible-looking responses would be fabricating observation data. So the automation
-handles the repetitive scaffolding and leaves the observation itself to the observer.
+The collection is fully automatic. Coding and interpretation (entities, law status,
+executive summary) remain the observer's analytic work; the scaffold just lays them out.
 
-## The observer's weekly workflow
+## Configuration
 
-1. On Tuesday, `git pull` — the scaffold for the week is already committed.
-2. Collect each system's response through its web interface (as usual).
-3. Replace every `TODO` in `YYYY-MM-DD-observation.md` and the `YYYY-MM-DD/` files.
-4. Update the observation log and law table in `README.md`.
-5. Commit and push.
+The observed systems and models live in
+[`scripts/observation_config.json`](scripts/observation_config.json). Edit that file to
+change model ids, add/remove systems, or set per-request params. Each system names the
+environment variable that holds its API key (`api_key_env`).
+
+Default systems: Gemini (`google`), ChatGPT (`openai`), Claude (`anthropic`),
+Perplexity (`perplexity`). **Update the `model` ids to the exact API model strings you
+intend to observe** — the defaults mirror the latest report and may need adjusting.
+
+## One-time setup
+
+1. **Add API keys as repository secrets** (Settings → Secrets and variables → Actions):
+   `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `PERPLEXITY_API_KEY`.
+   A system whose key is missing is skipped and recorded as `skipped_no_api_key`, so the
+   run still produces a partial record rather than failing.
+2. **Enable write access for Actions**: Settings → Actions → General → Workflow permissions
+   → *Read and write permissions*. (The workflow already declares `permissions: contents: write`.)
+3. Ensure the workflow file is on the repository's **default branch** so the schedule takes effect.
 
 ## Running it manually
 
 - **From GitHub**: Actions tab → *Weekly MIBO record* → **Run workflow**. Optionally pass a
-  specific `date` (YYYY-MM-DD); leave blank to use today's Asia/Tokyo date.
-- **Locally**:
+  specific `date` (YYYY-MM-DD); blank uses today's Asia/Tokyo date.
+- **Locally** (keys in your environment):
 
   ```bash
-  python3 scripts/scaffold_weekly_record.py              # today's date (Asia/Tokyo)
-  python3 scripts/scaffold_weekly_record.py --date 2026-08-04
+  export OPENAI_API_KEY=... ANTHROPIC_API_KEY=... GEMINI_API_KEY=... PERPLEXITY_API_KEY=...
+  python3 scripts/collect_observations.py --date 2026-08-04   # collect
+  python3 scripts/scaffold_weekly_record.py --date 2026-08-04 # analysis workspace
   ```
 
-The script is **idempotent**: it never overwrites an existing file, so re-running it — or
-running it after you have started filling in data — only creates what is missing.
+`collect_observations.py` skips a date that already has `responses.json` (use `--force` to
+re-collect). `scaffold_weekly_record.py` never overwrites an existing file. Both are
+therefore safe to re-run.
 
-## One-time setup
+## The observer's weekly workflow
 
-For the scheduled job to commit back to the repository, GitHub Actions needs write
-permission. The workflow already requests `permissions: contents: write`; in addition,
-confirm in **Settings → Actions → General → Workflow permissions** that
-*"Read and write permissions"* is enabled. The workflow file must also be present on the
-repository's **default branch** for the schedule to take effect.
+1. The scheduled run collects responses and commits them on Tuesday.
+2. `git pull`, read `YYYY-MM-DD/raw-responses.md`.
+3. Code the observations (fill `coded-observations.csv` / `analysis.json`) and write the
+   report (`YYYY-MM-DD-observation.md`, `law-updates.md`).
+4. Update the observation log and law table in `README.md`.
+5. Commit and push.
