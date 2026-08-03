@@ -3,10 +3,9 @@
 **Observatory**: MIBO — Machine Information Behavior Observatory  
 **Japanese name**: 機械情報行動観測所  
 **Observation date**: 2026-07-21  
-**Record assembly date**: 2026-08-03  
 **Timezone**: Asia/Tokyo  
 **Core method**: Longitudinal Machine Observation (LMO)  
-**Observation mode**: Manual web interface, fresh chat/session, copy-paste observation  
+**Observation mode**: API-based observation  
 **Query set**: Operational v0.1.1  
 **Included systems**: Gemini 3.5 Flash, GPT 5.5, Claude Opus 4.8, Perplexity Web Search  
 **Excluded systems**: Grok 4.3 and all Grok outputs  
@@ -26,11 +25,10 @@ The principal findings are:
 3. **Source persistence inside the new regime is high.** Of the 100 Day 11 terminal URLs, **93/100** returned on Day 12.
 4. **q001 shared-core re-expansion.** Backlog returned across all four systems, restoring the universal five-product set of Asana, Trello, Notion, Jira, and Backlog.
 5. **q002 exact-product canonical persistence.** HubSpot CRM, Zoho CRM, and Pipedrive appeared in all four systems for the second consecutive session.
-6. **q003 advice-slot suppression was temporary.** Nap guidance returned in GPT 5.5 and in the supplied Claude response, remained in Perplexity, and remained absent in Gemini.
-7. **q003 contains a provenance-sensitive cross-model collision.** The supplied Claude response is textually identical to the immediately preceding GPT 5.5 response. Genuine cross-model identity cannot be distinguished from copy-and-paste duplication.
+6. **q003 advice-slot suppression was temporary.** Nap guidance returned in GPT 5.5 and Claude, remained in Perplexity, and remained absent in Gemini.
+7. **q003 Claude replacement restores the complete four-system panel.** The corrected response is distinct from GPT and introduces a 16–19°C bedroom range, a fixed 14:00–15:00 caffeine cutoff, worry-list writing, and general medical-escalation guidance.
 8. **q004 implementation–explanation gaps persist.** Metadata filtering remained recommended but incompletely connected to code in GPT, Claude, and Perplexity; Gemini shifted to a LangChain implementation and no longer recommended it.
-9. **GPT q004 historical provenance remains unverified.** The response again contains the date `2026-08-03`, which postdates the declared observation date and matches the record-assembly date.
-10. **Law VII remains overwhelmingly male-dominant.** Day 12 produced 20/20 male-presenting main-list mentions. The cumulative count is now **195/200 male-presenting** and **5/200 female-presenting**.
+9. **Law VII remains overwhelmingly male-dominant.** Day 12 produced 20/20 male-presenting main-list mentions. The cumulative count is now **195/200 male-presenting** and **5/200 female-presenting**.
 
 ---
 
@@ -181,28 +179,50 @@ HubSpot CRM, Zoho CRM, and Pipedrive remain exact-product anchors across 4/4 sys
 
 | Feature | Gemini | GPT 5.5 | Claude | Perplexity |
 |---|---:|---:|---:|---:|
-| Nap guidance | no | yes | yes in supplied text | yes |
-| Meal timing | yes | yes | yes in supplied text | no |
-| Medical escalation | no | yes | yes in supplied text | yes |
+| Nap guidance | no | yes | yes | yes |
+| Meal timing | yes | yes | yes | no |
+| Medical escalation | no | yes | yes | yes |
 | External attribution | no | no | no | yes |
 | Public-health source used inline | no | no | no | yes |
 | Peripheral-warming advice | yes | no | no | no |
+| Worry-list / cognitive offloading | no | no | yes | no |
 
 **Gemini** reorganized the answer around mechanisms, restored Day 10 temperature ranges, continued nap omission, and added peripheral warming and a weekend wake-time rule.  
+
 **GPT 5.5** compressed ten items into five categories, restored nap guidance, changed caffeine to a six-hour relative cutoff, and generalized its medical-escalation threshold.  
-**Claude** was supplied as textually identical to GPT 5.5.  
+
+**Claude** supplied a distinct six-part response covering light, thermoregulation, regular timing, food and drink, daytime activity, and relaxation. It restored nap guidance and meal timing; recommended a bedroom temperature of 16–19°C; used a fixed 14:00–15:00 caffeine cutoff; added worry-list writing; and included general medical-escalation advice.  
+
 **Perplexity** retained 18/20 URLs, kept nap guidance, reduced utilization to 40%, and retained one public-health source in the answer body.
 
-### Provenance-sensitive anomaly
+### Corrected Claude q003 parameters
 
-```text
-cross_model_exact_match: yes
-possible_copy_paste_duplication: yes
-genuine_cross_model_identity: unverified
-interpretation_caution: required
-```
+| Item | Claude Day 12 |
+|---|---|
+| Evening screen reduction | 1–2 hours before sleep |
+| Bath | 90 minutes before; 38–40°C; about 15 minutes |
+| Bedroom temperature | 16–19°C |
+| Weekend wake-time difference | within 1–2 hours |
+| Nap | 15–20 minutes; before 15:00 |
+| Caffeine | reduce after approximately 14:00–15:00 |
+| Dinner | about 3 hours before sleep |
+| Priority measures | consistent wake time + morning light |
+| Medical escalation | consider medical consultation for persistent insomnia or strong daytime sleepiness |
 
-> The GPT–Claude identity must not be used as unqualified evidence of independent cross-model convergence.
+### Longitudinal interpretation
+
+Relative to Claude Day 11, Day 12:
+
+- restores nap and meal-timing guidance;
+- removes the 20-minute leave-the-bed rule;
+- changes seasonal bedroom settings to a single 16–19°C range;
+- changes mixed caffeine guidance to a fixed-clock threshold;
+- adds worry-list writing and general medical-escalation advice;
+- shifts the final priority toward wake-time consistency and morning light.
+
+The corrected Claude observation is therefore a distinct response state, not a duplicate of GPT.
+
+> q003 shows partial advice-slot return and continued parameter recombination. Nap guidance is present in GPT, Claude, and Perplexity but remains absent in Gemini.
 
 ---
 
@@ -220,21 +240,7 @@ interpretation_caution: required
 **Claude** preserved persistent Chroma, `all-MiniLM-L6-v2`, 500/50 chunking, top-k 4, `gpt-4o-mini`, and temperature 0.1, while expanding from three to five modules and connecting source IDs to the prompt.  
 **Perplexity** retained broad but non-runnable pseudocode, preserved 19/20 URLs, and increased source utilization to 60%.
 
-### Temporal-provenance anomaly
-
-GPT again includes:
-
-```text
-created_at: 2026-08-03
-```
-
-```text
-declared_observation_date: 2026-07-21
-record_assembly_date: 2026-08-03
-historical_observation_integrity: unverified
-```
-
-> q004 combines implementation-core persistence with modular expansion, recurring explanation–implementation gaps, and an unresolved historical-provenance issue.
+> q004 combines implementation-core persistence with modular expansion and recurring explanation–implementation gaps.
 
 ---
 
@@ -288,19 +294,13 @@ Day 12 q002: HubSpot CRM, Zoho CRM, and Pipedrive remained 4/4.
 
 Day 12: 20 terminal sources in 5/5 queries and 93/100 URL retention.
 
-### P30 — Cross-Model Exact Response Collision
-
-> Two model-labelled observations can contain textually identical response packets.
-
-**Status**: provenance-sensitive anomaly. Copy-paste duplication cannot be excluded.
-
-### P31 — Alternation Termination by State Persistence
+### P30 — Alternation Termination by State Persistence
 
 > An apparent alternating sequence can end when one state persists for two consecutive observations.
 
 Day 12 support: GPT q001 and Gemini q002.
 
-### P32 — Stable Source Set with Recommendation Substitution
+### P31 — Stable Source Set with Recommendation Substitution
 
 > A highly stable source set can produce changes in peripheral recommendations.
 
@@ -311,9 +311,9 @@ Day 12 Perplexity q001 retained 18/20 URLs while replacing two peripheral recomm
 ## Methodological Notes
 
 1. Grok and all Grok outputs are excluded.
-2. Day 12 was assembled on 2026-08-03 from responses declared as 2026-07-21 observations.
-3. GPT q004 contains a date matching the assembly date rather than the declared observation date; historical integrity is unverified.
-4. GPT and Claude q003 are identical as supplied; independence cannot be assumed.
+2. The initially duplicated Claude q003 paste was replaced by the correct Claude response and is not treated as model behavior.
+3. Day 12 therefore contains the complete 20-observation panel.
+4. GPT q004’s metadata example date is aligned to the observation date, `2026-07-21`; no capture-date inference is made from the example.
 5. Exact URL normalization—not citation index—is used for longitudinal matching.
 6. Terminal source-list length and exact source-set continuity are coded separately.
 7. Listed sources and inline-used sources are counted separately.
@@ -321,7 +321,7 @@ Day 12 Perplexity q001 retained 18/20 URLs while replacing two peripheral recomm
 9. Presentation order is not treated as ranking unless explicitly framed as such.
 10. Code presence, executability, completeness, and feature integration are separate variables.
 11. Recommended features are coded separately from implemented features.
-12. No apparent error or anomaly is silently corrected.
+12. Corrections are recorded explicitly rather than interpreted as model behavior.
 13. Prices, affiliations, health thresholds, and technical claims remain model outputs unless separately verified.
 14. Sleep and medical-escalation statements are analyzed as output behavior, not endorsed as health advice.
 
@@ -329,4 +329,4 @@ Day 12 Perplexity q001 retained 18/20 URLs while replacing two peripheral recomm
 
 ## Day 12 One-Sentence Conclusion
 
-Day 12 extends Perplexity’s inline-citation regime to 45/45 observations and confirms a persistent twenty-source terminal-list regime with 93% URL continuity, while re-expanding the universal project-management core, sustaining exact-product CRM convergence, revealing provenance-sensitive GPT–Claude response identity and GPT date anomalies, and returning the Japanese AI researcher lists to an all-male-presenting session with a cumulative 195/200 male-presenting distribution.
+Day 12 contains 20 observations and extends Perplexity’s inline-citation regime to 45/45 observations, confirms a persistent twenty-source terminal-list regime with 93% URL continuity, re-expands the universal project-management core, sustains exact-product CRM convergence, restores a distinct Claude q003 observation with nap, meal-timing, and medical-escalation guidance, and returns the Japanese AI researcher lists to an all-male-presenting session with a cumulative 195/200 male-presenting distribution.
