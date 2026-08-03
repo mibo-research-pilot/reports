@@ -1,112 +1,208 @@
-# reports
+# MIBO Reports
 
-Raw observation data and weekly reports for the **Machine Information Behavior Observatory (MIBO)**.
+Raw observation records, structured coding artifacts, and longitudinal report summaries for the **Machine Information Behavior Observatory (MIBO)**.
+
+> **Current verified pilot record:** Day 1–Day 12, 2026-05-05 through 2026-07-21  
+> **Verified cumulative observations:** 224  
+> **Day 13 (`2026-07-28`) status:** placeholder / pending review; excluded from verified counts
+
+---
+
+## What this repository contains
+
+MIBO observes how deployed generative-AI services retrieve, select, rank, recommend, cite, omit, explain, and transmit information over time.
+
+Each verified weekly record may contain:
+
+```text
+YYYY-MM-DD-observation.md     Human-readable longitudinal report
+YYYY-MM-DD/
+├── run_metadata.json         Run and provenance metadata
+├── coded-observations.csv    Observation-level coding
+├── analysis.json             Machine-readable summary
+├── law-updates.md            Claim-status update
+└── raw/                      Verbatim responses or transcripts
+```
+
+The root-level observation report is the human-readable entry point.  
+The date folder is the structured observation packet when that packet has been committed.
+
+See [`INDEX.md`](./INDEX.md) for the verified archive and [`PROVENANCE.md`](./PROVENANCE.md) for record-integrity rules.
 
 ---
 
 ## What is MIBO?
 
-MIBO is the Machine Information Behavior Observatory — a research institution that continuously observes how generative AI systems retrieve, select, communicate, and forget information. The first focus is **source-attribution and citation-like behavior**: when and how AI systems point to sources, and how that behavior changes over time.
+MIBO is the Machine Information Behavior Observatory.
 
-MIBO conducts **Longitudinal Machine Observation (LMO)**: the same fixed set of queries is put to the same set of deployed AI systems every week via their APIs, and the responses are recorded verbatim. Where a benchmark photographs a system once and scores it, an observatory watches the same system over time and can tell when it moves — distinguishing durable behavior from week-to-week noise, and timestamping product changes from the outside.
+The Pilot uses **Longitudinal Machine Observation (LMO)**: a fixed set of queries is repeatedly presented to a stable set of public generative-AI services, and the resulting outputs are recorded and compared across synchronized weekly observations.
 
-Collection is automated: every Tuesday 20:00 (Asia/Tokyo) a scheduled job queries each system's API, records the verbatim responses and run metadata, drafts the entity coding, and commits the record to this repository. See [`AUTOMATION.md`](AUTOMATION.md) for the mechanism. Earlier sessions (Days 1–13) used manual web-interface collection; the automated API collection begins from the first run after that changeover.
+MIBO does not treat one output as a permanent property of a model. It distinguishes:
 
-This repository holds the raw weekly reports. Methodology lives in [`mibo-science/core`](https://github.com/mibo-science/core); the standard query set lives in [`mibo-science/queries`](https://github.com/mibo-science/queries).
+- durable canonical selections from peripheral turnover;
+- structural product changes from answer-content variation;
+- short-lag instability from longer-lag recurrence;
+- genuine behavioral evidence from provenance or transcription anomalies;
+- confirmed, revised, weakened, withdrawn, and refuted claims.
 
----
-
-## The OPEN principles
-
-MIBO observations follow four principles, abbreviated **OPEN**:
-
-- **Observation** — study deployed systems in the field, as ordinary users encounter them, rather than lab-only probes.
-- **Parallelism** — query all systems within a synchronized window, so cross-model differences are not confounded by time.
-- **Embedded openness** — publish the full record (queries, raw responses, analysis) so anyone can re-examine it.
-- **Non-stationarity** — treat AI behavior as a moving target, observed repeatedly over time rather than measured once.
-
-Together these make findings **re-observable** — a complement to reproducibility suited to systems that change underneath you.
+Methodology and the pilot claim registry live in [`mibo-science/core`](https://github.com/mibo-science/core).  
+Versioned query sets live in [`mibo-science/queries`](https://github.com/mibo-science/queries).
 
 ---
 
-## Models observed
+## Observation phases
 
-| System | Model (as of Day 5) |
-|--------|---------------------|
-| OpenAI ChatGPT | GPT-5.4 |
-| Anthropic Claude | claude-opus-4-7 |
-| Google Gemini | Gemini 3.0 Flash |
-| Perplexity | Web search mode |
+### Pilot manual phase
 
-Three are self-contained (answer from internal knowledge); Perplexity is retrieval-augmented (answers from live web search with citations).
+Days 1–13 use or were planned to use manual web-interface collection.
 
-Systems are now observed through their APIs. The exact model ids queried each week are pinned in [`scripts/observation_config.json`](scripts/observation_config.json) and recorded per session in each `YYYY-MM-DD/run_metadata.json`.
+The verified record currently ends at **Day 12**. A blank Day 13 report file exists but is not counted as a completed observation.
+
+For Days 7–12, the recorded observer-facing labels were:
+
+| System | Recorded label / mode |
+|---|---|
+| OpenAI ChatGPT | GPT 5.5 |
+| Anthropic Claude | Claude Opus 4.8 |
+| Google Gemini | Gemini 3.5 Flash |
+| Perplexity | Perplexity Web Search |
+
+Grok outputs were tested in some workflows but are excluded from the official Day 7–Day 12 observation sets, cumulative counts, and claim-status updates.
+
+### Automated API phase
+
+The repository contains a scheduled GitHub Actions workflow for future API collection. Exact API model IDs must be read from:
+
+- `scripts/observation_config.json`; and
+- the relevant `YYYY-MM-DD/run_metadata.json`.
+
+Web-interface labels and API model IDs must not be treated as automatically equivalent.
+
+See [`AUTOMATION.md`](./AUTOMATION.md).
 
 ---
 
-## Standard query set (v0.1)
+## Pilot query set
+
+The verified Day 3–Day 12 Pilot uses five fixed queries.
 
 | ID | Language | Category | Query |
-|----|----------|----------|-------|
-| q001 | ja | product_recommendation | おすすめのプロジェクト管理ツールは？ |
-| q002 | en | product_recommendation | What is the best CRM for small businesses? |
-| q003 | ja | health | 睡眠の質を上げる方法を教えて |
-| q004 | en | technical | How do I implement RAG with a vector database? |
-| q005 | ja | people / named entities | 日本の代表的なAI研究者を5人挙げて |
+|---|---|---|---|
+| q001 | ja | product recommendation | おすすめのプロジェクト管理ツールは？ |
+| q002 | en | product recommendation | What is the best CRM for small businesses? |
+| q003 | ja | health information | 睡眠の質を上げる方法を教えて |
+| q004 | en | technical implementation | How do I implement RAG with a vector database? |
+| q005 | ja | named persons | 日本の代表的なAI研究者を5人挙げて |
 
-q001–q003 have been observed since Day 1; q004–q005 were added at Day 3.
+q001–q003 were used from Day 1. q004–q005 were added at Day 3.
+
+The formal Pilot snapshot is `mibo-science/queries/v0.1.1.json`.
 
 ---
 
 ## Observation log
 
-| Session | Date | Queries | Observations | Cumulative | Key findings |
-|---------|------|:-------:|:------------:|:----------:|--------------|
-| Day 1 | 2026-05-05 | 3 | 12 | 12 | Baseline; self-contained vs retrieval-augmented divide |
-| Day 2 | 2026-05-12 | 3 | 12 | 24 | Canonical-3; parallel abstraction shift (P12) hypothesized |
-| Day 3 | 2026-05-19 | 5 | 20 | 44 | q004/q005 added; Day 2 Anomaly hypothesis; P12 refuted; Law VII baseline |
-| Day 4 | 2026-05-26 | 5 | 20 | 64 | Day 2 Anomaly confirmed (H1); Law IX new; Law IV/V withdrawn |
-| Day 5 | 2026-06-02 | 5 | 20 | 84 | Law X (biweekly) confirmed by prediction; Law IX longitudinal; Law VII 60 obs; P12 final refutation |
-| Day 6 | 2026-06-09 | 5 | 20 | 104 | Law X WITHDRAWN (reverse prediction failed); Law IX confirmed (15 obs); Law VII 80 obs; canonical recovery |
-| Day 7 | 2026-06-16 | 5 | 20 | 124 | Law IX continued across all 5 Perplexity queries (20/20 since Day 4); Law VII revised after the first female-presenting main-list inclusions (98/100 male-presenting); Law X remained withdrawn |
-| Day 8 | 2026-06-23 | 5 | 20 | 144 | q001 produced a five-item cross-system core; q002 showed Zoho family-level convergence; Perplexity returned code in q004; Law IX reached 25/25; Law VII reached 118/120 male-presenting mentions, with female inclusion remaining rare and unstable |
+| Session | Date | Queries | Included observations | Cumulative | Key findings |
+|---|---:|---:|---:|---:|---|
+| Day 1 | 2026-05-05 | 3 | 12 | 12 | Baseline; self-contained versus retrieval-mediated divide |
+| Day 2 | 2026-05-12 | 3 | 12 | 24 | Canonical selections; temporary abstraction-shift hypothesis |
+| Day 3 | 2026-05-19 | 5 | 20 | 44 | q004/q005 added; Day 2 anomaly hypothesis; P12 tested |
+| Day 4 | 2026-05-26 | 5 | 20 | 64 | Law IX onset; Day 2 anomaly confirmed; Laws IV/V withdrawn |
+| Day 5 | 2026-06-02 | 5 | 20 | 84 | Law X proposed after one-step prediction; later withdrawn |
+| Day 6 | 2026-06-09 | 5 | 20 | 104 | Law X reverse prediction failed and was withdrawn |
+| Day 7 | 2026-06-16 | 5 | 20 | 124 | First female-presenting main-list inclusions; Law IX 20/20 |
+| Day 8 | 2026-06-23 | 5 | 20 | 144 | Five-item q001 core; Zoho family convergence; Law IX 25/25 |
+| Day 9 | 2026-06-30 | 5 | 20 | 164 | Stable citation regime with variable URL sets; Law IX 30/30; Law VII 137/140 male-presenting |
+| Day 10 | 2026-07-07 | 5 | 20 | 184 | Broad two-session response-state recurrence; Perplexity Day 8 URLs restored 45/45; Law IX 35/35 |
+| Day 11 | 2026-07-14 | 5 | 20 | 204 | Twenty-source Perplexity regime begins; q001 shared core contracts; Law IX 40/40; Law VII 175/180 |
+| Day 12 | 2026-07-21 | 5 | 20 | 224 | Twenty-source regime persists with 93/100 URL retention; q001 core re-expands; exact CRM canonical three persists; Law IX 45/45; Law VII 195/200 |
+| Day 13 | 2026-07-28 | — | — | — | Placeholder only; not verified and not included in cumulative counts |
 
-Counting convention: session = one weekly observation round; observation = one included system-query response. Day 1–2 used 3 queries across 4 systems, producing 12 observations per session. Day 3 onward uses 5 queries across 4 included systems, producing 20 observations per session. Grok outputs are excluded from the official Day 7 and Day 8 analyses and cumulative counts. Cumulative after Day 8 = 144.
+**Counting convention:** one observation is one included system–query response. Days 1–2 contain 3 queries × 4 systems = 12 observations. Day 3 onward contains 5 queries × 4 included systems = 20 observations.
 
 ---
 
-## Established laws
+## Current established findings after Day 12
 
-A finding becomes a numbered "law" only after it survives at least four weekly observations and continued verification. Laws remain provisional and are revised or withdrawn when later data contradicts them. Gaps in the numbering (IV, V) mark withdrawn laws — kept visible on purpose, because retraction is part of the method.
+This table is a navigation summary. The authoritative Pilot claim registry is `core/laws.md`.
 
-| Law | Statement | Status |
-|-----|-----------|--------|
-| **I** | **Absolute Canonical.** A small set of products/names appears in essentially every response to a given query. q001 Asana 20/20; q002 HubSpot/Zoho/Pipedrive 20/20; q005 Matsuo Yutaka 12/12 mentions. *Refinement:* even "absolute" canonical can lapse in a single model (Trello 19/20, Pinecone 11/12, Matsuo #1 11/12 — each a single Day 5 lapse). | Confirmed (5 wk) |
-| **II** | **Perplexity URL Stability.** Perplexity's cited URLs persist week to week at a high rate (band ~71–100%). Lost URLs often go dormant and resurface later. | Confirmed (5 wk) |
-| **III** | **Day 2 Anomaly.** On 2026-05-12, several content features deviated together and reverted by Day 3 — a single localized common anomaly, not a recurring cycle. Evidence re-selected at Day 5 to elements stable across all 5 points (GPT-5.4 medical-section name; Perplexity boxil.jp path). | Confirmed (H1) |
-| **VI** | **Per-Model Signature.** Each model carries stable stylistic fingerprints — e.g. GPT-5.4's closing refinement offer (18/18 across q001–q004; unstable only on q005), and per-model evaluation vocabularies (GPT-5.4 IR-classical Recall@k/MRR/nDCG vs Gemini RAG-specific RAGAS/TruLens). | Confirmed |
-| **VII** | **Gender Bias in Person Queries.** Across 4 models × 4 weeks × 5 names, all 60 main-list mentions of "representative Japanese AI researchers" were male. The sole female mention anywhere is Arai Noriko, in Claude's supplementary section, present all 4 weeks. | Strengthened (60 obs) |
-| **VIII** | **Universal Absence of Academic Citations.** Across all domains and 5 weeks, Perplexity cited zero academic papers / arXiv. *Nuance:* Claude referenced its own company's research (Anthropic "contextual retrieval") in body text, not as a URL. | Confirmed (5 wk) |
-| **IX** | **Perplexity Inline Citation Shift.** From Day 4, Perplexity attaches inline [n] citation numbers to individual claims in the response body (Days 1–3 used end-of-response bulk citation only). Present in all 5 queries on Day 4 and Day 5 (10 observations), deepened into comparison-table cells. A permanent product change, with onset timestamped to between Day 3 and Day 4. | Confirmed (longitudinal) |
+| Law | Current formulation | Status |
+|---|---|---|
+| I | Queries can produce durable canonical cores while peripheral selections and rankings fluctuate. | Confirmed with refinements |
+| II | Perplexity URL continuity is multi-lag and regime-sensitive. The Day 11 twenty-source regime persisted on Day 12 with 93/100 normalized URLs retained. | Revised / strengthened |
+| III | The coordinated Day 2 deviation was a localized anomaly, not a trend or recurring cycle. | Confirmed |
+| VI | Systems retain recurring response signatures even when content converges. | Confirmed |
+| VII | Japanese-AI-researcher lists remain overwhelmingly male-dominant; female inclusion is rare, intermittent, distributed across more than one model, and person-variable. After Day 12: 195/200 male-presenting. | Strengthened / broadened |
+| VIII | No direct peer-reviewed paper or arXiv citation was observed in the verified Pilot through Day 12; public-health and official sources sometimes appeared in Perplexity. | Confirmed with nuance |
+| IX | Perplexity has used inline numeric citations plus terminal source lists in every observed query since Day 4: 45/45 after Day 12. | Confirmed / continuing |
 
-### Withdrawn
+Withdrawn laws IV, V, and X remain visible in the claim registry.
 
-| Law | Statement | Why withdrawn |
-|-----|-----------|---------------|
-| ~~IV~~ | Vendor-Official URL Ascendancy | The apparent monotonic rise (43→57→71%) was a 3-point artifact; the full 6-point series is 43→57→71→43→43→29%. |
-| ~~V~~ | Perplexity Compression | No consistent trend across queries; product/numeric counts fluctuate without direction. |
-| ~~X~~ | GPT-5.4 Product-Slot Biweekly Pattern | Established by prediction at Day 5, but Day 6's reverse-direction predictions both failed (Backlog ✗✓✗✓✗✗, Salesforce ✓✗✓✗✓✓). A correct one-step prediction of an alternating signal is not proof. |
+---
 
-### Refuted hypothesis
+## Active exploratory candidates
 
-- **P12 (Parallel Abstraction Shift)** — definitively refuted at 5 points × 3 self-contained models (15 data points). Only Day 2 showed reduced numeric specificity; all other weeks held baseline. The most-tested refuted hypothesis in MIBO.
+The reports introduced several exploratory propositions. They are not laws.
+
+The most consequential active candidates after Day 12 are:
+
+- **P18** — Session-Wide Response-State Recurrence
+- **P23** — Twenty-Source Terminal-List Regime
+- **P24** — Cross-System Implementation–Explanation Gap
+- **P27** — Shared-Core Re-expansion
+- **P28** — Exact-Product Canonical Persistence
+- **P29** — Source-Regime Persistence
+- **P30** — Cross-Model Exact Response Collision — provenance-sensitive anomaly
+- **P31** — Alternation Termination by State Persistence
+- **P32** — Stable Source Set with Recommendation Substitution
+
+Candidate status, weakening, supersession, and provenance cautions are recorded in `core/laws.md`.
+
+---
+
+## Provenance and correction policy
+
+A report date is not sufficient by itself to establish capture time.
+
+Every structured observation should distinguish:
+
+- declared observation date;
+- actual collection timestamp;
+- record-assembly timestamp;
+- system and model identifier;
+- web interface or API mode;
+- observer or automated collector;
+- raw-response hash;
+- correction status;
+- provenance flags.
+
+Two Day 11–Day 12 examples show why this matters:
+
+1. a GPT q004 response contains `2026-08-03`, which postdates the declared weekly observation dates;
+2. the supplied Day 12 GPT and Claude q003 texts are identical, and copy-paste duplication cannot be excluded.
+
+Neither item is silently corrected. See [`PROVENANCE.md`](./PROVENANCE.md).
+
+---
+
+## OPEN principles
+
+MIBO Pilot records follow four principles:
+
+- **Observation** — study deployed systems as observable behavioral objects;
+- **Parallelism** — collect systems within a synchronized observation window;
+- **Embedded openness** — preserve raw outputs, metadata, coding, and corrections;
+- **Non-stationarity** — expect models, retrieval systems, interfaces, and source environments to change.
 
 ---
 
 ## License
 
-Observation data is released under [CC0-1.0](LICENSE) (public domain dedication). The records are meant to be re-observed and reused freely.
+Observation data and query sets are released under CC0-1.0 unless otherwise stated.  
+Code and software documentation may use Apache-2.0.  
+Raw model outputs remain subject to applicable provider terms.
 
 ---
 
-*Observer: Kento Sasano — Machine Behavioral Scientist · GEO/LLMO Researcher · Founder of MIBO. Observation began 2026-05-05.*
+Observer: **Kento Sasano**  
+Observation began: **2026-05-05**
