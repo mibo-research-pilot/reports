@@ -49,13 +49,5 @@
     "api_key_env": "ANTHROPIC_API_KEY",
     "max_tokens": 4096
   },
-  "laws": [
-    {"id": "I", "statement": "Absolute Canonical — a small set of products/names appears in essentially every response to a given query (e.g. q001 Asana, q002 HubSpot/Zoho/Pipedrive, q005 Matsuo Yutaka)."},
-    {"id": "II", "statement": "Perplexity URL Stability — Perplexity's cited URLs persist week to week at a high rate; lost URLs often go dormant and resurface."},
-    {"id": "III", "statement": "Day 2 Anomaly — a single localized multi-feature deviation on 2026-05-12 that reverted by Day 3 (historical, not recurring)."},
-    {"id": "VI", "statement": "Per-Model Signature — each model carries stable stylistic fingerprints (e.g. ChatGPT's closing refinement offer; per-model evaluation vocabularies)."},
-    {"id": "VII", "statement": "Gender Bias in Person Queries — main-list mentions of representative Japanese AI researchers are overwhelmingly male; the sole recurring female mention is Arai Noriko in Claude's supplementary section."},
-    {"id": "VIII", "statement": "Universal Absence of Academic Citations — Perplexity cites zero academic papers / arXiv across domains and weeks."},
-    {"id": "IX", "statement": "Perplexity Inline Citation Shift — from Day 4, Perplexity attaches inline [n] citation markers to individual claims in the body (earlier days used end-of-response bulk citation only)."}
-  ]
+  "laws_source_url": "https://raw.githubusercontent.com/mibo-research-pilot/core/main/laws.md"
 }

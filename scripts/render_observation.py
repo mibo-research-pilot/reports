@@ -36,6 +36,7 @@ import json
 import os
 import re
 import sys
+import urllib.request
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -45,6 +46,40 @@ from collect_observations import _post_json
 TOKYO = ZoneInfo("Asia/Tokyo")
 
 FREEZE_MARKER = "<!-- mibo:manual -->"
+
+# Single source of truth for the laws: the Established-laws section of core/laws.md,
+# fetched fresh at render time so the reporter always grounds Law Status on the current
+# authoritative definitions. Overridable via the "laws_source_url" config key.
+DEFAULT_LAWS_URL = "https://raw.githubusercontent.com/mibo-research-pilot/core/main/laws.md"
+
+
+def fetch_laws_text(url: str) -> str:
+    """Fetch core/laws.md and return its '## Established laws' section (Markdown).
+
+    Returns "" on any network/parse failure so render degrades to a data-only Law Status
+    rather than failing the run. The reporter prompt handles an empty laws text explicitly.
+    """
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "mibo-render"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            md = resp.read().decode("utf-8")
+    except Exception as e:  # noqa: BLE001 - network/decoding; caller falls back gracefully
+        print(f"warning: could not fetch laws from {url} ({e}); Law Status will be data-only.",
+              file=sys.stderr)
+        return ""
+    lines = md.splitlines()
+    out: list[str] = []
+    capturing = False
+    for ln in lines:
+        if ln.startswith("## "):
+            if ln.strip().lower().startswith("## established laws"):
+                capturing = True
+                continue
+            if capturing:  # reached the next H2 (e.g. "## Withdrawn laws") — stop.
+                break
+        if capturing:
+            out.append(ln)
+    return "\n".join(out).strip()
 
 
 # --- Small helpers ---------------------------------------------------------
@@ -123,9 +158,12 @@ in the data. When the data is insufficient to judge a law, say so rather than gu
 
 Return ONLY a JSON object with these string fields (Markdown allowed inside each):
 - "executive_summary": 2-5 sentences on this session's most important observations.
-- "law_status": a Markdown bullet list. For each provided law (reference it by its id, e.g. \
-"Law IX"), state confirm / strengthen / revise / withdraw / insufficient-evidence THIS \
-session, with the supporting count from the data. Only discuss the provided laws.
+- "law_status": a Markdown bullet list. For each established law in the LAWS section below \
+(reference it by its id and name, e.g. "Law IX — Perplexity Inline Citation Shift"), state \
+confirm / strengthen / revise / withdraw / insufficient-evidence THIS session, with the \
+supporting count from the data. Only discuss the laws in that section. If the LAWS section \
+is empty, write a single bullet noting the authoritative law list was unavailable this run \
+and summarize the citation/canonical evidence without assigning law numbers.
 - "query_interpretations": an object mapping each query_id (e.g. "q001") to 1-3 sentences \
 on cross-system agreement, divergence, and citation behavior for that query.
 - "methodological_notes": 1-3 sentences on exclusions, any systems that errored or were \
@@ -135,7 +173,7 @@ skipped, the query-set version, and anomalies. Base this on the collection facts
 COLLECTION FACTS (JSON):
 {facts}
 
-ESTABLISHED LAWS (JSON):
+ESTABLISHED LAWS (Markdown, authoritative — from core/laws.md):
 {laws}
 
 THIS SESSION'S CODED DATA (JSON):
@@ -143,12 +181,12 @@ THIS SESSION'S CODED DATA (JSON):
 """
 
 
-def call_reporter(reporter: dict, key: str, facts: dict, laws: list, data: dict) -> dict:
+def call_reporter(reporter: dict, key: str, facts: dict, laws_text: str, data: dict) -> dict:
     prompt = REPORTER_PROMPT.format(
         day=facts.get("day", "?"),
         date=facts.get("date", "?"),
         facts=json.dumps(facts, ensure_ascii=False),
-        laws=json.dumps(laws, ensure_ascii=False),
+        laws=laws_text if laws_text else "(unavailable this run)",
         data=json.dumps(data, ensure_ascii=False),
     )
     url = reporter.get("endpoint", "https://api.anthropic.com/v1/messages")
@@ -289,7 +327,8 @@ def main() -> int:
     config = json.loads(Path(args.config).read_text(encoding="utf-8"))
     queries = config.get("queries", [])
     systems = [s["system"] for s in config.get("systems", [])]
-    laws = config.get("laws", [])
+    # Laws are single-sourced from core/laws.md, fetched fresh at render time.
+    laws_text = fetch_laws_text(config.get("laws_source_url", DEFAULT_LAWS_URL))
 
     analysis_path = data_dir / "analysis.json"
     if not analysis_path.exists():
@@ -331,7 +370,7 @@ def main() -> int:
         }
         data = {"observations": analysis.get("observations", [])}
         try:
-            narrative = call_reporter(reporter, key, facts, laws, data)
+            narrative = call_reporter(reporter, key, facts, laws_text, data)
             model_note = (f"Automatically generated from this session's verbatim responses by "
                           f"`render_observation.py` — entity tables from the coded data; narrative "
                           f"by {reporter['model']} ({stamp}).")
