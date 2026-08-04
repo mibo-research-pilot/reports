@@ -72,6 +72,14 @@ jobs:
             python3 scripts/code_observations.py
           fi
 
+      - name: Render observation report
+        run: |
+          if [ -n "$OBS_DATE" ]; then
+            python3 scripts/render_observation.py --date "$OBS_DATE"
+          else
+            python3 scripts/render_observation.py
+          fi
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
