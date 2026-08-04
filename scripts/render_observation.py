@@ -282,12 +282,14 @@ def build_report(date_s: str, day: int, analysis: dict, meta: dict, queries: lis
         # Citation behaviour line, straight from the coded flags — deterministic.
         flags = flags_by_query.get(qid, {})
         if flags:
-            def mark(sysname: str, field: str) -> str:
-                return flags.get(sysname, {}).get(field, "")
-            cites = ", ".join(
-                f"{s}: inline={mark(s, 'inline_citations') or '?'}/terminal={mark(s, 'terminal_sources') or '?'}"
-                for s in systems
-            )
+            def cite_cell(sysname: str) -> str:
+                o = flags.get(sysname, {})
+                inl = o.get("inline_citations") or "?"
+                ts = o.get("terminal_sources") or "?"
+                count = o.get("terminal_source_count")
+                ts_disp = f"{ts}({count})" if count else ts
+                return f"{sysname}: inline={inl}/terminal={ts_disp}"
+            cites = ", ".join(cite_cell(s) for s in systems)
             L.append(f"_Citations — {cites}._")
             L.append("")
         L.append("### Interpretation")

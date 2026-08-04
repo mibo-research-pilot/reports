@@ -11,6 +11,11 @@ verbatim response and asks a coding model to extract, for every (query, system):
   - code                yes/no — the answer contains a code block
   - notes               one concise sentence
 
+``terminal_sources`` is corrected deterministically afterwards: providers such as Perplexity
+return the source list in a structured ``citations`` array rather than in the answer text, so
+a text-only reading would miscode it as "no". When the collected response carries a non-empty
+``citations`` array, terminal_sources is set to "yes" and the count recorded in analysis.json.
+
 The result is written back into ``YYYY-MM-DD/coded-observations.csv`` and the
 ``observations`` array of ``YYYY-MM-DD/analysis.json`` as a **draft**. Coding is an
 analytic judgement, so the output is explicitly marked ``coding_status: auto_draft`` for
@@ -163,14 +168,25 @@ def main() -> int:
 
     fieldnames, rows = load_csv(csv_path)
     coding_by_key: dict[tuple, dict] = {}
+    ts_by_key: dict[tuple, int] = {}  # (query_id, system) -> terminal source count
     coded = skipped = failed = 0
 
     for row in rows:
         rk = (row["query_id"], row["system"])
+        entry = ok_by_key.get(rk)
+
+        # Deterministic terminal-source correction from the provider's structured citations
+        # array (e.g. Perplexity). This needs no API call, so it runs for every row — even
+        # rows already LLM-coded or skipped below — and overrides the model's text-only guess.
+        if entry is not None:
+            n = len(entry.get("citations") or [])
+            if n:
+                row["terminal_sources"] = "yes"
+                ts_by_key[rk] = n
+
         if row.get("entities", "").strip() and not args.force:
             skipped += 1
             continue
-        entry = ok_by_key.get(rk)
         if entry is None:
             continue  # no successful response to code for this cell
         try:
@@ -179,6 +195,8 @@ def main() -> int:
             print(f"  FAIL  {rk[0]} {rk[1]}: {e}", file=sys.stderr)
             failed += 1
             continue
+        if rk in ts_by_key:  # keep the structured reading over the model's text-only guess
+            coding["terminal_sources"] = "yes"
         row.update(coding)
         coding_by_key[rk] = coding
         coded += 1
@@ -186,14 +204,19 @@ def main() -> int:
 
     write_csv(csv_path, fieldnames, rows)
 
-    # Mirror the coding into analysis.json observations and flag it as a draft.
+    # Mirror the coding into analysis.json observations.
     if analysis_path.exists():
         analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
         for obs in analysis.get("observations", []):
-            coding = coding_by_key.get((obs.get("query_id"), obs.get("system")))
+            rk = (obs.get("query_id"), obs.get("system"))
+            coding = coding_by_key.get(rk)
             if coding:
                 obs.update(coding)
-        analysis["coding_status"] = "auto_draft — LLM-drafted coding, review before publishing"
+            if rk in ts_by_key:  # deterministic terminal-source correction + count
+                obs["terminal_sources"] = "yes"
+                obs["terminal_source_count"] = ts_by_key[rk]
+        analysis["coding_status"] = ("auto — entities drafted by LLM; terminal sources read "
+                                     "from the provider citations array")
         analysis["coding_model"] = coder["model"]
         analysis_path.write_text(json.dumps(analysis, ensure_ascii=False, indent=2) + "\n",
                                  encoding="utf-8")
