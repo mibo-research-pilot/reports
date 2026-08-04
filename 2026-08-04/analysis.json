@@ -69,9 +69,10 @@
       "model": "sonar",
       "entities": "Asana; Backlog; Jira; Trello; monday.com; Notion",
       "inline_citations": "yes",
-      "terminal_sources": "no",
+      "terminal_sources": "yes",
       "code": "no",
-      "notes": "Recommends five main project management tools with per-tool descriptions plus use-case guidance, using inline citation markers but no terminal source list."
+      "notes": "Recommends five main project management tools with per-tool descriptions plus use-case guidance, using inline citation markers but no terminal source list.",
+      "terminal_source_count": 20
     },
     {
       "query_id": "q002",
@@ -109,9 +110,10 @@
       "model": "sonar",
       "entities": "Bigin by Zoho CRM; Salesforce; HubSpot CRM; Pipedrive",
       "inline_citations": "yes",
-      "terminal_sources": "no",
+      "terminal_sources": "yes",
       "code": "no",
-      "notes": "Recommends four small-business CRMs with use-case-based guidance and inline citations but no terminal sources list."
+      "notes": "Recommends four small-business CRMs with use-case-based guidance and inline citations but no terminal sources list.",
+      "terminal_source_count": 20
     },
     {
       "query_id": "q003",
@@ -141,7 +143,7 @@
       "inline_citations": "no",
       "terminal_sources": "no",
       "code": "no",
-      "notes": "A structured, categorized guide on improving sleep quality with environmental, lifestyle, dietary, and pre-bed tips, but no specific named products or sources."
+      "notes": "Structured advice on improving sleep quality covering environment, rhythm, diet, and pre-sleep habits, with no products or sources cited."
     },
     {
       "query_id": "q003",
@@ -149,9 +151,10 @@
       "model": "sonar",
       "entities": "毎日ほぼ同じ時間に起きる; 朝起きたら日光を浴びる; 夜はスマホ・PCを控える; 寝室を快適に保つ; 就寝前に入浴して体を温める; 日中に適度な運動をする; 夕食は寝る3時間前までに済ませる; 昼寝は短くする",
       "inline_citations": "yes",
-      "terminal_sources": "no",
+      "terminal_sources": "yes",
       "code": "no",
-      "notes": "A structured list of sleep-quality improvement tips with inline citation markers but no terminal source list."
+      "notes": "A structured list of sleep-quality improvement tips with inline citation markers but no terminal source list.",
+      "terminal_source_count": 19
     },
     {
       "query_id": "q004",
@@ -189,9 +192,10 @@
       "model": "sonar",
       "entities": "Pinecone; Weaviate; Qdrant; Milvus; FAISS; Chroma",
       "inline_citations": "yes",
-      "terminal_sources": "no",
+      "terminal_sources": "yes",
       "code": "yes",
-      "notes": "A step-by-step RAG implementation guide with pseudocode and a list of vector databases, using inline citations but no terminal source list."
+      "notes": "A step-by-step RAG implementation guide with pseudocode and a list of vector databases, using inline citations but no terminal source list.",
+      "terminal_source_count": 20
     },
     {
       "query_id": "q005",
@@ -229,11 +233,12 @@
       "model": "sonar",
       "entities": "松尾豊; 石黒浩; 栗原聡; 松原仁; 甘利俊一",
       "inline_citations": "yes",
-      "terminal_sources": "no",
+      "terminal_sources": "yes",
       "code": "no",
-      "notes": "Lists five representative Japanese AI researchers with brief descriptions and inline citations but no terminal source list."
+      "notes": "Lists five representative Japanese AI researchers with brief descriptions and inline citations but no terminal source list.",
+      "terminal_source_count": 20
     }
   ],
-  "coding_status": "auto_draft — LLM-drafted coding, review before publishing",
+  "coding_status": "auto — entities drafted by LLM; terminal sources read from the provider citations array",
   "coding_model": "claude-opus-4-8"
 }
