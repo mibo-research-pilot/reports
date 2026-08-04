@@ -9,13 +9,15 @@ name: Weekly MIBO record
 #   3. code_observations.py      — LLM-drafts the entity coding for the collected responses.
 #   4. commit + push            — updates Git with the week's record.
 #
-# Schedule: Tuesday 20:00 Asia/Tokyo == Tuesday 11:00 UTC.
-# GitHub Actions cron runs in UTC, so JST 20:00 is expressed as 11:00 UTC.
-# (Scheduled runs can be delayed by a few minutes to ~an hour under GitHub load.)
+# Schedule: Tuesday 20:07 Asia/Tokyo == Tuesday 11:07 UTC.
+# GitHub Actions cron runs in UTC, so JST 20:07 is expressed as 11:07 UTC.
+# The :07 offset avoids the top-of-the-hour rush: GitHub delays or drops scheduled
+# runs that all fire at :00 under load, so an off-peak minute improves reliability.
+# (Scheduled runs can still be delayed by a few minutes to ~an hour under GitHub load.)
 
 on:
   schedule:
-    - cron: "0 11 * * 2"
+    - cron: "7 11 * * 2"
   workflow_dispatch:
     inputs:
       date:
