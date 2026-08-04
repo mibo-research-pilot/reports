@@ -391,4 +391,4 @@ Having withdrawn Law X, the analysis deliberately refused to elevate other tempt
 Observer: Kento Sasano
 Machine Behavioral Scientist · GEO/LLMO Researcher · Founder of MIBO
 Observation began: 2026-05-05
-Repository: https://github.com/mibo-science
+Repository: https://github.com/mibo-research-pilot

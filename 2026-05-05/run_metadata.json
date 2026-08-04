@@ -15,8 +15,8 @@
   "observatory": {
     "name": "Machine Information Behavior Observatory",
     "abbreviation": "MIBO",
-    "repository_organization": "mibo-science",
-    "official_repository": "https://github.com/mibo-science"
+    "repository_organization": "mibo-research-pilot",
+    "official_repository": "https://github.com/mibo-research-pilot"
   },
   "field_hierarchy": {
     "parent_field": "Machine Behavioral Sciences",
@@ -28,7 +28,7 @@
   "query_set": {
     "query_set_id": "mibo-queryset-v0.1.0",
     "version": "0.1.0",
-    "source_repository": "mibo-science/queries",
+    "source_repository": "mibo-research-pilot/queries",
     "source_file": "v0.1.0.json",
     "queries_used": [
       "q001",
@@ -138,7 +138,7 @@
     "code_license": "Apache-2.0"
   },
   "related_files": [
-    "https://github.com/mibo-science/queries/blob/main/v0.1.json",
-    "https://github.com/mibo-science/reports/blob/main/2026-05-05-observation.md"
+    "https://github.com/mibo-research-pilot/queries/blob/main/v0.1.json",
+    "https://github.com/mibo-research-pilot/reports/blob/main/2026-05-05-observation.md"
   ]
 }

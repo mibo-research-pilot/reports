@@ -387,4 +387,4 @@ The recurring methodological lesson: a line through N points is not a trend unti
 Observer: Kento Sasano
 Machine Behavioral Scientist · GEO/LLMO Researcher · Founder of MIBO
 Observation began: 2026-05-05
-Repository: https://github.com/mibo-science
+Repository: https://github.com/mibo-research-pilot

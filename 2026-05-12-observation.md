@@ -1313,4 +1313,4 @@ LLM-citation pathway in Japan.
 Observer: Kento Sasano
 MIBO — Machine Information Behaviour Observatory
 Observation continues weekly. Next: 2026-05-19
-Repository: https://github.com/mibo-science
+Repository: https://github.com/mibo-research-pilot

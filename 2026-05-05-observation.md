@@ -23,7 +23,7 @@ be automated via API calls. Responses are recorded verbatim. URLs and
 named entities cited by each model are listed under each response.
 
 The standardised query set is published at:
-https://github.com/mibo-science/queries
+https://github.com/mibo-research-pilot/queries
 
 This first observation focuses on three query types:
 - Commercial recommendation, ja-language (q001)
@@ -1073,4 +1073,4 @@ Planned additions:
 Observer: Kento Sasano
 MIBO — Machine Information Behaviour Observatory
 Observation began: 2026-05-05
-Repository: https://github.com/mibo-science
+Repository: https://github.com/mibo-research-pilot

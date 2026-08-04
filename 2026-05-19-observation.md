@@ -23,7 +23,7 @@ This is the third observation of MIBO, conducted exactly two weeks after Day 1 (
 
 - **O**bservation, not controlled experimentation: deployed systems accessed through their public web interfaces, without modification
 - **P**arallelism across providers: all four models observed within a synchronized observation window (~2 hours on the same evening)
-- **E**mbedded openness: this record is published in full at https://github.com/mibo-science/reports
+- **E**mbedded openness: this record is published in full at https://github.com/mibo-research-pilot/reports
 - **N**on-stationarity awareness: queries q001-q003 repeated for the third week to record temporal change
 
 Identical query wording to Day 1 and Day 2 is preserved for longitudinal comparability.
@@ -1659,4 +1659,4 @@ The Day 2 anomaly and P12 refutation should be the lead findings for the next Su
 Observer: Kento Sasano
 MIBO — Machine Information Behavior Observatory
 Observation continues weekly. Next: 2026-05-26
-Repository: https://github.com/mibo-science
+Repository: https://github.com/mibo-research-pilot

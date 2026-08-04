@@ -717,4 +717,4 @@ Claude (5/5 identical) > Gemini (4/5) > GPT-5.4 (3/5 top-3) > Perplexity (2/5, s
 Observer: Kento Sasano
 Machine Behavioral Scientist · GEO/LLMO Researcher · Founder of MIBO
 Observation began: 2026-05-05
-Repository: https://github.com/mibo-science
+Repository: https://github.com/mibo-research-pilot
