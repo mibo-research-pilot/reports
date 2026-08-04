@@ -1,0 +1,59 @@
+{
+  "observatory": "MIBO",
+  "japanese_name": "機械情報行動観測所",
+  "session": "Day 14",
+  "observation_date": "2026-08-04",
+  "timezone": "Asia/Tokyo",
+  "method": "Longitudinal Machine Observation",
+  "observation_mode": "API collection (automated)",
+  "collection_method": {
+    "type": "provider_api",
+    "automation_used": true,
+    "api_used": true,
+    "collector": "scripts/collect_observations.py"
+  },
+  "collected_at_start": "2026-08-04T20:33:02.089325+09:00",
+  "collected_at_end": "2026-08-04T20:36:59.845790+09:00",
+  "query_set": "operational v0.1.1",
+  "query_count": 5,
+  "systems": [
+    {
+      "system": "Gemini",
+      "provider": "google",
+      "model_requested": "gemini-3.5-flash",
+      "model_used": "gemini-3.5-flash",
+      "mode": "API",
+      "ok_count": 5,
+      "total_queries": 5
+    },
+    {
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model_requested": "gpt-5.5",
+      "model_used": "gpt-5.5-2026-04-23",
+      "mode": "API",
+      "ok_count": 5,
+      "total_queries": 5
+    },
+    {
+      "system": "Claude",
+      "provider": "anthropic",
+      "model_requested": "claude-opus-4-8",
+      "model_used": "claude-opus-4-8",
+      "mode": "API",
+      "ok_count": 5,
+      "total_queries": 5
+    },
+    {
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model_requested": "sonar",
+      "model_used": "sonar",
+      "mode": "API",
+      "ok_count": 5,
+      "total_queries": 5
+    }
+  ],
+  "included_observation_count": 20,
+  "expected_observation_count": 20
+}
