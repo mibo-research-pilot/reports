@@ -1,0 +1,244 @@
+{
+  "observation": {
+    "title": "MIBO 15th Observation",
+    "date": "2026-08-11",
+    "timezone": "Asia/Tokyo",
+    "included_systems": [
+      {
+        "system": "Gemini",
+        "model": "gemini-3.5-flash",
+        "mode": "API"
+      },
+      {
+        "system": "ChatGPT",
+        "model": "gpt-5.5-2026-04-23",
+        "mode": "API"
+      },
+      {
+        "system": "Claude",
+        "model": "claude-opus-4-8",
+        "mode": "API"
+      },
+      {
+        "system": "Perplexity",
+        "model": "sonar",
+        "mode": "API"
+      }
+    ],
+    "excluded_systems": [],
+    "total_included_observations": 20,
+    "cumulative_observations_after_session": 284
+  },
+  "law_status": {
+    "TODO": "per-law status for this session"
+  },
+  "observations": [
+    {
+      "query_id": "q001",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "Trello; Asana; monday.com; Notion; Backlog; Jira Software",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Recommends six project management tools organized by team size and use case, with features and pricing plus a selection guide."
+    },
+    {
+      "query_id": "q001",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "Notion; Trello; Asana; Jira; Backlog; ClickUp",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Recommends six project management tools organized by use case with a summary of which to pick for different team types."
+    },
+    {
+      "query_id": "q001",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "Trello; Todoist; Asana; Notion; ClickUp; Jira; GitHub Projects",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Categorizes seven project management tools by team size and use case, then asks clarifying questions to narrow recommendations."
+    },
+    {
+      "query_id": "q001",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "Asana; Backlog; Jira; Notion; Trello; Wrike; Jooto; Redmine; monday.com",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Recommends several project management tools with inline citation markers and usage-based selection guidance, but no terminal source list.",
+      "terminal_source_count": 20
+    },
+    {
+      "query_id": "q002",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "HubSpot CRM; Pipedrive; Zoho CRM; Copper; Less Annoying CRM",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "A categorized breakdown of five small business CRMs with pros, cons, pricing, a comparison table, and a decision guide, without any citations or sources."
+    },
+    {
+      "query_id": "q002",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "HubSpot CRM; Zoho CRM; Pipedrive; Freshsales; Salesforce Starter; Monday Sales CRM",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Recommends HubSpot CRM as the top pick with a comparison table of six CRMs by use case, but includes no citations or sources."
+    },
+    {
+      "query_id": "q002",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "HubSpot CRM; Pipedrive; Freshsales; Zoho CRM; Copper; Salesforce",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Groups CRM recommendations by strength category and ends with clarifying questions to refine advice."
+    },
+    {
+      "query_id": "q002",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "Salesforce; HubSpot CRM; Bigin by Zoho CRM; Pipedrive; Zoho CRM; NetHunt CRM; Freshsales",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "A CRM recommendation with inline citations and a comparison table matching CRMs to business styles, topped by Salesforce, HubSpot, and Bigin as key picks.",
+      "terminal_source_count": 20
+    },
+    {
+      "query_id": "q003",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Structured advice on improving sleep quality across morning habits, daytime, pre-bed routine, and bedroom environment, with a 3-step starter tip, but no specific named products or citations."
+    },
+    {
+      "query_id": "q003",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "毎日同じ時間に起きる; 朝に日光を浴びる; 寝る前のスマホ・PCを減らす; カフェインは午後以降控える; 寝る前のルーティンを作る; 入浴は寝る1〜2時間前に; 寝室を快適にする; 寝る直前の食事・飲酒を避ける; 日中に軽く運動する; 眠れないときは一度ベッドを出る",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "A structured 10-point list of sleep-quality tips with a summary of top three priorities and advice to see a doctor for persistent symptoms."
+    },
+    {
+      "query_id": "q003",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "A structured list of general sleep-hygiene tips organized by category, with no specific products, tools, or named sources cited."
+    },
+    {
+      "query_id": "q003",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "毎日ほぼ同じ時刻に起きる; 朝起きたら光を浴びる; 寝る1時間前はスマホ・PCを減らす; 夕方〜就寝3時間前までに軽い運動をする; 寝室を暗く・静か・快適にする",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Lists five sleep-quality tips in Japanese with inline citation markers but no terminal source list or code.",
+      "terminal_source_count": 18
+    },
+    {
+      "query_id": "q004",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "LangChain; Chroma; OpenAI; FAISS; SQLite (sqlite-vss); Pinecone; Qdrant; Milvus; pgvector; MongoDB Atlas; Elasticsearch; Cohere Rerank; BGE-Reranker",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "A step-by-step RAG tutorial with a LangChain/Chroma/OpenAI Python code example and production best practices listing many vector database options."
+    },
+    {
+      "query_id": "q004",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "Chroma; FAISS; Pinecone; Qdrant; Weaviate; Milvus; Postgres + pgvector; OpenAI API",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "A detailed RAG tutorial covering architecture, vector database options, and end-to-end Chroma/OpenAI code with production best practices, but no citations or references."
+    },
+    {
+      "query_id": "q004",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "ChromaDB; Pinecone; Weaviate; Qdrant; pgvector; FAISS; LangChain; LlamaIndex",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "A practical RAG implementation guide with Python code examples, a comparison table of vector databases, tips, and framework suggestions."
+    },
+    {
+      "query_id": "q004",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "LangChain; Qdrant; FAISS; Pinecone; BM25",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "A conceptual RAG-with-vector-DB pipeline walkthrough with inline citation markers but no end reference list or code block, offering follow-up examples.",
+      "terminal_source_count": 20
+    },
+    {
+      "query_id": "q005",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "松尾豊; 杉山将; 福島邦彦; 甘利俊一; 北野宏明",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Presents five representative Japanese AI researchers with their affiliations, specialties, and achievements, plus a summary categorization."
+    },
+    {
+      "query_id": "q005",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "松尾豊; 杉山将; 辻井潤一; 北野宏明; 中島秀之",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Lists five prominent Japanese AI researchers with brief descriptions and a caveat that the selection is one example."
+    },
+    {
+      "query_id": "q005",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "松尾豊; 甘利俊一; 石黒浩; 中島秀之; 新井紀子",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Lists five notable Japanese AI researchers with brief bios and a disclaimer about knowledge limitations, without citations."
+    },
+    {
+      "query_id": "q005",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "松尾豊; 石黒浩; 栗原聡; 松原仁; 甘利俊一",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Lists five representative Japanese AI researchers with brief descriptions and inline citation markers, offering to narrow the list further.",
+      "terminal_source_count": 20
+    }
+  ],
+  "coding_status": "auto — entities drafted by LLM; terminal sources read from the provider citations array",
+  "coding_model": "claude-opus-4-8"
+}
