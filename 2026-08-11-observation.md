@@ -13,25 +13,25 @@
 **Collection window**: 2026-08-11T21:09:58.089379+09:00 → 2026-08-11T21:14:14.173292+09:00  
 **Raw responses**: [`2026-08-11/raw-responses.md`](2026-08-11/raw-responses.md) (verbatim API outputs)  
 
-> Automatically generated from this session's verbatim responses by `render_observation.py` — entity tables from the coded data; narrative by claude-opus-4-8 (2026-08-11T21:15:55+09:00).
+> Automatically generated from this session's verbatim responses by `render_observation.py` — entity tables from the coded data; narrative by claude-opus-4-8 (2026-08-11T21:30:51+09:00).
 
 ---
 
 ## Executive Summary
 
-Day 15 collected cleanly across all four systems (Gemini, ChatGPT, Claude, Perplexity) at 5/5 each via API on query-set v0.1.1. The citation split remained sharp: Perplexity carried inline numeric citations plus a structured terminal `citations` array on all 5/5 responses (q001–q005 terminal counts: 20, 20, 18, 20, 20), while Gemini, ChatGPT, and Claude supplied zero inline citations and zero terminal sources throughout. Law VII was again tested by q005, where Claude's five-person list included Arai Noriko (新井紀子), the sole female-presenting main-list mention this session (1/20). Per-model signatures held — Claude's clarifying questions, ChatGPT's top-pick framing, Gemini's decision guides, and Perplexity's inline-marker style.
+All four systems (Gemini, ChatGPT, Claude, Perplexity) returned successful responses on 5/5 queries via API with no exclusions. Perplexity again carried inline numeric citations on all 5/5 responses with API `citations` arrays of 20, 20, 18, 20, and 20 sources (four of five in the twenty-source regime), while the other three systems supplied no citations or terminal sources on any query. Law VII held with a lopsided but non-zero gender ratio (19/20 male-presenting; 1/20 female-presenting via Arai Noriko in Claude's q005 main list), and canonical cores stayed durable in q001, q002, and q004 while person and ordinal selection continued to fluctuate.
 
 ---
 
 ## Law Status
 
-- **Law I — Canonical Inclusion**: Confirm. q001's tool nucleus persisted across systems — Trello, Asana, and Notion appear in all four lists, and Jira in all four, while peripheral picks and ordering fluctuated (Gemini added Backlog/monday.com, Claude added Todoist/GitHub Projects, Perplexity added Wrike/Jooto/Redmine). q002 similarly shows a HubSpot CRM + Pipedrive + Zoho CRM core across all four systems with peripheral variation. This matches the durable-core / fluctuating-periphery formulation.
-- **Law II — Perplexity URL Stability**: Insufficient-evidence this session. The coded data provides terminal_source_count per query (20/20/18/20/20) but no normalized-URL sets, so cross-wave URL survival, longer-lag recurrence, retained-share, and citation-index reassignment cannot be measured from this packet.
-- **Law III — Day 2 Anomaly**: Insufficient-evidence this session. This is a confirmed historical single-day anomaly; nothing in Day 15 data bears on it.
-- **Law VI — Per-Model Signature**: Confirm/strengthen. Signatures recur across all five queries: Claude closes with clarifying questions (q001, q002) and knowledge-limitation disclaimers (q005); ChatGPT leads with a named top pick and use-case summary (q002 HubSpot CRM) and adds one-example caveats (q005); Gemini produces categorized breakdowns with comparison tables and decision/selection guides (q001, q002); Perplexity uniformly carries inline citation markers and offers to narrow further (q005). 4/4 systems held recognizable style.
-- **Law VII — Gender Dominance in Person Queries**: Strengthen. q005 produced four five-person lists (20 main-list mentions). Male-presenting: 19/20; female-presenting: 1/20 — Arai Noriko (新井紀子) inside Claude's main list, the same researcher that appeared on Day 14. This is consistent with the rare, intermittent, cross-system-but-unstable pattern.
-- **Law VIII — Absence of Stable Direct Academic Grounding**: Insufficient-evidence for full audit, but consistent. Perplexity returned terminal sources on all five queries, but the packet gives only counts (20/20/18/20/20), not source classes or URLs, so no peer-reviewed / arXiv / first-party scholarly grounding can be confirmed or refuted at the item level; nothing contradicts the law.
-- **Law IX — Perplexity Inline Citation Shift**: Confirm/continuing. Inline numeric citations present on 5/5 Perplexity responses, each with a terminal `citations` array (q001–q005: 20, 20, 18, 20, 20), extending inline-plus-terminal continuity. Twenty-source regime this session: 4/5 (q003 returned 18). The other three systems again showed no inline or terminal citations, preserving the interface-level citation dichotomy.
+- **Law I — Canonical Inclusion**: Confirm. Durable inclusion cores persisted across systems with peripheral fluctuation: q001 showed Trello, Asana, and Notion in all 4 systems and Jira in 4/4; q002 showed HubSpot CRM in all 4 and Pipedrive in all 4; q004 showed Pinecone in 4/4 and FAISS in 4/4, with list lengths varying from 5 to 13 entities. This matches the law's expectation of a stable nucleus alongside varying peripheral selections and ordinal positions.
+- **Law II — Perplexity URL Stability**: Insufficient-evidence this session. The coded data provides terminal_source_count values (20/20/18/20/20) but no normalized-URL sets or prior-wave URL baselines, so normalized-URL survival, longer-lag recurrence, retained-share, and citation-index reassignment cannot be computed from this packet.
+- **Law III — Day 2 Anomaly**: Insufficient-evidence this session. This is a fixed historical finding about 2026-05-12; nothing in the Day 15 data bears on it.
+- **Law VI — Per-Model Signature**: Confirm. Signatures recurred: Claude closed with clarifying/narrowing questions or disclaimers (q001, q002, q005), ChatGPT led with a top pick and 'one example' caveats (q002, q005), Gemini produced categorized breakdowns with comparison tables and pricing (q001, q002), and Perplexity uniquely carried inline citations plus offers to narrow further (q004, q005). These held across changing entities and source sets.
+- **Law VII — Gender Dominance in Person Queries**: Strengthen. q005 produced 4 five-person male-presenting lists totaling 19/20 male-presenting mentions, with the single female-presenting mention being Arai Noriko (新井紀子) inside Claude's main list — again the recurring name, again in a single system, consistent with rare, intermittent, cross-system-variable inclusion. 松尾豊 appeared in all 4 systems.
+- **Law VIII — Absence of Stable Direct Academic Grounding**: Insufficient-evidence this session. Perplexity returned terminal source counts but the packet contains no source-class detail (no domains, titles, or URLs), so whether the terminal lists included peer-reviewed/arXiv/first-party scholarly sources cannot be judged this run; the counts alone are consistent with the law but do not test it.
+- **Law IX — Perplexity Inline Citation Shift**: Confirm/strengthen. Perplexity carried inline numeric citations on 5/5 responses, each paired with an API `citations` terminal array (20, 20, 18, 20, 20), extending inline-plus-terminal continuity. Twenty-source regime this session was 4/5 (q003 returned 18); the other three systems produced no inline or terminal citations on any of their 15 responses, keeping the citation form a Perplexity-only signature.
 
 ---
 
@@ -63,7 +63,7 @@ _Citations — Gemini: inline=no/terminal=no, ChatGPT: inline=no/terminal=no, Cl
 
 ### Interpretation
 
-Strong cross-system agreement on a project-management core — Trello, Asana, Notion, and Jira appear in all four lists — with peripheral divergence (Gemini's Backlog/monday.com, Claude's Todoist/GitHub Projects, Perplexity's Wrike/Jooto/Redmine). Only Perplexity carried inline citations and a 20-source terminal array; the note's 'no terminal source list' phrasing conflicts with the terminal_sources=yes flag and count of 20, likely reflecting the API `citations` array not being rendered in answer text.
+All four systems recommended project-management tools with strong overlap — Trello, Asana, and Notion appeared in all 4, and Jira in all 4 — while list length ranged from 6 (Gemini, ChatGPT) to 7 (Claude) to 9 (Perplexity, which added Wrike, Jooto, and Redmine). Only Perplexity carried inline citations and a 20-source terminal array; its note oddly claims 'no terminal source list' despite the terminal_sources flag and count of 20, a minor coding inconsistency.
 
 ## q002 — What is the best CRM for small businesses?
 
@@ -89,7 +89,7 @@ _Citations — Gemini: inline=no/terminal=no, ChatGPT: inline=no/terminal=no, Cl
 
 ### Interpretation
 
-Broad agreement on a small-business CRM nucleus — HubSpot CRM, Pipedrive, and Zoho CRM appear across all four systems — but with distinct top picks: ChatGPT leads with HubSpot CRM while Perplexity tops its list with Salesforce. Perplexity alone supplied inline citations and 20 terminal sources; the other three gave comparison tables but no citations.
+The four systems converged on HubSpot CRM (all 4) and Pipedrive (all 4), with Zoho CRM in all 4 as well; divergence appeared at the top pick, where ChatGPT led with HubSpot and Perplexity topped its list with Salesforce. Only Perplexity supplied inline citations and a 20-source terminal array.
 
 ## q003 — 睡眠の質を上げる方法を教えて
 
@@ -119,7 +119,7 @@ _Citations — Gemini: inline=no/terminal=no, ChatGPT: inline=no/terminal=no, Cl
 
 ### Interpretation
 
-This sleep-quality query drew no named products from any system; Gemini and Claude returned prose hygiene advice with no coded entities, while ChatGPT (10 tips) and Perplexity (5 tips) enumerated Japanese-language behavioral items. Perplexity was the only system with inline citations and a terminal source array (18, the session's single sub-20 count).
+This Japanese sleep-quality query drew no product entities from Gemini or Claude (prose guidance only), while ChatGPT enumerated 10 tips and Perplexity 5; the two enumerated lists agree on the core habits (consistent wake time, morning light, reduced pre-sleep screens, comfortable bedroom). Perplexity alone carried inline citations with an 18-source terminal array — the only sub-20 count this session.
 
 ## q004 — How do I implement RAG with a vector database?
 
@@ -153,7 +153,7 @@ _Citations — Gemini: inline=no/terminal=no, ChatGPT: inline=no/terminal=no, Cl
 
 ### Interpretation
 
-All four systems converged on a RAG vector-database toolset — FAISS, Pinecone, and Qdrant appear in all four, with LangChain, Chroma/ChromaDB, and pgvector widely shared — but implementation style split on code: Gemini, ChatGPT, and Claude included working code blocks (code=yes), whereas Perplexity gave a conceptual walkthrough with inline citations and 20 terminal sources but no code, reprising its citation-over-code signature.
+All four gave RAG implementation guidance with shared vector-database nuclei — Pinecone and FAISS in all 4, Qdrant in 3/4 — but Gemini, ChatGPT, and Claude included runnable code while Perplexity did not, instead giving a conceptual walkthrough with inline citations and a 20-source terminal array. This is a clear split: code-bearing systems suppress citations, and the citation-bearing system suppresses code.
 
 ## q005 — 日本の代表的なAI研究者を5人挙げて
 
@@ -179,16 +179,16 @@ _Citations — Gemini: inline=no/terminal=no, ChatGPT: inline=no/terminal=no, Cl
 
 ### Interpretation
 
-All four lists centered on 松尾豊 (present in every response), with 甘利俊一 shared by three and other picks diverging (ChatGPT's 辻井潤一/中島秀之, Claude's 石黒浩/中島秀之/新井紀子, Perplexity's 栗原聡/松原仁). Claude's inclusion of 新井紀子 is the session's lone female-presenting main-list mention (Law VII); only Perplexity attached inline citations and a 20-source terminal array.
+松尾豊 was the sole unanimous name across all 4 systems, with 甘利俊一 in 3/4; otherwise the five-person lists diverged substantially (石黒浩, 中島秀之, 杉山将, and others distributed unevenly). Only Perplexity carried inline citations; Claude's list uniquely included the female-presenting Arai Noriko (新井紀子), the session's single female-presenting main-list mention.
 
 ---
 
 ## Methodological Notes
 
-All four systems ran in API mode on query-set operational v0.1.1 with 5/5 ok each and no excluded or errored systems; collection ran 21:09:58–21:14:14 (+09:00) on 2026-08-11. One coding anomaly: Perplexity's q001 and q003 notes state there is 'no terminal source list' while the same records carry terminal_sources=yes with counts of 20 and 18, reflecting the post-Day-14 shift where terminal sources arrive via the API `citations` array rather than rendered answer text.
+All four systems ran in API mode under query set 'operational v0.1.1' with 5/5 ok_count each and no excluded or errored systems; collection spanned roughly four minutes (21:09:58–21:14:14 JST). One anomaly of note is Perplexity's q001 coding, where the note states 'no terminal source list' while the terminal_sources flag is 'yes' with a count of 20; source-class detail and normalized URLs are absent from the packet, limiting Laws II and VIII.
 
 ---
 
 ## Day 15 One-Sentence Conclusion
 
-A clean four-system API session that reaffirmed the Perplexity-only citation regime, stable cross-system canonical cores on q001/q002/q004, persistent per-model signatures, and a single female-presenting researcher (Arai Noriko) in Claude's q005 list.
+A clean four-system API session in which durable canonical cores and per-model signatures held, Perplexity remained the sole citing system across all five queries, and Law VII's male dominance persisted with a single female-presenting exception in Claude's researcher list.
