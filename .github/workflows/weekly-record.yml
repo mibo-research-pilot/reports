@@ -100,7 +100,13 @@ jobs:
           OBS_DATE_MSG="${OBS_DATE:-$(TZ=Asia/Tokyo date +%F)}"
           git add -A
           git commit -m "Weekly MIBO record for ${OBS_DATE_MSG} (automated API collection)"
-          git push
+          # Rebase-then-push with retries so two runs (e.g. native cron + a manual dispatch,
+          # or two backfills) that finish together do not lose one to a non-fast-forward reject.
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            echo "push contention; retry $i"; sleep $((i * 3))
+          done
+          echo "failed to push after retries" >&2; exit 1
 
       - name: Notify Slack
         if: always()  # notify on both success and failure
