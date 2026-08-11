@@ -205,6 +205,30 @@ def call_reporter(reporter: dict, key: str, facts: dict, laws_text: str, data: d
 
 # --- Report assembly -------------------------------------------------------
 
+def as_md(value, default: str = "TODO") -> str:
+    """Coerce a reporter narrative field to a Markdown string.
+
+    The reporter model may return a section as a string, a list (of strings or objects),
+    or a dict instead of the requested string. Normalize all of these to Markdown so a
+    shape mismatch can never crash report assembly.
+    """
+    if value is None:
+        return default
+    if isinstance(value, str):
+        return value.strip() or default
+    if isinstance(value, list):
+        parts: list[str] = []
+        for item in value:
+            if isinstance(item, dict):
+                parts.append("- " + "; ".join(f"{k}: {v}" for k, v in item.items()))
+            else:
+                parts.append(f"- {str(item).strip()}")
+        return "\n".join(parts) if parts else default
+    if isinstance(value, dict):
+        return "\n".join(f"- **{k}**: {v}" for k, v in value.items()) or default
+    return str(value).strip() or default
+
+
 def build_report(date_s: str, day: int, analysis: dict, meta: dict, queries: list[dict],
                  systems: list[str], narrative: dict, model_note: str) -> str:
     obs = analysis.get("observation", {})
@@ -228,7 +252,9 @@ def build_report(date_s: str, day: int, analysis: dict, meta: dict, queries: lis
         by_query.setdefault(q, {})[s] = split_entities(o.get("entities", ""))
         flags_by_query.setdefault(q, {})[s] = o
 
-    qi = narrative.get("query_interpretations", {}) if narrative else {}
+    qi = narrative.get("query_interpretations") if narrative else {}
+    if not isinstance(qi, dict):
+        qi = {}
 
     L: list[str] = []
     L.append(f"# {ordinal(day)} Observation — {date_s}")
@@ -256,13 +282,13 @@ def build_report(date_s: str, day: int, analysis: dict, meta: dict, queries: lis
     L.append("")
     L.append("## Executive Summary")
     L.append("")
-    L.append(narrative.get("executive_summary", "TODO").strip() if narrative else "TODO")
+    L.append(as_md(narrative.get("executive_summary")) if narrative else "TODO")
     L.append("")
     L.append("---")
     L.append("")
     L.append("## Law Status")
     L.append("")
-    L.append(narrative.get("law_status", "TODO").strip() if narrative else "TODO")
+    L.append(as_md(narrative.get("law_status")) if narrative else "TODO")
     L.append("")
     L.append("---")
     L.append("")
@@ -294,19 +320,19 @@ def build_report(date_s: str, day: int, analysis: dict, meta: dict, queries: lis
             L.append("")
         L.append("### Interpretation")
         L.append("")
-        L.append(qi.get(qid, "TODO").strip() if qi.get(qid) else "TODO")
+        L.append(as_md(qi.get(qid)))
         L.append("")
     L.append("---")
     L.append("")
     L.append("## Methodological Notes")
     L.append("")
-    L.append(narrative.get("methodological_notes", "TODO").strip() if narrative else "TODO")
+    L.append(as_md(narrative.get("methodological_notes")) if narrative else "TODO")
     L.append("")
     L.append("---")
     L.append("")
     L.append(f"## Day {day} One-Sentence Conclusion")
     L.append("")
-    L.append(narrative.get("conclusion", "TODO").strip() if narrative else "TODO")
+    L.append(as_md(narrative.get("conclusion")) if narrative else "TODO")
     L.append("")
     return "\n".join(L)
 
@@ -388,7 +414,12 @@ def main() -> int:
                       f"from the coded data. Reporter key absent — narrative sections left as TODO.")
         print("reporter key absent; rendering tables with TODO narrative.")
 
-    report = build_report(date_s, day, analysis, meta, queries, systems, narrative, model_note)
+    try:
+        report = build_report(date_s, day, analysis, meta, queries, systems, narrative, model_note)
+    except Exception as e:  # noqa: BLE001 - never let report assembly fail the run / block the commit
+        print(f"warning: report assembly failed ({e}); rendering tables with TODO narrative.",
+              file=sys.stderr)
+        report = build_report(date_s, day, analysis, meta, queries, systems, {}, model_note)
     out_path.write_text(report, encoding="utf-8")
     print(f"wrote {out_path} (Day {day}, {len(queries)} queries, {len(systems)} systems).")
     return 0

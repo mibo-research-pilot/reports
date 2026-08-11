@@ -83,6 +83,9 @@ jobs:
           fi
 
       - name: Commit and push if changed
+        # Run even if an earlier step (e.g. render) failed, so a presentation-layer error
+        # never discards the week's collected observations. Skips only on cancellation.
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
