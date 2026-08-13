@@ -2,10 +2,15 @@
 
 **Repository:** `mibo-research-pilot/reports`
 
-Raw API observation records, structured coding artifacts, and longitudinal report summaries for the **Machine Information Behavior Observatory (MIBO)**.
+Historical observation records, structured coding artifacts, corrections, and longitudinal report summaries for **MIBO — Machine Information Behavioral Observatory**.
 
-> **Current verified pilot record:** Day 1–Day 13, 2026-05-05 through 2026-07-28  
-> **Verified cumulative observations:** 244
+> **MIBO Pilot phase:** developmental observations before 2026-09-01; collection was API-based continuously from Day 1 (2026-05-05).<br>
+> **Paper B evidence freeze:** Day 1–Day 13, 2026-05-05 through 2026-07-28; 244 included observations.<br>
+> **Latest preserved operational Pilot record at this audit:** Day 15, 2026-08-11; 20 included observations that session and 284 cumulative Pilot observations.
+
+Day 13 / 244 is the Paper B evidence boundary, not the end of the MIBO Pilot. Later Pilot observations remain in this live historical repository but are intentionally outside Paper B. See [`paper-b/`](./paper-b/) for the frozen evidence manifest and provenance matrix.
+
+**Provenance correction — 14 August 2026:** some historical observation reports and metadata describe manual/web-interface collection. Those statements are preserved as historical record text but are factually superseded: MIBO Pilot collection was API-based continuously from Day 1. There was no web-to-API transition during the Pilot.
 
 ---
 
@@ -32,7 +37,7 @@ The date folder is the structured observation packet.
 
 ## What is MIBO?
 
-MIBO is the Machine Information Behavior Observatory.
+MIBO is the Machine Information Behavioral Observatory.
 
 The Pilot uses **Longitudinal Machine Observation (LMO)**: a fixed, versioned query set is repeatedly submitted through APIs to a stable set of identified generative-AI system lineages, and the resulting outputs are recorded and compared across synchronized weekly observations.
 
@@ -95,7 +100,7 @@ The formal Pilot snapshot is `mibo-research-pilot/queries/v0.1.1.json`.
 
 ---
 
-## Observation log
+## Paper B included observation log
 
 | Session | Date | Queries | Included observations | Cumulative | Key findings |
 |---|---:|---:|---:|---:|---|
@@ -115,11 +120,24 @@ The formal Pilot snapshot is `mibo-research-pilot/queries/v0.1.1.json`.
 
 **Counting convention:** one observation is one included system–query response. Days 1–2 contain 3 queries × 4 systems = 12 observations. Day 3 onward contains 5 queries × 4 included systems = 20 observations. Cumulative after Day 13 = 244.
 
+The arithmetic was independently recomputed for the Paper B manifest: `12 + 12 + (11 × 20) = 244`.
+
+### Later MIBO Pilot observations outside Paper B
+
+| Session | Date | Queries | Included observations | Cumulative | Record status |
+|---|---:|---:|---:|---:|---|
+| Day 14 | 2026-08-04 | 5 | 20 | 264 | Complete structured packet; provenance corrigendum added 2026-08-14 |
+| Day 15 | 2026-08-11 | 5 | 20 | 284 | Latest preserved Pilot packet; coding remains marked as automated draft |
+
+These observations are valid Pilot records but are excluded from the Paper B evidence freeze.
+
 ---
 
-## Current established findings after Day 13
+## Paper B claim-navigation snapshot after Day 13
 
 This table is a navigation summary. The authoritative Pilot claim registry is maintained in `core/laws.md`.
+
+The term “law” is historical Pilot terminology. These entries are provisional and corrigible longitudinal claims, not universal laws.
 
 | Law | Current formulation | Status |
 |---|---|---|
@@ -132,6 +150,8 @@ This table is a navigation summary. The authoritative Pilot claim registry is ma
 | IX | Perplexity has used inline numeric citations plus terminal source lists in every observed query since Day 4: 50/50 after Day 13. The twenty-source terminal-list regime covers 15/15 observations across Days 11–13. | Confirmed / continuing |
 
 Withdrawn Laws IV, V, and X remain visible in the claim registry.
+
+The historical gender-related entries are preserved as Pilot-era coding. Paper B does not use the earlier gender-dominance result as a central design-validation case, and this audit introduces no new gender inference or coding.
 
 ---
 

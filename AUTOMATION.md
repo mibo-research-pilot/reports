@@ -3,6 +3,10 @@
 Every Tuesday this repository runs the MIBO observation automatically over the provider
 APIs and commits the result, so the weekly record is collected without manual copy-paste.
 
+**Immutable provenance fact:** MIBO Pilot collection has been API-based continuously since Day 1 (2026-05-05). The automation and generated reports must not describe a later observation as the first API observation or as a transition from web/manual collection to API collection.
+
+The term “law” in generated and historical Pilot records is historical Pilot terminology. It denotes a provisional and corrigible longitudinal claim, not a universal law.
+
 ## What runs, and when
 
 - **Schedule**: every **Tuesday 20:00 Asia/Tokyo** (= 11:00 UTC).

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "release_purpose": "Paper B evidence freeze for the MIBO Pilot longitudinal evidence record",
+  "repository": "mibo-research-pilot/reports",
+  "boundary_type": "frozen evidence boundary within the live Pilot repository; not a separate dataset",
+  "first_included_day": 1,
+  "first_included_date": "2026-05-05",
+  "last_included_day": 13,
+  "last_included_date": "2026-07-28",
+  "freeze_date": "2026-07-28",
+  "total_included_observations": 244,
+  "count_formula": "12 + 12 + (11 * 20) = 244",
+  "collection_mode": "api",
+  "api_collection_since": "2026-05-05",
+  "query_schedule": [
+    {
+      "days": [1, 2],
+      "query_ids": ["q001", "q002", "q003"],
+      "expected_observations_per_day": 12,
+      "query_set_note": "historical three-query Pilot snapshot"
+    },
+    {
+      "days": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      "query_ids": ["q001", "q002", "q003", "q004", "q005"],
+      "expected_observations_per_day": 20,
+      "query_set_version": "v0.1.1"
+    }
+  ],
+  "included_days": [
+    {"day": 1, "date": "2026-05-05", "expected_included_observations": 12, "report": "2026-05-05-observation.md", "additional_source_files": ["2026-05-05/run_metadata.json"], "provenance_status": "partial"},
+    {"day": 2, "date": "2026-05-12", "expected_included_observations": 12, "report": "2026-05-12-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 3, "date": "2026-05-19", "expected_included_observations": 20, "report": "2026-05-19-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 4, "date": "2026-05-26", "expected_included_observations": 20, "report": "2026-05-26-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 5, "date": "2026-06-02", "expected_included_observations": 20, "report": "2026-06-02-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 6, "date": "2026-06-09", "expected_included_observations": 20, "report": "2026-06-09-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 7, "date": "2026-06-16", "expected_included_observations": 20, "report": "2026-06-16-observation.md", "additional_source_files": ["2026-06-16/run_metadata.json", "2026-06-16/coded-observations.csv", "2026-06-16/analysis.json", "2026-06-16/law-updates.md"], "provenance_status": "partial"},
+    {"day": 8, "date": "2026-06-23", "expected_included_observations": 20, "report": "2026-06-23-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 9, "date": "2026-06-30", "expected_included_observations": 20, "report": "2026-06-30-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 10, "date": "2026-07-07", "expected_included_observations": 20, "report": "2026-07-07-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 11, "date": "2026-07-14", "expected_included_observations": 20, "report": "2026-07-14-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 12, "date": "2026-07-21", "expected_included_observations": 20, "report": "2026-07-21-observation.md", "additional_source_files": [], "provenance_status": "partial"},
+    {"day": 13, "date": "2026-07-28", "expected_included_observations": 20, "report": "2026-07-28-observation.md", "additional_source_files": [], "provenance_status": "partial"}
+  ],
+  "excluded_later_pilot_observations": [
+    {"day": 14, "date": "2026-08-04", "included_observations": 20, "reason": "later MIBO Pilot observation outside the Paper B freeze"},
+    {"day": 15, "date": "2026-08-11", "included_observations": 20, "reason": "later MIBO Pilot observation outside the Paper B freeze"}
+  ],
+  "excluded_systems": [
+    {"system": "Grok", "days": [7, 8, 9, 10, 11, 12, 13], "reason": "excluded from official analyses, cumulative counts, and claim-status updates"}
+  ],
+  "correction_notes": [
+    "The duplicated Claude q003 record associated with Day 12 was an input/data-record error; the corrected Claude response supersedes it and the duplication is not model behavior.",
+    "Some preserved historical reports and metadata contain incorrect manual/web collection wording. MIBO Pilot collection was API-based continuously from Day 1; original historical artifacts remain preserved with repository-level correction context.",
+    "Day 14 previously claimed to be the first API-collected session. It is outside this freeze and carries a visible 2026-08-14 corrigendum."
+  ],
+  "provenance_matrix": "paper-b/provenance-matrix.csv",
+  "hash_manifest": "paper-b/SHA256SUMS.json"
+}
