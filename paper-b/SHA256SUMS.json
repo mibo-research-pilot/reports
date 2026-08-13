@@ -1,0 +1,90 @@
+{
+  "algorithm": "SHA-256",
+  "hashing_rule": "SHA-256 of each identified text file after CRLF-to-LF normalization (the canonical Git text representation); paths are repository-relative POSIX paths; SHA256SUMS.json does not hash itself",
+  "files": [
+    {
+      "path": "2026-05-05-observation.md",
+      "sha256": "11329ecc025e92736c724191f29d32341eb037c2432309aa50dc5893d82ebd48"
+    },
+    {
+      "path": "2026-05-05/run_metadata.json",
+      "sha256": "47b1a80617930cd113ab26701aeba2724b7f4b0e31fc2a5d79729383b9b858d7"
+    },
+    {
+      "path": "2026-05-12-observation.md",
+      "sha256": "3e2f2a453fdf1253f1bf53f7085101a1063898d96690ba5b0deb12a0ba4ef188"
+    },
+    {
+      "path": "2026-05-19-observation.md",
+      "sha256": "427738b752743f41cd7237521d820a9ecd7845117d33dfde9819568a32db9fb8"
+    },
+    {
+      "path": "2026-05-26-observation.md",
+      "sha256": "58963992ba9aa987972a647f73706d51858e8d9c1504f68a95e52a2e451f8ec8"
+    },
+    {
+      "path": "2026-06-02-observation.md",
+      "sha256": "534f1dd4d2ea8099dcbcad47ccefcd096d6b55fb619082d86350f56c230d4237"
+    },
+    {
+      "path": "2026-06-09-observation.md",
+      "sha256": "fa0f117d1110476d5e90736ee1010726bcff085c7446c2018f417b76168c1e86"
+    },
+    {
+      "path": "2026-06-16-observation.md",
+      "sha256": "d53a50d3bca40a47cc7e3148fdfb7ee7ea3b64775f31c13cc6093c0051076823"
+    },
+    {
+      "path": "2026-06-16/analysis.json",
+      "sha256": "d5e7e61731b9b024558f7ba9680e6d6c33e7158dbdf5ca240f57e09148c579fe"
+    },
+    {
+      "path": "2026-06-16/coded-observations.csv",
+      "sha256": "15dd73a3c8317fe5ed44632b01bb4976212570fcc8ba58cdbb9430b244f628e5"
+    },
+    {
+      "path": "2026-06-16/law-updates.md",
+      "sha256": "ab78f041aa7407e57d22a4129d2ba7b600d1de7f7038ef7261171402a5644bc4"
+    },
+    {
+      "path": "2026-06-16/run_metadata.json",
+      "sha256": "34ec40da9a3ce50e152955574eb0a595306a42839e3568bd15a89931821b5ae0"
+    },
+    {
+      "path": "2026-06-23-observation.md",
+      "sha256": "c55a5fcd9d0514eb6125268cb15db7018db6b513df26ffc75199f7e325e80297"
+    },
+    {
+      "path": "2026-06-30-observation.md",
+      "sha256": "c45a4634c0389f9eed5bee1b9da91004958075631037ecc366726632e228b568"
+    },
+    {
+      "path": "2026-07-07-observation.md",
+      "sha256": "50d6239670a34423238c5ed091acc81b1a001c566dbf1ac108ae656caeb1fd4b"
+    },
+    {
+      "path": "2026-07-14-observation.md",
+      "sha256": "176f05a49282445d59d02ef7ff43e4ad07c8e3816a18de2c23e16da6b8b82cb3"
+    },
+    {
+      "path": "2026-07-21-observation.md",
+      "sha256": "8dda435d4e50c21551dba4fe618fc646979226130caa0ca17b77842fb0818361"
+    },
+    {
+      "path": "2026-07-28-observation.md",
+      "sha256": "698ab675b72566da44390113f00b0146b92ade2c90d9751a35651910389b78eb"
+    },
+    {
+      "path": "paper-b/README.md",
+      "sha256": "dcb8e21651eb4db48bc120fd71af8738f915b5b47ec83a69b5cd2ecaa9ef2194"
+    },
+    {
+      "path": "paper-b/evidence-manifest.json",
+      "sha256": "1b1d1375fe3f0ba26622624fd3c62424aba4342d6fc83620dc6d566fabbaca7f"
+    },
+    {
+      "path": "paper-b/provenance-matrix.csv",
+      "sha256": "af2381ecd3ce5e06af8d5996c5f2bd875fac24c5141741ddf83e572643af46f6"
+    }
+  ]
+}

@@ -49,5 +49,7 @@
     "api_key_env": "ANTHROPIC_API_KEY",
     "max_tokens": 4096
   },
+  "immutable_historical_fact": "MIBO Pilot collection has been API-based continuously since Day 1 (2026-05-05). Do not describe any later observation as the first API observation or as a transition from web/manual collection to API collection.",
+  "prospective_coding_guardrail": "Do not infer or code gender from names or appearance. Do not introduce gender counts unless documented public professional identity information and a defined protocol are explicitly supplied in the preserved record.",
   "laws_source_url": "https://raw.githubusercontent.com/mibo-research-pilot/core/main/laws.md"
 }

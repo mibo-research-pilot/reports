@@ -1,5 +1,9 @@
 # 14th Observation — 2026-08-04
 
+> **Correction — 14 August 2026:** An earlier version of this report incorrectly described Day 14 as the first API-collected session. MIBO Pilot collection has been API-based continuously since Day 1 (5 May 2026). This documentation correction does not change the Day 14 observation count, outputs, or coded data.
+
+<!-- mibo:manual -->
+
 **Observatory**: MIBO — Machine Information Behavior Observatory  
 **Japanese name**: 機械情報行動観測所  
 **Observation date**: 2026-08-04  
@@ -19,7 +23,7 @@
 
 ## Executive Summary
 
-Day 14 is the first API-collected session, and all four systems (Gemini, ChatGPT, Claude, Perplexity) returned 5/5 responses with no exclusions. Perplexity carried inline numeric citations on all 5/5 responses with terminal sources now delivered via the API `citations` array (q001–q005: 20, 20, 19, 20, 20), while the other three systems again supplied zero citations across all 15 responses. The q005 person query produced a notable Law VII event: Arai Noriko (新井紀子) appeared inside Claude's five-person main list, the only female-presenting mention in an otherwise 19/20 male-presenting session. Canonical inclusion cores held for q001 (project-management tools) and q002 (CRMs) despite membership fluctuation, and Perplexity again returned zero scholarly citations, consistent with Law VIII.
+Day 14 continues the API-based MIBO Pilot sequence, and all four systems (Gemini, ChatGPT, Claude, Perplexity) returned 5/5 responses with no exclusions. Perplexity carried inline numeric citations on all 5/5 responses with terminal sources delivered in the preserved packet through the API `citations` array (q001–q005: 20, 20, 19, 20, 20), while the other three systems again supplied zero citations across all 15 responses. The q005 person query produced a notable Law VII event: Arai Noriko (新井紀子) appeared inside Claude's five-person main list, the only female-presenting mention in an otherwise 19/20 male-presenting session. Canonical inclusion cores held for q001 (project-management tools) and q002 (CRMs) despite membership fluctuation, and Perplexity again returned zero scholarly citations, consistent with Law VIII.
 
 ---
 
@@ -209,10 +213,10 @@ _Citations — Gemini: inline=no/terminal=no, ChatGPT: inline=no/terminal=no, Cl
 
 ## Methodological Notes
 
-This is the first API-collected session under query set operational v0.1.1; all four systems (Gemini gemini-3.5-flash, ChatGPT gpt-5.5-2026-04-23, Claude claude-opus-4-8, Perplexity sonar) returned 5/5 with no excluded systems. Terminal sources for Perplexity are now read from the API `citations` array rather than rendered answer text, and each Perplexity note states 'no terminal source list' despite a reported terminal_source_count — an artifact of the interface-to-API transition worth flagging. Claude's q003 returned no coded entities.
+This session continues API-based collection under query set operational v0.1.1; all four systems (Gemini gemini-3.5-flash, ChatGPT gpt-5.5-2026-04-23, Claude claude-opus-4-8, Perplexity sonar) returned 5/5 with no excluded systems. In this preserved structured packet, terminal sources for Perplexity are read from the API `citations` array rather than rendered answer text, and each Perplexity note states 'no terminal source list' despite a reported terminal_source_count — a response-representation discrepancy worth flagging. Claude's q003 returned no coded entities.
 
 ---
 
 ## Day 14 One-Sentence Conclusion
 
-A clean first API session confirmed the durable canonical cores and per-model signatures while Perplexity remained the sole citing system, and Claude's inclusion of Arai Noriko delivered the session's only female-presenting person mention.
+This continuing API-based Pilot session preserved durable canonical cores and per-model signatures while Perplexity remained the sole citing system, and Claude's inclusion of Arai Noriko delivered the session's only female-presenting person mention.
