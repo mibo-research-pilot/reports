@@ -1,0 +1,493 @@
+{
+  "algorithm": "SHA-256",
+  "enumerated_payload_file_count": 48,
+  "files": [
+    {
+      "bundle_path": "README.md",
+      "inclusion_rationale": "Explains release scope, integrity checks, provenance, corrections, and citation status.",
+      "role": "release_metadata",
+      "sha256": "48ca9be515081b56cf682422ad09239961af6a90cca6e9c86ca0d5dadc96485d",
+      "source_commit": null,
+      "source_path": "paper-b/release/README.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "release_candidate canonical Git text (CRLF-to-LF); final Git SHA recorded externally after merge"
+    },
+    {
+      "bundle_path": "RELEASE_LOCK.json",
+      "inclusion_rationale": "Locks the immutable evidence boundary and source repository commits.",
+      "role": "release_metadata",
+      "sha256": "645dd45b44be9bf702d395bfa46bb1f16b5027b35efebd10a4188140919dc78f",
+      "source_commit": null,
+      "source_path": "paper-b/RELEASE_LOCK.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "release_candidate canonical Git text (CRLF-to-LF); final Git SHA recorded externally after merge"
+    },
+    {
+      "bundle_path": "RELEASE_NOTES.md",
+      "inclusion_rationale": "Drafts the release purpose, boundaries, integrity policy, and limitations.",
+      "role": "release_metadata",
+      "sha256": "0ef3b054ee8dbea92b96d6c959ff87e7edc9909a984fb098cc7c5ed7537a828e",
+      "source_commit": null,
+      "source_path": "paper-b/release/RELEASE_NOTES.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "release_candidate canonical Git text (CRLF-to-LF); final Git SHA recorded externally after merge"
+    },
+    {
+      "bundle_path": "RIGHTS_AND_LICENSES.md",
+      "inclusion_rationale": "Separates source-specific licenses and unresolved provider or third-party rights.",
+      "role": "license_or_rights",
+      "sha256": "9629f58c301d0b900ef3a31e27d74d88ad854bbb6f469e8fcdc5e3a8025e1f2a",
+      "source_commit": null,
+      "source_path": "paper-b/release/RIGHTS_AND_LICENSES.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "release_candidate canonical Git text (CRLF-to-LF); final Git SHA recorded externally after merge"
+    },
+    {
+      "bundle_path": "SOURCE_REPOSITORIES.json",
+      "inclusion_rationale": "Records repository roles, pinned commits, extraction methods, and validation state.",
+      "role": "provenance",
+      "sha256": "6e7a6b741f12f61b35ca817dadf959fe6b714814b02cf570ff87685888176bef",
+      "source_commit": null,
+      "source_path": "paper-b/release/SOURCE_REPOSITORIES.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "release_candidate canonical Git text (CRLF-to-LF); final Git SHA recorded externally after merge"
+    },
+    {
+      "bundle_path": "ZENODO_METADATA_DRAFT.md",
+      "inclusion_rationale": "Provides human-reviewable deposit metadata without claiming a DOI or publication.",
+      "role": "release_metadata",
+      "sha256": "db8cf098f140a5341ee1a4e0255f80d0530fa98fb17c4ca68d014f02262ce6b9",
+      "source_commit": null,
+      "source_path": "paper-b/release/ZENODO_METADATA_DRAFT.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "release_candidate canonical Git text (CRLF-to-LF); final Git SHA recorded externally after merge"
+    },
+    {
+      "bundle_path": "core-context/.github/workflows/validate.yml",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "validation",
+      "sha256": "8a2221849d9be43bf37c2f0fc9b9f0531d094548f2d738d6dcbd0e65a08e338c",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": ".github/workflows/validate.yml",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/.gitignore",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "validation",
+      "sha256": "fe07aeae2cfd1ff2ce4c0c5911dfbb550a3f1065e213175039abadfc3a5a15bb",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": ".gitignore",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/AUDIT.md",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "provenance",
+      "sha256": "dc6b8371bc9fb45d13c8b85f3c29a8e87bf23aeefac27e4dc55a6db0cd994a58",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "AUDIT.md",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/CITATION.cff",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "release_metadata",
+      "sha256": "25881423e7c0b401241cef4f5453814e1b1d436d13d4155ffdf0928f19f2d0d0",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "CITATION.cff",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/LICENSE",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "license_or_rights",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "LICENSE",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/README.md",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "conceptual_context",
+      "sha256": "7486b68b6b6e7ce613fc1be7584e67896a07f782c7681a7ee5e6940f81ebbf3a",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "README.md",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/hierarchy.md",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "conceptual_context",
+      "sha256": "6f3d5b155645d93a5e8d9c784305dc28238508898dfffabf7e4a509f95c489f0",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "hierarchy.md",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/laws.md",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "conceptual_context",
+      "sha256": "47453fab725d5040f06d234893977706daef404b012716bbff30ba04d267c5a7",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "laws.md",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/paper-b/README.md",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "release_metadata",
+      "sha256": "f4c4de9539a9691da08ac9dc9a44d92e7d8be76bb4fa2631aac547894a87e032",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "paper-b/README.md",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "core-context/scripts/validate_core.py",
+      "inclusion_rationale": "Complete tracked pinned core snapshot preserving historical conceptual and methodological context.",
+      "role": "validation",
+      "sha256": "ac37467dddc7037031cac89731fff73f0b56efa8806a32991cb5819f69b971f2",
+      "source_commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "source_path": "scripts/validate_core.py",
+      "source_repository": "mibo-research-pilot/core",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/.github/workflows/validate.yml",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "validation",
+      "sha256": "563220052d424d29abb1ff7b22d278ce83794df4b270445b8ea7a124305beb4d",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": ".github/workflows/validate.yml",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/AUDIT.md",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "provenance",
+      "sha256": "6f7f0eca219ce8edb98a04a92766ad29a742fc783e75c53fd5e79e97ec6831c8",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "AUDIT.md",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/HASHES.json",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "integrity_manifest",
+      "sha256": "8dea6dd0df2abdc59a667eaa2c9aafe3310a34aa088f0a81e296a2cae2206440",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "HASHES.json",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/LICENSE",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "license_or_rights",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "LICENSE",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/README.md",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "provenance",
+      "sha256": "025a6990e65e2e7fabca8d2e1cdaa67d4bec169aca1e7b379ee68873f5bb4b1c",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "README.md",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/scripts/validate_queries.py",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "validation",
+      "sha256": "7510a777b28da6470d6bf4258565e9fd24daca7606a1413064e2733eef1d3c7b",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "scripts/validate_queries.py",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/v0.1.0.json",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "query_instrument",
+      "sha256": "be32412333cbc1d8aed363f17c43dceffd0afd241d92a46e83419d4a2d0b0be2",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "v0.1.0.json",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/v0.1.1.json",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "query_instrument",
+      "sha256": "fa235f355ec50b69a4e485f900df508dabdd2042056c63d6a402e10a04ef0c11",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "v0.1.1.json",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "query-instrument/v0.1.json",
+      "inclusion_rationale": "Complete tracked pinned queries snapshot preserving complete query-instrument provenance.",
+      "role": "query_instrument",
+      "sha256": "7ec316b3fd61fe6ddd793e53fb299b9b36cd4012ba908acbad2c96d775c45e26",
+      "source_commit": "49144025fee43b6599892ad0a270c09c518ff815",
+      "source_path": "v0.1.json",
+      "source_repository": "mibo-research-pilot/queries",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-05-05-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "11329ecc025e92736c724191f29d32341eb037c2432309aa50dc5893d82ebd48",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-05-05-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-05-05/run_metadata.json",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "provenance",
+      "sha256": "47b1a80617930cd113ab26701aeba2724b7f4b0e31fc2a5d79729383b9b858d7",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-05-05/run_metadata.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-05-12-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "3e2f2a453fdf1253f1bf53f7085101a1063898d96690ba5b0deb12a0ba4ef188",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-05-12-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-05-19-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "427738b752743f41cd7237521d820a9ecd7845117d33dfde9819568a32db9fb8",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-05-19-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-05-26-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "58963992ba9aa987972a647f73706d51858e8d9c1504f68a95e52a2e451f8ec8",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-05-26-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-02-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "534f1dd4d2ea8099dcbcad47ccefcd096d6b55fb619082d86350f56c230d4237",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-02-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-09-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "fa0f117d1110476d5e90736ee1010726bcff085c7446c2018f417b76168c1e86",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-09-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-16-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "d53a50d3bca40a47cc7e3148fdfb7ee7ea3b64775f31c13cc6093c0051076823",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-16-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-16/analysis.json",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "analysis",
+      "sha256": "d5e7e61731b9b024558f7ba9680e6d6c33e7158dbdf5ca240f57e09148c579fe",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-16/analysis.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-16/coded-observations.csv",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "coded_data",
+      "sha256": "15dd73a3c8317fe5ed44632b01bb4976212570fcc8ba58cdbb9430b244f628e5",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-16/coded-observations.csv",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-16/law-updates.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "correction_record",
+      "sha256": "ab78f041aa7407e57d22a4129d2ba7b600d1de7f7038ef7261171402a5644bc4",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-16/law-updates.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-16/run_metadata.json",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "provenance",
+      "sha256": "34ec40da9a3ce50e152955574eb0a595306a42839e3568bd15a89931821b5ae0",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-16/run_metadata.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-23-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "c55a5fcd9d0514eb6125268cb15db7018db6b513df26ffc75199f7e325e80297",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-23-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-06-30-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "c45a4634c0389f9eed5bee1b9da91004958075631037ecc366726632e228b568",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-06-30-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-07-07-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "50d6239670a34423238c5ed091acc81b1a001c566dbf1ac108ae656caeb1fd4b",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-07-07-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-07-14-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "176f05a49282445d59d02ef7ff43e4ad07c8e3816a18de2c23e16da6b8b82cb3",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-07-14-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-07-21-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "8dda435d4e50c21551dba4fe618fc646979226130caa0ca17b77842fb0818361",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-07-21-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/2026-07-28-observation.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "observation_report",
+      "sha256": "698ab675b72566da44390113f00b0146b92ade2c90d9751a35651910389b78eb",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "2026-07-28-observation.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/LICENSE",
+      "inclusion_rationale": "Preserves the pinned Reports source license as rights context; it is outside the unchanged 21-file Paper B evidence hash set and protected by the outer manifest.",
+      "role": "license_or_rights",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "LICENSE",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/paper-b/README.md",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "release_metadata",
+      "sha256": "dcb8e21651eb4db48bc120fd71af8738f915b5b47ec83a69b5cd2ecaa9ef2194",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "paper-b/README.md",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/paper-b/SHA256SUMS.json",
+      "inclusion_rationale": "Preserves the existing non-self-hashing integrity manifest for the Paper B reports evidence subset.",
+      "role": "integrity_manifest",
+      "sha256": "4b38bf250c67f9fc9e5a7e5e175c5881175465df44840e5484877a34d5f83282",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "paper-b/SHA256SUMS.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/paper-b/evidence-manifest.json",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "integrity_manifest",
+      "sha256": "1b1d1375fe3f0ba26622624fd3c62424aba4342d6fc83620dc6d566fabbaca7f",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "paper-b/evidence-manifest.json",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    },
+    {
+      "bundle_path": "reports-evidence/paper-b/provenance-matrix.csv",
+      "inclusion_rationale": "Selected by the existing Paper B evidence manifest and verified by its SHA-256 manifest.",
+      "role": "provenance",
+      "sha256": "af2381ecd3ce5e06af8d5996c5f2bd875fac24c5141741ddf83e572643af46f6",
+      "source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "source_path": "paper-b/provenance-matrix.csv",
+      "source_repository": "mibo-research-pilot/reports",
+      "source_state": "pinned_git_blob"
+    }
+  ],
+  "final_bundle_file_count": 50,
+  "hashing_rule": "SHA-256 of exact bundle file bytes; no line-ending normalization",
+  "release_id": "mibo-paper-b-pilot-evidence-v1.0.0",
+  "release_metadata_commit_policy": "Release-created files use source_commit null because the final release-preparation Git commit cannot self-embed. The final tag and GitHub Release metadata will record that commit after review and merge.",
+  "release_status": "release_candidate",
+  "schema_version": "1.0",
+  "self_reference_policy": "MANIFEST.json and outer SHA256SUMS.json are excluded from this payload enumeration to avoid circular hashes. The outer SHA256SUMS.json hashes MANIFEST.json and every other bundle file except itself."
+}

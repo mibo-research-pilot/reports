@@ -1,0 +1,4 @@
+dist/
+_sources/
+__pycache__/
+*.py[cod]

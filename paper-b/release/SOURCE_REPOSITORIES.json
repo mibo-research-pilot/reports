@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "release_status": "release_candidate",
+  "repositories": [
+    {
+      "name": "core",
+      "repository": "mibo-research-pilot/core",
+      "url": "https://github.com/mibo-research-pilot/core",
+      "pinned_source_sha": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e",
+      "role": "historical conceptual/methodological context",
+      "extraction_method": "tracked Git blobs from the pinned commit",
+      "snapshot_scope": "complete non-Git tracked snapshot",
+      "validation_status": "commit and byte hashes validated during build"
+    },
+    {
+      "name": "queries",
+      "repository": "mibo-research-pilot/queries",
+      "url": "https://github.com/mibo-research-pilot/queries",
+      "pinned_source_sha": "49144025fee43b6599892ad0a270c09c518ff815",
+      "role": "exact versioned Pilot stimuli",
+      "extraction_method": "tracked Git blobs from the pinned commit",
+      "snapshot_scope": "complete non-Git tracked snapshot",
+      "validation_status": "commit, query text, per-query hashes, and ordered instrument hash validated during build"
+    },
+    {
+      "name": "reports",
+      "repository": "mibo-research-pilot/reports",
+      "url": "https://github.com/mibo-research-pilot/reports",
+      "pinned_source_sha": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0",
+      "role": "Paper B observational evidence",
+      "extraction_method": "tracked Git blobs selected by the existing Paper B evidence manifest and hash manifest",
+      "snapshot_scope": "Paper B evidence subset only",
+      "validation_status": "commit, Day boundary, count, schedule, and existing evidence hashes validated during build"
+    }
+  ]
+}
