@@ -1,0 +1,40 @@
+{
+  "release_id": "mibo-paper-b-pilot-evidence-v1.0.0",
+  "release_version": "1.0.0",
+  "release_status": "release_candidate",
+  "paper_title": "Operationalizing Longitudinal Machine Information Behavior: The Founding and Developmental Pilot of MIBO",
+  "paper_subtitle": "An Open Resource and Methods Paper",
+  "evidence_first_day": 1,
+  "evidence_first_date": "2026-05-05",
+  "evidence_last_day": 13,
+  "evidence_last_date": "2026-07-28",
+  "included_observations": 244,
+  "count_formula": "12 + 12 + (11 * 20) = 244",
+  "collection_mode": "api",
+  "api_collection_since": "2026-05-05",
+  "later_pilot_observations_included": false,
+  "query_instrument": {
+    "file": "v0.1.1.json",
+    "query_count": 5,
+    "ordered_instrument_sha256": "8463f51cf40bd0e2b7186569cdb84e26085ad16f6c62e7035c1a1c59311cdd35",
+    "schedule": {
+      "days_1_2": ["q001", "q002", "q003"],
+      "days_3_13": ["q001", "q002", "q003", "q004", "q005"]
+    }
+  },
+  "source_repositories": {
+    "core": {
+      "repository": "mibo-research-pilot/core",
+      "commit": "5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e"
+    },
+    "queries": {
+      "repository": "mibo-research-pilot/queries",
+      "commit": "49144025fee43b6599892ad0a270c09c518ff815"
+    },
+    "reports": {
+      "repository": "mibo-research-pilot/reports",
+      "evidence_source_commit": "005b98c55158e95c71b1f4d963c04d4dcf2fd5f0"
+    }
+  },
+  "release_preparation_commit_policy": "The final reports release-preparation Git SHA is intentionally not self-embedded. It will be recorded in later tag and GitHub Release metadata after review and merge."
+}

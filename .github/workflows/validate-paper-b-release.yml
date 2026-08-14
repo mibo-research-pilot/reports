@@ -1,0 +1,57 @@
+name: Validate Paper B archival release
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out reports release candidate
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check out pinned Core context
+        uses: actions/checkout@v6
+        with:
+          repository: mibo-research-pilot/core
+          ref: 5f8dc0a21dcc73930f6ebc27cbd67dada3105a0e
+          path: _sources/core
+          persist-credentials: false
+
+      - name: Check out pinned Queries instrument
+        uses: actions/checkout@v6
+        with:
+          repository: mibo-research-pilot/queries
+          ref: 49144025fee43b6599892ad0a270c09c518ff815
+          path: _sources/queries
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Validate reports repository
+        run: python scripts/validate_repository.py
+
+      - name: Build and validate deterministic release candidate
+        run: >-
+          python scripts/build_paper_b_release.py
+          --core-repo _sources/core
+          --queries-repo _sources/queries
+
+      - name: Upload deterministic ZIP workflow artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: MIBO_Paper_B_Pilot_Evidence_v1.0.0
+          path: dist/MIBO_Paper_B_Pilot_Evidence_v1.0.0.zip
+          if-no-files-found: error
+          archive: false
+          retention-days: 30
