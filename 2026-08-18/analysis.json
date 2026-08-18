@@ -1,0 +1,244 @@
+{
+  "observation": {
+    "title": "MIBO 16th Observation",
+    "date": "2026-08-18",
+    "timezone": "Asia/Tokyo",
+    "included_systems": [
+      {
+        "system": "Gemini",
+        "model": "gemini-3.5-flash",
+        "mode": "API"
+      },
+      {
+        "system": "ChatGPT",
+        "model": "gpt-5.5-2026-04-23",
+        "mode": "API"
+      },
+      {
+        "system": "Claude",
+        "model": "claude-opus-4-8",
+        "mode": "API"
+      },
+      {
+        "system": "Perplexity",
+        "model": "sonar",
+        "mode": "API"
+      }
+    ],
+    "excluded_systems": [],
+    "total_included_observations": 20,
+    "cumulative_observations_after_session": 304
+  },
+  "law_status": {
+    "summary": "- The authoritative law list (core/laws.md) was unavailable this run, so no established laws can be referenced by id or name, and no confirm/revise/withdraw judgments are assigned this session. Summarizing the citation/canonical evidence instead: Perplexity (sonar) was the only system showing inline-citation behavior, and it did so uniformly across all 5/5 queries; the other three systems (Gemini, ChatGPT, Claude) showed inline_citations=no and terminal_sources=no on all 5/5 responses. Perplexity's coded observations consistently flag `inline_citations: yes` and `terminal_sources: yes` but with a note that no terminal source list appeared in-body, alongside a terminal_source_count of 17–20 (q001=20, q002=18, q003=20, q004=17, q005=20) — a tension worth carrying forward. Code output appeared only on q004 (RAG), where all four systems emitted code. Canonical stability: 松尾豊 appeared in all four systems on q005; HubSpot CRM, Zoho CRM, and Pipedrive appeared in all four on q002; Trello/Notion/Asana/Jira and monday.com recurred across systems on q001."
+  },
+  "observations": [
+    {
+      "query_id": "q001",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "Trello; Asana; monday.com; Wrike; Backlog; Jira Software; Notion",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Categorizes seven project management tools by use case with features, target users, and a selection roadmap, but no citations or sources."
+    },
+    {
+      "query_id": "q001",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "Asana; Notion; Trello; Jira; GitHub Projects; Backlog; Jooto; monday.com; Wrike",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Lists nine project management tools organized by use case with a final selection guide but no citations or code."
+    },
+    {
+      "query_id": "q001",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "Notion; Asana; Trello; Jira; GitHub Projects; ClickUp; monday.com",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Recommends seven project management tools grouped by category with a follow-up table asking for user requirements to narrow down choices."
+    },
+    {
+      "query_id": "q001",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "Trello; Notion; Jira; Backlog; Asana; monday.com; Wrike",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Recommends seven project management tools by purpose with inline citation markers but no terminal source list or code.",
+      "terminal_source_count": 20
+    },
+    {
+      "query_id": "q002",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "HubSpot CRM; Zoho CRM; Pipedrive; Monday.com; Streak",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "A categorized breakdown of five small-business CRMs with pros, cons, and pricing, followed by a quick cheat sheet, but no citations or sources."
+    },
+    {
+      "query_id": "q002",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "HubSpot CRM; Zoho CRM; Pipedrive; Copper; Freshsales; Salesforce Starter",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Recommends six CRMs categorized by use case, with a final quick-pick summary favoring HubSpot, Zoho, and Pipedrive."
+    },
+    {
+      "query_id": "q002",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "HubSpot CRM; Pipedrive; Zoho CRM; Freshsales; Salesforce; Less Annoying CRM; Copper",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Categorized list of seven CRM recommendations by priority, followed by clarifying questions to narrow down the choice."
+    },
+    {
+      "query_id": "q002",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "HubSpot CRM; Pipedrive; Zoho CRM; Salesforce; Bigin by Zoho",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Recommends several CRMs with use-case guidance and inline citations but no terminal sources list or code.",
+      "terminal_source_count": 18
+    },
+    {
+      "query_id": "q003",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Structured Japanese advice on improving sleep quality across morning, daytime, night, and bedroom phases, with no cited sources or specific product recommendations."
+    },
+    {
+      "query_id": "q003",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "起床時間を固定する; 朝に日光を浴びる; 寝る前のスマホ・PCを控える; カフェインは午後以降控える; 寝酒は避ける; 寝室を快適にする; 寝る前のルーティンを作る; 運動する; 昼寝は短めにする; 眠れないまま布団で粘らない",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "A structured list of 10 sleep-improvement tips with a top-3 recommendation and a note to consult a doctor for persistent problems."
+    },
+    {
+      "query_id": "q003",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "起床時間を固定する; 朝日を浴びる",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Categorized sleep-hygiene tips with emoji headers, highlighting fixed wake time and morning sunlight as most effective, with no citations or sources."
+    },
+    {
+      "query_id": "q003",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "起床時刻を一定にする; 朝起きたら光を浴びる; 寝る前のスマホ・PCを控える; 寝室を暗くする; 夕食は早めに済ませる; 入浴は寝る1.5〜2時間前; 軽い運動を習慣にする; 寝室の環境を整える",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "A bulleted list of sleep-hygiene tips with inline numbered citations but no terminal source list, ending with advice to see a doctor if symptoms persist.",
+      "terminal_source_count": 20
+    },
+    {
+      "query_id": "q004",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "LangChain; ChromaDB; OpenAI; FAISS; Pinecone; Milvus; Qdrant; pgvector; all-MiniLM-L6-v2; text-embedding-3-large; Cohere Embed; Ollama; GPT-4o; Claude 3.5 Sonnet; LlamaIndex; Cohere Rerank; Ragas; TruLens",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "A detailed RAG implementation tutorial with architecture explanation, a full Python code example using LangChain/ChromaDB/OpenAI, a tech-stack comparison table, and production best practices."
+    },
+    {
+      "query_id": "q004",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "Chroma; FAISS; Pinecone; Weaviate; Qdrant; Milvus; OpenAI text-embedding-3-small/large; Cohere embeddings; SentenceTransformers all-MiniLM-L6-v2; BGE embeddings; Instructor embeddings; OpenAI GPT; Claude; Gemini; Llama; Mistral",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "A detailed RAG tutorial with a Chroma+OpenAI code walkthrough plus lists of vector DB, embedding, and LLM options and production tips."
+    },
+    {
+      "query_id": "q004",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "ChromaDB; sentence-transformers; OpenAI; all-MiniLM-L6-v2; gpt-4o-mini",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "yes",
+      "notes": "A practical RAG tutorial using ChromaDB, sentence-transformers, and OpenAI, with code examples and tables of design decisions but no citations."
+    },
+    {
+      "query_id": "q004",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "Pinecone; Weaviate; Qdrant; Milvus; FAISS; Chroma; pgvector",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "yes",
+      "notes": "A step-by-step RAG pipeline walkthrough with inline citations and a Python code snippet, listing common vector databases but with no terminal reference list.",
+      "terminal_source_count": 17
+    },
+    {
+      "query_id": "q005",
+      "system": "Gemini",
+      "model": "gemini-3.5-flash",
+      "entities": "松尾豊; 福島邦彦; 杉山将; 甘利俊一; 北野宏明",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Lists five prominent Japanese AI researchers with their positions, specialties, and detailed profiles, but no citations or sources."
+    },
+    {
+      "query_id": "q005",
+      "system": "ChatGPT",
+      "model": "gpt-5.5-2026-04-23",
+      "entities": "松尾豊; 杉山将; 甘利俊一; 辻井潤一; 國吉康夫",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Lists five prominent Japanese AI researchers with their affiliations and research areas, no citations or sources."
+    },
+    {
+      "query_id": "q005",
+      "system": "Claude",
+      "model": "claude-opus-4-8",
+      "entities": "松尾豊; 甘利俊一; 杉山将; 石黒浩; 中島秀之",
+      "inline_citations": "no",
+      "terminal_sources": "no",
+      "code": "no",
+      "notes": "Lists five notable Japanese AI researchers with brief descriptions and caveats about subjectivity, without any citations or sources."
+    },
+    {
+      "query_id": "q005",
+      "system": "Perplexity",
+      "model": "sonar",
+      "entities": "松尾豊; 杉山将; 石黒浩; 伊藤孝行; 今井翔太",
+      "inline_citations": "yes",
+      "terminal_sources": "yes",
+      "code": "no",
+      "notes": "Lists five Japanese AI researchers with brief descriptions and inline citation markers but no terminal source list.",
+      "terminal_source_count": 20
+    }
+  ],
+  "coding_status": "auto — entities drafted by LLM; terminal sources read from the provider citations array",
+  "coding_model": "claude-opus-4-8"
+}
