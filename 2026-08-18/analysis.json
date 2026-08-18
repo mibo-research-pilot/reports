@@ -30,7 +30,7 @@
     "cumulative_observations_after_session": 304
   },
   "law_status": {
-    "summary": "- The authoritative law list (core/laws.md) was unavailable this run, so no established laws can be referenced by id or name, and no confirm/revise/withdraw judgments are assigned this session. Summarizing the citation/canonical evidence instead: Perplexity (sonar) was the only system showing inline-citation behavior, and it did so uniformly across all 5/5 queries; the other three systems (Gemini, ChatGPT, Claude) showed inline_citations=no and terminal_sources=no on all 5/5 responses. Perplexity's coded observations consistently flag `inline_citations: yes` and `terminal_sources: yes` but with a note that no terminal source list appeared in-body, alongside a terminal_source_count of 17–20 (q001=20, q002=18, q003=20, q004=17, q005=20) — a tension worth carrying forward. Code output appeared only on q004 (RAG), where all four systems emitted code. Canonical stability: 松尾豊 appeared in all four systems on q005; HubSpot CRM, Zoho CRM, and Pipedrive appeared in all four on q002; Trello/Notion/Asana/Jira and monday.com recurred across systems on q001."
+    "summary": "- The authoritative law list (core/laws.md) was unavailable this run, so no established laws can be referenced by id or name, and no confirm/strengthen/revise/withdraw judgments can be assigned. Summarizing the raw citation/canonical evidence instead: **inline citations** appeared only in Perplexity, on 5/5 queries; Gemini, ChatGPT, and Claude showed 0/5 inline citations each. Every Perplexity observation carried a `terminal_source_count` (q001=20, q002=18, q003=20, q004=17, q005=20), yet each was coded `terminal_sources: yes` while the notes state no terminal source list was rendered in-text — a discrepancy worth flagging for the law maintainers. **Code** was emitted by all four systems only on q004 (RAG), i.e. 4/4 systems on that query and 0/4 on every other query. **Canonical/entity stability**: 松尾豊 was returned first by all four systems on q005; 杉山将 and 甘利俊一 recurred across three systems; HubSpot CRM led three of four systems on q002; ChromaDB/Chroma and OpenAI recurred across all four systems on q004."
   },
   "observations": [
     {
@@ -123,7 +123,7 @@
       "inline_citations": "no",
       "terminal_sources": "no",
       "code": "no",
-      "notes": "Structured Japanese advice on improving sleep quality across morning, daytime, night, and bedroom phases, with no cited sources or specific product recommendations."
+      "notes": "Japanese sleep-hygiene advice organized by time of day (morning, daytime, night, bedroom) plus NG habits, with no products, citations, or code."
     },
     {
       "query_id": "q003",
