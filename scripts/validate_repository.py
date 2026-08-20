@@ -165,7 +165,11 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
 
     root_reports = sorted(path.name for path in ROOT.glob("????-??-??-observation.md"))
     require(len(root_reports) == len(set(root_reports)), "duplicate root observation filenames")
-    require(len(root_reports) == 15, "expected exactly 15 official root observation reports")
+    # Paper B freezes Days 1-13; later Pilot observation days (14, 15, 16, ...) are added by the
+    # weekly automation and grow over time, so require a floor rather than an exact count. The
+    # frozen Day 1-13 reports are each verified individually in the manifest loop above, and the
+    # release hash manifest guarantees their contents, so ongoing days cannot weaken Paper B.
+    require(len(root_reports) >= 15, "expected at least the 15 known official root observation reports")
 
     for entry in included:
         report = ROOT / entry["report"]
