@@ -9,15 +9,13 @@ name: Weekly MIBO record
 #   3. code_observations.py      — LLM-drafts the entity coding for the collected responses.
 #   4. commit + push            — updates Git with the week's record.
 #
-# Schedule: Tuesday 20:07 Asia/Tokyo == Tuesday 11:07 UTC.
-# GitHub Actions cron runs in UTC, so JST 20:07 is expressed as 11:07 UTC.
-# The :07 offset avoids the top-of-the-hour rush: GitHub delays or drops scheduled
-# runs that all fire at :00 under load, so an off-peak minute improves reliability.
-# (Scheduled runs can still be delayed by a few minutes to ~an hour under GitHub load.)
+# Automatic weekly scheduling is DISABLED: the MIBO Pilot concluded with Day 17
+# (2026-08-25), so the Tuesday cron trigger has been removed to stop further runs.
+# The workflow is kept for manual, on-demand use only (Actions -> Run workflow, or a
+# workflow_dispatch), e.g. to re-render a past record. To resume weekly collection,
+# restore a `schedule:` trigger such as `- cron: "7 11 * * 2"` (Tuesday 20:07 JST).
 
 on:
-  schedule:
-    - cron: "7 11 * * 2"
   workflow_dispatch:
     inputs:
       date:
