@@ -127,7 +127,9 @@ The arithmetic was independently recomputed for the Paper B manifest: `12 + 12 +
 | Session | Date | Queries | Included observations | Cumulative | Record status |
 |---|---:|---:|---:|---:|---|
 | Day 14 | 2026-08-04 | 5 | 20 | 264 | Complete structured packet; provenance corrigendum added 2026-08-14 |
-| Day 15 | 2026-08-11 | 5 | 20 | 284 | Latest preserved Pilot packet; coding remains marked as automated draft |
+| Day 15 | 2026-08-11 | 5 | 20 | 284 | Complete structured packet; coding marked as automated draft |
+| Day 16 | 2026-08-18 | 5 | 20 | 304 | Complete structured packet; automated Law Status |
+| Day 17 | 2026-08-25 | 5 | 20 | 324 | Final Pilot observation; complete structured packet |
 
 These observations are valid Pilot records but are excluded from the Paper B evidence freeze.
 

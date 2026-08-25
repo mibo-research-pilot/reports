@@ -112,6 +112,29 @@ def parse_coding(text: str) -> dict:
     }
 
 
+def reconcile_terminal_note(note: str, count: int) -> str:
+    """Keep the free-text note consistent with a citations-array terminal-source correction.
+
+    The coder writes the note from the answer text, where a provider like Perplexity renders
+    no terminal source list, so the note can say "no terminal source list" even though the
+    sources are present in the API `citations` array and terminal_sources is coded "yes".
+    Append a clarifying clause in that case so the note and the flag do not read as
+    contradictory. Idempotent: a note already mentioning the citations array is left as-is.
+    """
+    if not note or "citations array" in note.lower():
+        return note
+    low = note.lower()
+    # Catch the family "no ... (terminal|source|reference) ... list" (e.g. "no terminal source
+    # list", "no terminal reference list", "no source list"), plus a couple of fixed phrasings.
+    denies_list = bool(re.search(r"\bno\b[\w\s-]*\b(?:terminal|source|reference)\b[\w\s-]*\blist\b", low)) \
+        or ("no end-of-response" in low) or ("without a terminal" in low)
+    if denies_list:
+        sep = " " if note.rstrip().endswith((".", "。", "!", "?", "！", "？")) else ". "
+        return (f"{note.rstrip()}{sep}Terminal sources are present in the provider's structured "
+                f"citations array ({count}).")
+    return note
+
+
 def load_csv(path: Path) -> tuple[list[str], list[dict]]:
     with path.open(encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
@@ -182,6 +205,7 @@ def main() -> int:
             n = len(entry.get("citations") or [])
             if n:
                 row["terminal_sources"] = "yes"
+                row["notes"] = reconcile_terminal_note(row.get("notes", ""), n)
                 ts_by_key[rk] = n
 
         if row.get("entities", "").strip() and not args.force:
@@ -197,6 +221,7 @@ def main() -> int:
             continue
         if rk in ts_by_key:  # keep the structured reading over the model's text-only guess
             coding["terminal_sources"] = "yes"
+            coding["notes"] = reconcile_terminal_note(coding.get("notes", ""), ts_by_key[rk])
         row.update(coding)
         coding_by_key[rk] = coding
         coded += 1
@@ -215,6 +240,7 @@ def main() -> int:
             if rk in ts_by_key:  # deterministic terminal-source correction + count
                 obs["terminal_sources"] = "yes"
                 obs["terminal_source_count"] = ts_by_key[rk]
+                obs["notes"] = reconcile_terminal_note(obs.get("notes", ""), ts_by_key[rk])
         analysis["coding_status"] = ("auto — entities drafted by LLM; terminal sources read "
                                      "from the provider citations array")
         analysis["coding_model"] = coder["model"]

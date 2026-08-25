@@ -71,7 +71,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "Recommends seven project management tools by purpose with inline citation markers but no terminal source list or code.",
+      "notes": "Recommends seven project management tools by purpose with inline citation markers but no terminal source list or code. Terminal sources are present in the provider's structured citations array (20).",
       "terminal_source_count": 20
     },
     {
@@ -112,7 +112,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "Recommends several CRMs with use-case guidance and inline citations but no terminal sources list or code.",
+      "notes": "Recommends several CRMs with use-case guidance and inline citations but no terminal sources list or code. Terminal sources are present in the provider's structured citations array (18).",
       "terminal_source_count": 18
     },
     {
@@ -153,7 +153,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "A bulleted list of sleep-hygiene tips with inline numbered citations but no terminal source list, ending with advice to see a doctor if symptoms persist.",
+      "notes": "A bulleted list of sleep-hygiene tips with inline numbered citations but no terminal source list, ending with advice to see a doctor if symptoms persist. Terminal sources are present in the provider's structured citations array (20).",
       "terminal_source_count": 20
     },
     {
@@ -194,7 +194,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "yes",
-      "notes": "A step-by-step RAG pipeline walkthrough with inline citations and a Python code snippet, listing common vector databases but with no terminal reference list.",
+      "notes": "A step-by-step RAG pipeline walkthrough with inline citations and a Python code snippet, listing common vector databases but with no terminal reference list. Terminal sources are present in the provider's structured citations array (17).",
       "terminal_source_count": 17
     },
     {
@@ -235,7 +235,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "Lists five Japanese AI researchers with brief descriptions and inline citation markers but no terminal source list.",
+      "notes": "Lists five Japanese AI researchers with brief descriptions and inline citation markers but no terminal source list. Terminal sources are present in the provider's structured citations array (20).",
       "terminal_source_count": 20
     }
   ],

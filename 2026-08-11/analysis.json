@@ -71,7 +71,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "Recommends several project management tools with inline citation markers and usage-based selection guidance, but no terminal source list.",
+      "notes": "Recommends several project management tools with inline citation markers and usage-based selection guidance, but no terminal source list. Terminal sources are present in the provider's structured citations array (20).",
       "terminal_source_count": 20
     },
     {
@@ -153,7 +153,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "Lists five sleep-quality tips in Japanese with inline citation markers but no terminal source list or code.",
+      "notes": "Lists five sleep-quality tips in Japanese with inline citation markers but no terminal source list or code. Terminal sources are present in the provider's structured citations array (18).",
       "terminal_source_count": 18
     },
     {
@@ -194,7 +194,7 @@
       "inline_citations": "yes",
       "terminal_sources": "yes",
       "code": "no",
-      "notes": "A conceptual RAG-with-vector-DB pipeline walkthrough with inline citation markers but no end reference list or code block, offering follow-up examples.",
+      "notes": "A conceptual RAG-with-vector-DB pipeline walkthrough with inline citation markers but no end reference list or code block, offering follow-up examples. Terminal sources are present in the provider's structured citations array (20).",
       "terminal_source_count": 20
     },
     {
