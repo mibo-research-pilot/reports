@@ -58,11 +58,20 @@ FALLBACK_TEXT = "_Not generated this session._"
 DEFAULT_LAWS_URL = "https://raw.githubusercontent.com/mibo-research-pilot/core/main/laws.md"
 
 
-def fetch_laws_text(url: str) -> str:
-    """Fetch core/laws.md and return its '## Established laws' section (Markdown).
+# H2 headings (lowercased substrings) that mark the start of the retained-laws section in
+# core/laws.md. Kept as a list so a registry rename does not silently blank Law Status again:
+# the historical heading was "## Established laws"; the Paper B registry renamed it to
+# "## Pilot laws retained in the registry".
+LAWS_SECTION_HINTS = ("established laws", "laws retained in the registry", "pilot laws")
 
-    Returns "" on any network/parse failure so render degrades to a data-only Law Status
-    rather than failing the run. The reporter prompt handles an empty laws text explicitly.
+
+def fetch_laws_text(url: str) -> str:
+    """Fetch core/laws.md and return its retained-laws section (Markdown).
+
+    Matches the section heading against LAWS_SECTION_HINTS (old or renamed) and stops at the
+    next H2 (e.g. "## Withdrawn laws"). Returns "" on any network/parse failure or if no
+    matching heading is found, so render degrades to a data-only Law Status rather than
+    failing the run. The reporter prompt handles an empty laws text explicitly.
     """
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "mibo-render"})
@@ -77,14 +86,19 @@ def fetch_laws_text(url: str) -> str:
     capturing = False
     for ln in lines:
         if ln.startswith("## "):
-            if ln.strip().lower().startswith("## established laws"):
+            heading = ln.strip().lower()
+            if not capturing and any(hint in heading for hint in LAWS_SECTION_HINTS):
                 capturing = True
                 continue
             if capturing:  # reached the next H2 (e.g. "## Withdrawn laws") — stop.
                 break
         if capturing:
             out.append(ln)
-    return "\n".join(out).strip()
+    text = "\n".join(out).strip()
+    if not text:
+        print(f"warning: no retained-laws section found in {url} (heading renamed?); "
+              f"Law Status will be data-only.", file=sys.stderr)
+    return text
 
 
 # --- Small helpers ---------------------------------------------------------
