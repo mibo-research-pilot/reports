@@ -1,0 +1,651 @@
+{
+  "date": "2026-08-25",
+  "day": 17,
+  "query_set": "operational v0.1.1",
+  "collected_at_start": "2026-08-25T20:37:31.303590+09:00",
+  "collected_at_end": "2026-08-25T20:41:10.428194+09:00",
+  "timezone": "Asia/Tokyo",
+  "results": [
+    {
+      "query_id": "q001",
+      "language": "ja",
+      "category": "product_recommendation",
+      "query": "おすすめのプロジェクト管理ツールは？",
+      "system": "Gemini",
+      "provider": "google",
+      "model_requested": "gemini-3.5-flash",
+      "status": "ok",
+      "model_used": "gemini-3.5-flash",
+      "response": "プロジェクト管理ツールは、**「チームの規模」「プロジェクトの性質（開発、マーケティング、事務など）」「メンバーのITリテラシー」**によって最適なものが大きく異なります。\n\nここでは、特徴別に厳選したおすすめのツールを紹介します。\n\n---\n\n### 1. 初心者向け・直感的に使えるツール\n「まずはシンプルにタスクを可視化したい」「難しい機能は不要」という場合におすすめです。\n\n*   **Trello（トレロ）**\n    *   **特徴:** 付箋を貼って動かすような「カンバン方式」の元祖。直感的で誰でもすぐに使えます。\n    *   **向いている人:** 個人、数人の小規模チーム、視覚的にタスクを管理したい人。\n    *   **無料プラン:** あり（十分使えます）\n*   **Asana（アサナ）**\n    *   **特徴:** リスト、カンバン、タイムライン（ガントチャート）など、表示の切り替えがスムーズ。デザインが洗練されていて使いやすいです。\n    *   **向いている人:** 中規模以上のチーム、タスクの締め切りや担当者を明確にしたいチーム。\n    *   **無料プラン:** あり（最大10人まで）\n\n---\n\n### 2. 万能型・ドキュメントも一緒に管理したい場合\nタスクだけでなく、マニュアルや議事録なども一元管理したい場合におすすめです。\n\n*   **Notion（ノーション）**\n    *   **特徴:** メモ、Wiki（社内情報）、タスク管理、データベースなど、何でも作れる万能ツール。自由度が極めて高いです。\n    *   **向いている人:** ドキュメント管理とプロジェクト管理を1つにまとめたいチーム。\n    *   **無料プラン:** あり（個人は無料、チームは制限あり）\n\n---\n\n### 3. 日本企業に大人気・ガントチャート重視\n日本のビジネス習慣に合いやすく、サポートも日本語で安心なツールです。\n\n*   **Backlog（バックログ）**\n    *   **特徴:** 福岡発の国産ツール。キャラクターやアイコンが可愛らしく、非エンジニア（事務やマーケター）でも親しみやすい。ガントチャートが標準で使いやすい。\n    *   **向いている人:** クライアント（社外）を巻き込んだプロジェクト、Web制作、日本の企業。\n    *   **無料プラン:** 30日間無料お試し（基本は有料）\n\n---\n\n### 4. システム開発・ITプロジェクト向け\nアジャイル開発やバグ管理など、高度な開発管理が必要な場合です。\n\n*   **Jira Software（ジラ）**\n    *   **特徴:** 世界中のエンジニアが使う開発者向けデファクトスタンダード。スクラム開発やカンバンに最適化されており、GitHub等との連携も強力。\n    *   **向いている人:** ソフトウェア・アプリ開発チーム。\n    *   **無料プラン:** あり（最大10人まで）\n\n---\n\n### 5. 業務自動化・ガリガリ使いこなしたい多機能型\nデザイン性、カスタマイズ性、自動化に優れた海外の最先端ツールです。\n\n*   **monday.com（マンデードットコム）**\n    *   **特徴:** カラフルで視覚的に状況が分かりやすい。ノーコードで「このタスクが終わったら自動で担当者にメールする」といった自動化（オートメーション）が簡単に作れます。\n    *   **向いている人:** 業務効率化を進めたい中堅〜大手企業、マーケティング、デザイン部門。\n*   **ClickUp（クリックアップ）**\n    *   **特徴:** 「これ1つであらゆるアプリを代替する」を掲げる超多機能ツール。マインドマップやホワイトボード機能まで内蔵。\n    *   **向いている人:** ツールを1つに集約し、高度にカスタマイズしたい人。\n\n---\n\n### 💡 選び方のステップ\n\n1.  **メンバーのITスキルは？**\n    *   低い ➔ **Trello**, **Backlog**\n    *   普通以上 ➔ **Asana**, **Notion**\n    *   高い（開発者） ➔ **Jira**, **ClickUp**\n2.  **何を見たいか？**\n    *   進行状況 ➔ **Trello**, **Asana**（カンバン）\n    *   スケジュール（日程） ➔ **Backlog**, **Asana**（ガントチャート）\n    *   仕様書や議事録 ➔ **Notion**\n\nまずは**「Trello」**か**「Asana」**の無料プランから試してみるのが、失敗が少なくておすすめです。",
+      "usage": {
+        "promptTokenCount": 7,
+        "candidatesTokenCount": 1035,
+        "totalTokenCount": 2369,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 7
+          }
+        ],
+        "thoughtsTokenCount": 1327,
+        "serviceTier": "standard"
+      },
+      "latency_ms": 12388
+    },
+    {
+      "query_id": "q001",
+      "language": "ja",
+      "category": "product_recommendation",
+      "query": "おすすめのプロジェクト管理ツールは？",
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model_requested": "gpt-5.5",
+      "status": "ok",
+      "model_used": "gpt-5.5-2026-04-23",
+      "response": "目的によりますが、定番でおすすめしやすいプロジェクト管理ツールは以下です。\n\n## まずおすすめを選ぶなら\n\n### 1. **Asana**\nタスク管理・進捗管理をバランスよく使いたいチーム向け。  \n見やすく、ガントチャート、カンバン、リスト表示なども使えます。\n\n**向いているケース**\n- マーケ・営業・企画・制作チーム\n- 複数案件を並行管理したい\n- 非エンジニアも使いやすいツールがよい\n\n---\n\n### 2. **Trello**\nシンプルなカンバン方式で管理したい場合におすすめ。  \nカードを「未着手」「進行中」「完了」などに動かすだけで使えます。\n\n**向いているケース**\n- 小規模チーム\n- 個人のタスク管理\n- シンプルさ重視\n- 無料で始めたい\n\n---\n\n### 3. **Notion**\nドキュメント、議事録、タスク、ナレッジ管理をまとめたい場合に便利です。  \n自由度が高く、社内ポータルやプロジェクト管理を一体化できます。\n\n**向いているケース**\n- 情報共有もまとめたい\n- 議事録や仕様書も管理したい\n- 柔軟にカスタマイズしたい\n\n---\n\n### 4. **Backlog**\n日本企業で使いやすい、開発・制作案件向けのツールです。  \n課題管理、Wiki、Git、ガントチャートなどがまとまっています。\n\n**向いているケース**\n- システム開発・Web制作\n- 日本語UIやサポート重視\n- クライアントとの課題管理\n- エンジニアと非エンジニアが混在するチーム\n\n---\n\n### 5. **Jira**\n本格的なソフトウェア開発向け。  \nアジャイル開発、スクラム、スプリント管理に強いです。\n\n**向いているケース**\n- エンジニア中心の開発チーム\n- スクラム・カンバン運用\n- 大規模開発\n- 詳細なワークフロー管理が必要\n\n---\n\n### 6. **monday.com**\n見た目がわかりやすく、プロジェクト全体を可視化しやすいツールです。  \n業務管理、営業管理、制作進行など幅広く使えます。\n\n**向いているケース**\n- ビジュアル重視\n- チーム横断で進捗を見たい\n- 業務フローをカスタマイズしたい\n\n---\n\n## 目的別のおすすめ\n\n| 目的 | おすすめ |\n|---|---|\n| とにかく簡単に始めたい | Trello |\n| チームのタスク管理をしっかりしたい | Asana |\n| ドキュメントも一緒に管理したい | Notion |\n| 日本語で開発・制作案件を管理したい | Backlog |\n| 本格的なソフトウェア開発 | Jira |\n| 見た目やダッシュボード重視 | monday.com |\n\n## 個人的なおすすめ\n\n迷ったら、以下の選び方がよいです。\n\n- **小規模・シンプル運用**：Trello  \n- **一般的なチームプロジェクト管理**：Asana  \n- **社内情報管理も含めたい**：Notion  \n- **開発・制作会社**：Backlog  \n- **エンジニア組織**：Jira  \n\n特に日本のチームで、開発や制作も絡むなら **Backlog**、幅広い職種で使うなら **Asana** が無難です。",
+      "usage": {
+        "prompt_tokens": 16,
+        "completion_tokens": 906,
+        "total_tokens": 922,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 30,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "latency_ms": 13696
+    },
+    {
+      "query_id": "q001",
+      "language": "ja",
+      "category": "product_recommendation",
+      "query": "おすすめのプロジェクト管理ツールは？",
+      "system": "Claude",
+      "provider": "anthropic",
+      "model_requested": "claude-opus-4-8",
+      "status": "ok",
+      "model_used": "claude-opus-4-8",
+      "response": "プロジェクト管理ツールは用途やチームの規模によって最適なものが変わります。いくつか代表的なものを紹介します。\n\n## タスク管理がシンプルで使いやすい\n- **Trello** - カンバン方式で直感的。小規模チームや個人利用に最適\n- **Asana** - タスク管理とチーム連携のバランスが良い。中小規模向け\n\n## 多機能・カスタマイズ性が高い\n- **Notion** - ドキュメント・データベース・タスク管理を統合。柔軟だが設計に手間がかかる\n- **ClickUp** - 非常に多機能。設定次第で幅広く対応できる\n- **monday.com** - 視覚的で使いやすく、ワークフロー自動化も強力\n\n## エンジニア・開発チーム向け\n- **Jira** - アジャイル開発の定番。スクラム/カンバンに強い\n- **GitHub Projects** - コード管理と連携したい場合に便利\n\n## 大規模・エンタープライズ向け\n- **Microsoft Project** - 本格的なガントチャートや工程管理\n- **Wrike** - リソース管理やレポート機能が充実\n\n---\n\n**選ぶ際のポイント：**\n- チームの規模（個人／小規模／大規模）\n- 開発系か、一般業務か\n- ガントチャートやカンバンなど必要な機能\n- 予算（無料プランの有無）\n- 既存ツールとの連携（Slack、Googleなど）\n\n---\n\nもしよろしければ、以下を教えていただくと、より具体的におすすめできます：\n- **チームの人数**\n- **業種・用途**（開発、マーケティング、営業など）\n- **重視したい機能**\n- **予算感**\n\nどんな使い方を想定されていますか？",
+      "usage": {
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 595,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 11866
+    },
+    {
+      "query_id": "q001",
+      "language": "ja",
+      "category": "product_recommendation",
+      "query": "おすすめのプロジェクト管理ツールは？",
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model_requested": "sonar",
+      "status": "ok",
+      "model_used": "sonar",
+      "response": "目的によっておすすめは変わりますが、**迷ったら Asana・Trello・Backlog・Jira** の4つから選ぶのが無難です。[12][16][1]\n\n- **Asana**: 進捗管理やタスクの見える化をバランスよく使いたい場合に向いています。[16]\n- **Trello**: かんばん形式で、シンプルにタスクを管理したい小規模チーム向けです。[4][16]\n- **Backlog**: 担当者・期限を明確にして、確認漏れや遅延を防ぎたい場合に向いています。[1]\n- **Jira**: 開発チームや、より高度なプロジェクト管理をしたい場合の定番です。[1][12]\n\n用途別に絞るなら、次の選び方が実用的です。[12][16]\n\n| 目的 | おすすめ |\n|---|---|\n| シンプルに始めたい | Trello |\n| タスク・進捗をしっかり管理したい | Asana |\n| 日本語で使いやすく、開発案件も管理したい | Backlog |\n| ソフトウェア開発・アジャイル管理 | Jira |\n| 社内の情報共有もまとめたい | Notion |\n| 無料で幅広く使いたい | Bitrix24 |\n\nもしよければ、**「少人数向け」「無料重視」「日本語重視」「開発向け」**のどれかを教えてください。条件に合わせて3つまでに絞って提案できます。",
+      "usage": {
+        "completion_tokens": 388,
+        "cost": {
+          "input_tokens_cost": 1e-05,
+          "output_tokens_cost": 0.00039,
+          "request_cost": 0.005,
+          "total_cost": 0.0054
+        },
+        "prompt_tokens": 12,
+        "search_context_size": "low",
+        "total_tokens": 400
+      },
+      "latency_ms": 5150,
+      "citations": [
+        "https://it-trend.jp/project_management/article/33-0001",
+        "https://www.aspicjapan.org/asu/article/11490",
+        "https://lychee-redmine.jp/blogs/efficiency/tips-freeprojectmanagement/",
+        "https://freeconsultant.jp/column/c516/",
+        "https://www.itreview.jp/categories/project-management",
+        "https://lychee-redmine.jp/blogs/project/free-project-management-tools/",
+        "https://crewworks.net/column/project-management-tools/",
+        "https://tech-stock.com/magazine/project-management-tools/",
+        "https://dstmp.shachihata.co.jp/column/0220241129/",
+        "https://www.onamae.com/business/article/30530/",
+        "https://products.sint.co.jp/blog/project-management-tools-recommend",
+        "https://service.msols.com/blog/project-management-tool",
+        "https://kensetsu.gemba-tech.jp/list/project-management-tools/",
+        "https://document.wizbiz.jp/column/pj-tools/",
+        "https://products.sint.co.jp/blog/project-management-advanteges.html",
+        "https://asana.com/ja/resources/best-project-management-software",
+        "https://asana.com/ja/resources/best-project-planning-software",
+        "https://www.crowdlog.jp/blog/137172/",
+        "https://www.wrike.com/ja/project-management-guide/faq/what-are-project-management-tools/",
+        "https://biz.moneyforward.com/work-efficiency/basic/14156/"
+      ]
+    },
+    {
+      "query_id": "q002",
+      "language": "en",
+      "category": "product_recommendation",
+      "query": "What is the best CRM for small businesses?",
+      "system": "Gemini",
+      "provider": "google",
+      "model_requested": "gemini-3.5-flash",
+      "status": "ok",
+      "model_used": "gemini-3.5-flash",
+      "response": "There is no single \"best\" CRM (Customer Relationship Management) system for every small business because needs vary based on your budget, team size, industry, and goals. \n\nTo help you find the right one, here is a breakdown of the best CRMs for small businesses in 2024, categorized by what they do best.\n\n---\n\n### 1. HubSpot CRM: Best Overall & Best Free Option\nHubSpot is widely considered the gold standard for growing small businesses. It offers a surprisingly robust **free-forever plan** that includes contact management, email tracking, and basic live chat.\n\n*   **Best for:** Businesses that want room to grow and those focusing heavily on inbound marketing.\n*   **Pros:** \n    *   Extremely user-friendly interface.\n    *   The free tier is highly functional (unlimited users, up to 1 million contacts).\n    *   Excellent mobile app.\n*   **Cons:** Paid plans (Starter, Professional) get expensive very quickly as you scale.\n*   **Pricing:** Free; paid plans start at $15–$20/user/month.\n\n### 2. Zoho CRM: Best Value for Features\nZoho is the ultimate budget-friendly powerhouse. It offers features usually reserved for enterprise software (like AI assistants and advanced workflow automation) at a fraction of the cost.\n\n*   **Best for:** Budget-conscious businesses that need advanced customization and automation.\n*   **Pros:** \n    *   Highly customizable.\n    *   Integrates seamlessly with Zoho’s suite of 40+ other business apps (finance, HR, etc.).\n    *   Great AI features (Zia) in higher tiers.\n*   **Cons:** The interface can feel cluttered, and there is a steeper learning curve.\n*   **Pricing:** Free tier available; paid plans start at $14/user/month (billed annually).\n\n### 3. Pipedrive: Best for Visual Sales Pipelines\nPipedrive was designed by salespeople, for salespeople. It is built entirely around a visual \"deal pipeline\" (Kanban board) that makes tracking sales stages incredibly simple.\n\n*   **Best for:** Sales-driven businesses that want a simple, action-oriented pipeline.\n*   **Pros:** \n    *   Extremely easy to set up and use.\n    *   Excellent drag-and-drop visual interface.\n    *   Strong focus on \"activity-based selling\" (reminding you what to do next).\n*   **Cons:** No free tier; limited built-in marketing tools (you'll need integrations for email campaigns).\n*   **Pricing:** Starts at $14/user/month (billed annually).\n\n### 4. Copper: Best for Google Workspace (Gmail) Users\nCopper lives entirely inside Gmail and Google Calendar. It scrapes your emails to automatically update contact info, meaning you rarely have to manually input data.\n\n*   **Best for:** Teams that use Google Workspace and want a CRM that requires zero training.\n*   **Pros:** \n    *   No data entry; it automatically pulls contact history from Gmail.\n    *   Looks and feels just like Google’s interface.\n    *   Zero learning curve.\n*   **Cons:** No free tier; only works well if your business is 100% committed to Google Workspace.\n*   **Pricing:** Starts at $25/user/month (billed annually).\n\n### 5. Monday.com CRM: Best for Project Management + Sales\nWhile Monday.com started as a project management tool, its CRM product is excellent for businesses that need to manage a project *after* the sale is closed.\n\n*   **Best for:** Agencies, contractors, and service businesses where sales and execution are closely linked.\n*   **Pros:** \n    *   Incredibly customizable.\n    *   Allows you to track sales pipelines and project delivery in the same app.\n    *   Modern, colorful, and intuitive interface.\n*   **Cons:** CRM-specific features (like email tracking) are not as deep as dedicated CRMs like HubSpot.\n*   **Pricing:** CRM plans start at $12/user/month (minimum 3 users).\n\n---\n\n### How to Choose: A Quick Cheat Sheet\n\n*   **Choose HubSpot if:** You have a budget of $0, want something easy to use, or want marketing tools in the same dashboard.\n*   **Choose Zoho if:** You want the most features for the lowest price and don't mind a slight learning curve.\n*   **Choose Pipedrive if:** You have a dedicated sales team and want to focus purely on closing deals.\n*   **Choose Copper if:** You run your business out of Gmail and hate manual data entry.\n*   **Choose Monday.com if:** You need to manage projects, clients, and sales all in one place.",
+      "usage": {
+        "promptTokenCount": 9,
+        "candidatesTokenCount": 1037,
+        "totalTokenCount": 2041,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 9
+          }
+        ],
+        "thoughtsTokenCount": 995,
+        "serviceTier": "standard"
+      },
+      "latency_ms": 10135
+    },
+    {
+      "query_id": "q002",
+      "language": "en",
+      "category": "product_recommendation",
+      "query": "What is the best CRM for small businesses?",
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model_requested": "gpt-5.5",
+      "status": "ok",
+      "model_used": "gpt-5.5-2026-04-23",
+      "response": "The “best” CRM for a small business depends on your budget, sales process, and how much automation you need, but for most small businesses:\n\n## Best overall: **HubSpot CRM**\n**Why:** Easy to use, generous free plan, strong contact/deal management, email tracking, forms, marketing tools, and good integrations.\n\n**Best for:** Small businesses that want a CRM they can start using quickly and grow into over time.\n\n---\n\n## Other strong options\n\n### **Zoho CRM**\nBest for businesses that want lots of features at a lower price.  \nGood for sales automation, customization, and reporting.\n\n### **Pipedrive**\nBest for sales-focused teams.  \nVery visual pipeline management and simple deal tracking.\n\n### **Less Annoying CRM**\nBest for simplicity.  \nAffordable, easy to learn, and great for small teams that don’t need complex automation.\n\n### **Freshsales**\nBest for built-in calling, email, and AI features.  \nGood all-in-one sales CRM for growing teams.\n\n### **Salesforce Starter**\nBest if you expect to scale significantly.  \nPowerful, but can be more complex and expensive than other small-business options.\n\n---\n\n## Quick recommendation\nIf you’re not sure where to start, choose:\n\n**HubSpot CRM** if you want the safest all-around choice.  \n**Pipedrive** if your main focus is managing sales deals.  \n**Zoho CRM** if you want strong features at a lower cost.  \n**Less Annoying CRM** if you want something very simple.\n\nFor most small businesses, I’d recommend starting with **HubSpot CRM** because it’s easy, flexible, and has a free plan that’s actually useful.",
+      "usage": {
+        "prompt_tokens": 15,
+        "completion_tokens": 402,
+        "total_tokens": 417,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 48,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "latency_ms": 6428
+    },
+    {
+      "query_id": "q002",
+      "language": "en",
+      "category": "product_recommendation",
+      "query": "What is the best CRM for small businesses?",
+      "system": "Claude",
+      "provider": "anthropic",
+      "model_requested": "claude-opus-4-8",
+      "status": "ok",
+      "model_used": "claude-opus-4-8",
+      "response": "There's no single \"best\" CRM—it depends on your specific needs. But here are strong options across different priorities:\n\n**Easiest to start with / free tier**\n- **HubSpot CRM** – Generous free plan, intuitive, scales well as you grow. Great if you want marketing + sales tools together.\n- **Zoho CRM** – Affordable, feature-rich, good for businesses already using other Zoho apps.\n\n**Best for sales-focused teams**\n- **Pipedrive** – Built around visual sales pipelines, simple and easy to adopt. Popular with small sales teams.\n- **Close** – Good for teams that do a lot of calling/emailing.\n\n**Best for simplicity / very small teams**\n- **Freshsales** – Clean interface, reasonable pricing.\n- **Less Annoying CRM** – Exactly what it sounds like; flat pricing, minimal learning curve.\n\n**Best if you want an all-in-one business platform**\n- **Salesforce (Starter/Essentials)** – Powerful and highly customizable, but more complex and pricier. Better once you have dedicated resources.\n\n**Questions to help you choose:**\n1. **Budget** – Free, under $20/user/month, or willing to invest more?\n2. **Team size** – Just you, or a growing sales team?\n3. **Main goal** – Managing contacts, closing deals, email marketing, or all of it?\n4. **Integrations** – What tools do you already use (email, accounting, e-commerce)?\n5. **Technical comfort** – Do you want plug-and-play or heavy customization?\n\n**A common recommendation:** For most small businesses starting out, **HubSpot's free CRM** or **Pipedrive** are safe bets—easy to learn with room to grow.\n\nIf you tell me a bit about your business (industry, team size, budget, main goal), I can give you a more tailored recommendation.",
+      "usage": {
+        "input_tokens": 19,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 614,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 9658
+    },
+    {
+      "query_id": "q002",
+      "language": "en",
+      "category": "product_recommendation",
+      "query": "What is the best CRM for small businesses?",
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model_requested": "sonar",
+      "status": "ok",
+      "model_used": "sonar",
+      "response": "There is **no single best CRM** for every small business; the best choice depends on whether you prioritize **ease of use, low cost, sales pipelines, automation, or scalability**.[5][8][15]\n\nIf you want the shortest practical answer, these are the most commonly recommended picks:\n\n- **Zoho CRM** — best overall value for many small businesses, especially if you want strong features on a budget.[14][16][20]\n- **HubSpot CRM** — best for an easy start and an all-in-one platform, with a popular free option.[11][12]\n- **Pipedrive** — best for simple, sales-focused pipeline management.[5][8][9]\n- **Salesforce** — best if you expect to scale fast or need deeper customization, though it is more complex.[1][2][8][13]\n- **Bigin by Zoho CRM** — best if you want a very simple small-business CRM with adaptable dashboards and integrations.[3]\n\nIf I had to pick **one default recommendation** for most small businesses, I’d choose **Zoho CRM** for overall balance of price and capability.[14][16][20] If your team wants the easiest onboarding and a strong free tier, choose **HubSpot CRM** instead.[11][12]",
+      "usage": {
+        "completion_tokens": 290,
+        "cost": {
+          "input_tokens_cost": 1e-05,
+          "output_tokens_cost": 0.00029,
+          "request_cost": 0.005,
+          "total_cost": 0.0053
+        },
+        "prompt_tokens": 9,
+        "search_context_size": "low",
+        "total_tokens": 299
+      },
+      "latency_ms": 4877,
+      "citations": [
+        "https://www.techradar.com/best/best-crm-for-small-business",
+        "https://blog.salesflare.com/best-small-business-crm",
+        "https://www.pcmag.com/picks/the-best-small-business-crm-software",
+        "https://innowise.com/blog/best-crm-for-small-business/",
+        "https://fayedigital.com/blog/best-crm-for-small-business/",
+        "https://www.forbes.com/advisor/business/software/best-crm-small-business/",
+        "https://croclub.com/tools/best-crm-for-small-business/",
+        "https://routine-automation.com/blog/best-crm-for-small-business/",
+        "https://www.techrepublic.com/article/best-crm-small-business/",
+        "https://www.reddit.com/r/CRM/comments/1e5141p/best_and_inexpensive_crm_for_small_business/",
+        "https://fitsmallbusiness.com/best-crm-for-small-business/",
+        "https://blog.hubspot.com/sales/all-in-one-crm",
+        "https://www.salesforce.com/crm/crm-for-small-business/",
+        "https://tech.co/crm-software/best-crm-software-small-business",
+        "https://slack.com/blog/crm/best-crm-for-small-business",
+        "https://www.capterra.com/customer-relationship-management-software/s/small-businesses/",
+        "https://zapier.com/blog/best-crms-for-small-business/",
+        "https://www.uschamber.com/co/start/strategy/low-cost-crm-tools",
+        "https://www.zoho.com/crm/small-business-crm-software/",
+        "https://mailchimp.com/resources/best-crm-for-small-business/"
+      ]
+    },
+    {
+      "query_id": "q003",
+      "language": "ja",
+      "category": "health",
+      "query": "睡眠の質を上げる方法を教えて",
+      "system": "Gemini",
+      "provider": "google",
+      "model_requested": "gemini-3.5-flash",
+      "status": "ok",
+      "model_used": "gemini-3.5-flash",
+      "response": "睡眠の質を高めるためには、**「朝の過ごし方」「日中の習慣」「寝る前の準備」「寝室の環境」**の4つのアプローチが重要です。\n\nすべてを一度にやる必要はありません。できそうなところから1つずつ試してみてください。\n\n---\n\n### 1. 朝〜日中の過ごし方（体内時計を整える）\n睡眠の質は、朝起きた瞬間から決まります。\n\n*   **朝起きたら太陽の光を浴びる**\n    *   光を浴びることで体内時計がリセットされ、約15〜16時間後に眠気を作るホルモン（メラトニン）が分泌されます。\n*   **朝食をしっかり食べる**\n    *   体に「朝が来た」と認識させ、自律神経を整えます。\n*   **日中に適度な運動をする**\n    *   夕方までに軽いウォーキングやストレッチをすると、夜に適度な疲労感が生まれ、深い眠りに入りやすくなります。\n*   **カフェインは15時まで**\n    *   コーヒーや緑茶などのカフェインは体内に5〜8時間残るため、夕方以降は控えましょう。\n\n---\n\n### 2. 夕方〜就寝前の準備（副交感神経を優位にする）\n体をリラックスモード（副交感神経優位）に切り替えていきます。\n\n*   **お風呂は「湯船に浸かる」（入眠の90分前がベスト）**\n    *   38〜40度くらいのぬるめのお湯に15〜20分浸かります。一度体の芯（深部体温）を温め、それが下がっていく時に強い眠気が訪れます。\n*   **夕食は寝る3時間前までに済ませる**\n    *   寝る直前に食べると、睡眠中に胃腸が働き続けてしまい、眠りが浅くなります。\n*   **スマホやパソコンは寝る1時間前から触らない**\n    *   画面のブルーライトは脳に「朝だ」と錯覚させます。スマホを見る代わりに、読書や静かな音楽を聴くのがおすすめです。\n*   **部屋の照明を暗め（暖色系）にする**\n    *   明るい白い光は脳を刺激します。間接照明などを活用しましょう。\n\n---\n\n### 3. 寝室の環境づくり（快適な空間を作る）\n途中で目が覚めるのを防ぎ、深い睡眠（ノンレム睡眠）を維持します。\n\n*   **室温と湿度を適切に保つ**\n    *   夏：26〜28℃、冬：16〜20℃\n    *   湿度：50%〜60%（加湿器などを活用）\n*   **寝具とパジャマにこだわる**\n    *   枕の高さが合っているか確認しましょう。\n    *   パジャマは吸湿性と通気性の良い「綿」や「シルク」がおすすめです。スウェットやジャージは熱がこもりやすいので避けましょう。\n*   **遮光カーテンや耳栓を使う**\n    *   わずかな光や雑音も睡眠を妨げます。\n\n---\n\n### 4. やってはいけない「NG習慣」\n*   **「寝酒（アルコール）」は避ける**\n    *   お酒は寝付きを良くしますが、夜中に目が覚めやすくなり、睡眠の質を著しく下げます。\n*   **ベッドの上でスマホを見たり、考えごとをしたりしない**\n    *   脳が「ベッド＝起きている場所（悩む場所）」と学習してしまいます。布団に入ったら寝るだけ、を徹底しましょう。\n\n---\n\n### 💡 どうしても眠れないときは？\n布団に入って15分以上眠れないときは、**一度ベッドから出てください。**\n薄暗い部屋で、ソファなどに座ってボーッと過ごし、眠くなったら再びベッドに入りましょう。「眠らなきゃ」というプレッシャーをなくすことが大切です。\n\nまずは**「朝、太陽の光を浴びる」「寝る1時間前はスマホを見ない」**の2つから始めてみるのが効果を実感しやすいためおすすめです。",
+      "usage": {
+        "promptTokenCount": 8,
+        "candidatesTokenCount": 931,
+        "totalTokenCount": 1876,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 8
+          }
+        ],
+        "thoughtsTokenCount": 937,
+        "serviceTier": "standard"
+      },
+      "latency_ms": 10263
+    },
+    {
+      "query_id": "q003",
+      "language": "ja",
+      "category": "health",
+      "query": "睡眠の質を上げる方法を教えて",
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model_requested": "gpt-5.5",
+      "status": "ok",
+      "model_used": "gpt-5.5-2026-04-23",
+      "response": "睡眠の質を上げるには、「体内時計を整える」「寝る前に脳と体を落ち着かせる」「寝室環境を整える」の3つが重要です。\n\n## 1. 起きる時間を固定する\n休日も含めて、できるだけ毎日同じ時間に起きましょう。  \n寝る時間よりも「起きる時間」を一定にする方が、体内時計が整いやすいです。\n\n## 2. 朝に日光を浴びる\n起床後30分以内にカーテンを開ける、外に出るなどして日光を浴びると、夜に眠くなりやすくなります。  \n曇りの日でも効果があります。\n\n## 3. 寝る前のスマホ・PCを控える\n寝る1時間前はスマホ、PC、強い照明をなるべく避けましょう。  \nブルーライトだけでなく、SNSや動画による脳の刺激も睡眠を浅くします。\n\n## 4. カフェインは午後以降控える\nコーヒー、緑茶、紅茶、エナジードリンクなどのカフェインは、体内に長く残ります。  \n眠りが浅い人は、午後2〜3時以降は控えるのがおすすめです。\n\n## 5. 寝る前の飲酒を避ける\nお酒は寝つきを良く感じることがありますが、睡眠の後半を浅くし、中途覚醒を増やします。  \n睡眠の質を上げたいなら、寝酒は避けた方がよいです。\n\n## 6. 寝室を快適にする\n目安としては以下です。\n\n- 室温：暑すぎず寒すぎず、快適な温度  \n- 明るさ：できるだけ暗く  \n- 音：静かに、必要なら耳栓やホワイトノイズ  \n- 寝具：体に合った枕・マットレス  \n- 湿度：乾燥しすぎないようにする\n\n## 7. 寝る前のルーティンを作る\n毎晩同じ流れを作ると、脳が「そろそろ寝る時間」と認識しやすくなります。\n\n例：\n\n- ぬるめのお風呂に入る  \n- 軽いストレッチ  \n- 深呼吸  \n- 読書  \n- 静かな音楽  \n- 照明を暗くする\n\n## 8. 入浴は寝る1〜2時間前に\nぬるめのお風呂に入ると、一度体温が上がり、その後下がるタイミングで眠気が出やすくなります。  \n熱すぎるお湯は逆に目が覚めることがあります。\n\n## 9. 昼寝は短めにする\n昼寝をするなら、15〜20分程度がおすすめです。  \n夕方以降の昼寝や長すぎる昼寝は、夜の睡眠に影響します。\n\n## 10. 寝床で考え事をしない\n布団に入って20〜30分眠れない場合は、一度起きて暗めの部屋で静かに過ごし、眠くなってから戻るのがおすすめです。  \n「布団＝眠れない場所」と脳が覚えてしまうのを防げます。\n\n## まず試すならこの3つ\n1. 毎朝同じ時間に起きる  \n2. 朝に日光を浴びる  \n3. 寝る1時間前からスマホを控える  \n\nこれだけでも睡眠の質が改善することがあります。\n\nなお、強い不眠が数週間以上続く、日中の眠気が強い、いびきや無呼吸がある、気分の落ち込みがある場合は、睡眠外来や内科・精神科などに相談するのがおすすめです。",
+      "usage": {
+        "prompt_tokens": 18,
+        "completion_tokens": 949,
+        "total_tokens": 967,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 26,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "latency_ms": 21676
+    },
+    {
+      "query_id": "q003",
+      "language": "ja",
+      "category": "health",
+      "query": "睡眠の質を上げる方法を教えて",
+      "system": "Claude",
+      "provider": "anthropic",
+      "model_requested": "claude-opus-4-8",
+      "status": "ok",
+      "model_used": "claude-opus-4-8",
+      "response": "# 睡眠の質を上げる方法\n\n## 🌙 就寝前の習慣\n\n**光のコントロール**\n- 就寝1〜2時間前からスマホ・PCのブルーライトを控える\n- 寝室は暗くする（遮光カーテンなど）\n\n**入浴のタイミング**\n- 就寝90分前に入浴すると、体温が下がるタイミングで眠くなりやすい\n- ぬるめ（38〜40℃）で15分ほど\n\n**リラックス**\n- 軽いストレッチや深呼吸\n- 読書やヒーリング音楽など落ち着く活動\n\n## ☕ 日中の過ごし方\n\n- **朝、太陽の光を浴びる**（体内時計がリセットされる）\n- **適度な運動**（ただし就寝直前の激しい運動は避ける）\n- **昼寝は15〜20分まで**、15時以降は避ける\n\n## 🍵 飲食の注意点\n\n| 避けたいもの | 理由 |\n|---|---|\n| カフェイン（夕方以降） | 覚醒作用が続く |\n| アルコール | 眠りが浅くなる |\n| 就寝直前の食事 | 消化活動で眠りが妨げられる |\n\n## 🛏️ 睡眠環境を整える\n\n- 室温：夏26℃前後、冬18〜20℃程度\n- 湿度：50〜60%\n- 自分に合った枕・マットレスを選ぶ\n\n## ⏰ 生活リズム\n\n- **毎日同じ時間に寝起きする**（休日も大きくずらさない）\n- 眠くなってから布団に入る\n\n---\n\nまずは**「朝日を浴びる」「就寝前のスマホを控える」「起床時間を一定にする」**あたりから始めるのがおすすめです。\n\n特に気になる悩み（寝つきが悪い・途中で目が覚める・朝スッキリしない など）はありますか？それに合わせて詳しくお伝えできます。",
+      "usage": {
+        "input_tokens": 22,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 660,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 12432
+    },
+    {
+      "query_id": "q003",
+      "language": "ja",
+      "category": "health",
+      "query": "睡眠の質を上げる方法を教えて",
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model_requested": "sonar",
+      "status": "ok",
+      "model_used": "sonar",
+      "response": "睡眠の質を上げるには、**起床時間を一定にすること**、**朝に日光を浴びること**、**寝る前のスマホ・PCを控えること**が特に効果的です。[1][7][14][15]\n\n実践しやすい方法を挙げると、次の通りです。\n\n- **毎日同じ時間に起きる・寝る**ことで体内時計を整える。[4][14]\n- **朝起きたら日光を浴びる**ことで、睡眠と覚醒のリズムを整える。[1][10]\n- **就寝1〜2時間前はスマホやPC、強い照明を避ける**。光はメラトニン分泌を遅らせ、眠りにくくします。[3][7][17]\n- **夕食は寝る2〜3時間前までに済ませる**。消化が終わる前に寝ると睡眠の妨げになります。[2][4][16]\n- **就寝90〜120分前にぬるめの入浴をする**。体温の下がり方が眠気につながりやすくなります。[4][9][16]\n- **日中に体を動かす**。適度な運動は寝つきと睡眠の深さに役立ちます。[4][19]\n- **寝室を暗く、静かに、快適な温湿度に保つ**。光や音、暑さ寒さは眠りを浅くします。[6][7][11][17]\n- **カフェインやアルコールの摂取時間に注意する**。夕方以降のカフェインや寝酒は睡眠を乱しやすいです。[6][18]\n\nすぐ始めるなら、まずは  \n**「起床時刻を固定する」→「朝日を浴びる」→「寝る1時間前から画面を見ない」**  \nの3つだけでも効果が出やすいです。[1][7][14][15]\n\nもし **2〜3週間以上** 眠りの悪さが続く、日中の強い眠気がある、いびきや呼吸停止を指摘される場合は、睡眠時無呼吸なども考えられるため医療機関への相談が勧められます。[6][15]",
+      "usage": {
+        "completion_tokens": 592,
+        "cost": {
+          "input_tokens_cost": 1e-05,
+          "output_tokens_cost": 0.00059,
+          "request_cost": 0.005,
+          "total_cost": 0.0056
+        },
+        "prompt_tokens": 11,
+        "search_context_size": "low",
+        "total_tokens": 603
+      },
+      "latency_ms": 7475,
+      "citations": [
+        "https://www.fujiyaku-direct.com/health_information/article/088main",
+        "https://www.ibiki-med.clinic/column_n/sleep-quality/improve-sleep-quality/",
+        "https://wellness.shionogi.co.jp/insomnia/trial/trial.html",
+        "https://www.kao.co.jp/health-care/condition-care/006/",
+        "https://www.daiwahouse.co.jp/tryie/column/life/better_sleep_tips/index.html",
+        "https://ic-clinic-ikebukuro.com/column-sleep-quality-improvement-methods/",
+        "https://kennet.mhlw.go.jp/slp/event/sleep_quality/index.html",
+        "https://www.hiro-clinic.or.jp/medicine/2025/10/20/sleep-quality-improvement/",
+        "https://mencli.ashitano.clinic/2474",
+        "https://www.nihonbashi-nishikawa.com/column/mattress/sleep-quality/",
+        "https://www.kamaboko.com/fishprotein/articles/sleep/",
+        "https://note.com/kokoda1/n/n35560ceefb78",
+        "https://www.wellness.itolator.co.jp/column/013.html",
+        "https://www.iyobank.co.jp/sp/iyomemo/entry/20230627.html",
+        "https://fukunaga-clinic.com/blog/sas/7ways-to-improve-the-quality-of-your-sleep/",
+        "https://www.glico.com/jp/powerpro/citric-acid/entry91/",
+        "https://www.mhlw.go.jp/content/10904750/001181265.pdf",
+        "https://banno-clinic.biz/sleep-quality/",
+        "https://www.well-aging.or.jp/kisaragi/suimin.html",
+        "https://brand.taisho.co.jp/contents/tsukare/457/"
+      ]
+    },
+    {
+      "query_id": "q004",
+      "language": "en",
+      "category": "technical",
+      "query": "How do I implement RAG with a vector database?",
+      "system": "Gemini",
+      "provider": "google",
+      "model_requested": "gemini-3.5-flash",
+      "status": "ok",
+      "model_used": "gemini-3.5-flash",
+      "response": "Implementing Retrieval-Augmented Generation (RAG) with a vector database involves building a pipeline that takes a user query, finds relevant information from your private data (stored as vectors), and passes that information to a Large Language Model (LLM) to generate an accurate, context-aware answer.\n\nHere is a comprehensive guide to implementing RAG, from architecture to code.\n\n---\n\n### 1. The RAG Architecture Flow\n\nThe process is divided into two main phases: **Ingestion** (offline) and **Retrieval/Generation** (online).\n\n```text\n[Ingestion Phase]\nRaw Data (PDFs, Docs) ➔ Chunking ➔ Embedding Model ➔ Vector Database\n\n[Retrieval & Generation Phase]\nUser Query ➔ Embedding Model ➔ Vector Search (Similarity) ➔ Retrieved Chunks\n                                                                    ↓\nLLM Response 🌁 [LLM] 🔀 Context (Chunks) + User Query 🎠-------------------┘\n```\n\n---\n\n### 2. Step-by-Step Implementation\n\nWe will use **Python**, **LangChain** (orchestration), **ChromaDB** (a lightweight, local vector database), and **OpenAI** (for embeddings and LLM).\n\n#### Prerequisites\nInstall the required libraries:\n```bash\npip install langchain langchain-openai langchain-community chromadb tiktoken\n```\n\nSet your OpenAI API key in your environment:\n```bash\nexport OPENAI_API_KEY=\"your-api-key-here\"\n```\n\n#### Complete Python Implementation\n\nHere is the complete code to load documents, embed them, store them in ChromaDB, and run a RAG query.\n\n```python\nimport os\nfrom langchain_community.document_loaders import TextLoader\nfrom langchain_text_splitters import RecursiveCharacterTextSplitter\nfrom langchain_openai import OpenAIEmbeddings, ChatOpenAI\nfrom langchain_community.vectorstores import Chroma\nfrom langchain_core.prompts import ChatPromptTemplate\nfrom langchain_core.runnables import RunnablePassthrough\nfrom langchain_core.output_parsers import StrOutputParser\n\n# ==========================================\n# STEP 1: Ingest and Chunk the Data\n# ==========================================\n# For this example, create a dummy text file\nwith open(\"company_policy.txt\", \"w\") as f:\n    f.write(\n        \"The work-from-home policy at Acme Corp allows employees to work remotely \"\n        \"up to 3 days a week. Employees must core hours between 10:00 AM and 3:00 PM EST. \"\n        \"Expense reimbursement for home office setup is capped at $500.\"\n    )\n\n# Load the document\nloader = TextLoader(\"company_policy.txt\")\ndocs = loader.load()\n\n# Split the document into smaller chunks\n# (Crucial so that embeddings represent specific, concise ideas)\ntext_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)\nchunks = text_splitter.split_documents(docs)\n\nprint(f\"Created {len(chunks)} chunks from the document.\")\n\n# ==========================================\n# STEP 2: Generate Embeddings & Store in Vector DB\n# ==========================================\n# Initialize the embedding model\nembeddings = OpenAIEmbeddings(model=\"text-embedding-3-small\")\n\n# Initialize ChromaDB (it will save data in-memory for this example)\n# To persist on disk, add `persist_directory=\"./chroma_db\"`\nvector_store = Chroma.from_documents(chunks, embeddings)\n\nprint(\"Vectors successfully stored in ChromaDB.\")\n\n# ==========================================\n# STEP 3: Setup Retrieval and the Prompt\n# ==========================================\n# Create a retriever (fetches top K most similar chunks)\nretriever = vector_store.as_retriever(search_kwargs={\"k\": 2})\n\n# Define the Prompt Template\ntemplate = \"\"\"\nYou are a helpful assistant. Answer the question based ONLY on the following context. \nIf you do not know the answer, say \"I don't know\".\n\nContext:\n{context}\n\nQuestion: {question}\nAnswer:\n\"\"\"\nprompt = ChatPromptTemplate.from_template(template)\n\n# Initialize the LLM\nllm = ChatOpenAI(model=\"gpt-4o-mini\", temperature=0)\n\n# ==========================================\n# STEP 4: Build the RAG Chain & Query\n# ==========================================\n# Define how the data flows\ndef format_docs(docs):\n    return \"\\n\\n\".join([doc.page_content for doc in docs])\n\nrag_chain = (\n    {\"context\": retriever | format_docs, \"question\": RunnablePassthrough()}\n    | prompt\n    | llm\n    | StrOutputParser()\n)\n\n# Test the RAG system\nquery = \"What is the budget for home office setup and how many days can I work remotely?\"\nresponse = rag_chain.invoke(query)\n\nprint(\"\\n--- QUERY ---\")\nprint(query)\nprint(\"\\n--- RESPONSE ---\")\nprint(response)\n```\n\n---\n\n### 3. Key Components Explained\n\nTo move from this prototype to production, you need to understand the configuration of each step:\n\n#### A. Chunking Strategy\nYou cannot pass a 100-page PDF to an embedding model all at once. You must break it up.\n*   **RecursiveCharacterTextSplitter:** Splits by paragraphs, then sentences, then words to keep semantic concepts together.\n*   **Chunk Size:** Typically 500–1000 tokens. Smaller chunks = more precise retrieval; larger chunks = more context for the LLM.\n*   **Overlap:** Typically 10–20% of the chunk size. This ensures context is not lost at the split boundaries.\n\n#### B. The Vector Database\nWhile we used **Chroma** (great for local testing), here is how to choose a vector DB for production:\n*   **Pinecone:** Fully managed, cloud-native, scales incredibly well, SaaS.\n*   **Milvus / Qdrant:** Open-source, highly performant, self-hosted or managed cloud. Great for massive datasets.\n*   **pgvector:** An extension for PostgreSQL. Excellent if you already use Postgres and want to keep metadata and vectors in one database.\n*   **Weaviate:** Open-source, supports rich schemas and hybrid search out of the box.\n\n#### C. Embeddings\nAn embedding model converts text into a list of numbers (e.g., a vector of 1536 dimensions).\n*   **Proprietary:** OpenAI (`text-embedding-3-small` or `3-large`), Cohere.\n*   **Open Source:** HuggingFace models (e.g., `BAAI/bge-large-en-v1.5`) which you can run locally for free.\n\n---\n\n### 4. Advanced RAG Techniques (For Production)\n\nSimple RAG (like the code above) fails on complex questions. To improve accuracy, implement these advanced techniques:\n\n1.  **Hybrid Search:** Combine Vector Search (semantic similarity) with traditional Keyword Search (BM25) to get the best of both worlds (e.g., finding exact product IDs or names).\n2.  **Re-ranking (e.g., Cohere Rerank):** Retrieve the top 25 documents using fast vector search, then use a more powerful \"Re-ranker\" model to evaluate those 25 and pass only the absolute top 3 to the LLM.\n3.  **Metadata Filtering:** If your user is only asking about \"2024 financial reports,\" filter the vector search using metadata tags (e.g., `year = 2024`) before doing the vector math.\n4.  **Query Rewriting:** Use an LLM to rewrite the user's messy query into a better search query before sending it to the vector database.",
+      "usage": {
+        "promptTokenCount": 11,
+        "candidatesTokenCount": 1734,
+        "totalTokenCount": 2823,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 11
+          }
+        ],
+        "thoughtsTokenCount": 1078,
+        "serviceTier": "standard"
+      },
+      "latency_ms": 13483
+    },
+    {
+      "query_id": "q004",
+      "language": "en",
+      "category": "technical",
+      "query": "How do I implement RAG with a vector database?",
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model_requested": "gpt-5.5",
+      "status": "ok",
+      "model_used": "gpt-5.5-2026-04-23",
+      "response": "Retrieval-Augmented Generation (RAG) with a vector database usually has two phases:\n\n1. **Indexing / ingestion**: load documents, split into chunks, embed them, store embeddings in a vector DB.\n2. **Query-time retrieval + generation**: embed the user query, retrieve relevant chunks, pass them to an LLM as context, generate an answer.\n\n---\n\n## 1. High-level architecture\n\n```text\nDocuments\n   ↓\nLoad + clean text\n   ↓\nChunk text\n   ↓\nCreate embeddings\n   ↓\nStore in vector database\n   ↓\n\nUser question\n   ↓\nEmbed question\n   ↓\nSearch vector database\n   ↓\nRetrieve relevant chunks\n   ↓\nSend question + chunks to LLM\n   ↓\nAnswer with citations/context\n```\n\n---\n\n## 2. Choose your components\n\nYou need:\n\n### Vector database\nCommon choices:\n\n- **Chroma**: simple local/dev usage\n- **FAISS**: local, fast similarity search\n- **Pinecone**: managed cloud vector DB\n- **Weaviate**\n- **Qdrant**\n- **Milvus**\n\n### Embedding model\nOptions:\n\n- OpenAI embeddings: `text-embedding-3-small`, `text-embedding-3-large`\n- Cohere embeddings\n- Hugging Face sentence-transformers\n- Voyage AI embeddings\n\n### LLM\nOptions:\n\n- OpenAI GPT models\n- Anthropic Claude\n- Mistral\n- Llama-based local models\n\n---\n\n## 3. Basic implementation using Python, OpenAI, and Chroma\n\nInstall dependencies:\n\n```bash\npip install openai chromadb tiktoken\n```\n\nSet your API key:\n\n```bash\nexport OPENAI_API_KEY=\"your_api_key\"\n```\n\n---\n\n## 4. Create embeddings and store documents\n\n```python\nfrom openai import OpenAI\nimport chromadb\nfrom chromadb.config import Settings\n\nclient = OpenAI()\n\nchroma_client = chromadb.Client(Settings())\n\ncollection = chroma_client.create_collection(\n    name=\"my_documents\"\n)\n\ndef embed_text(text: str):\n    response = client.embeddings.create(\n        model=\"text-embedding-3-small\",\n        input=text\n    )\n    return response.data[0].embedding\n\n\ndef chunk_text(text, chunk_size=800, overlap=100):\n    chunks = []\n    start = 0\n\n    while start < len(text):\n        end = start + chunk_size\n        chunks.append(text[start:end])\n        start += chunk_size - overlap\n\n    return chunks\n\n\ndocuments = [\n    {\n        \"id\": \"doc1\",\n        \"text\": \"\"\"\n        RAG stands for Retrieval-Augmented Generation. It combines search over external\n        knowledge sources with language model generation. The model retrieves relevant\n        documents and uses them as context to answer questions.\n        \"\"\",\n        \"source\": \"rag_intro.txt\"\n    },\n    {\n        \"id\": \"doc2\",\n        \"text\": \"\"\"\n        Vector databases store high-dimensional embeddings. They are useful for semantic\n        search because similar meanings are located near each other in vector space.\n        \"\"\",\n        \"source\": \"vector_db.txt\"\n    }\n]\n\nfor doc in documents:\n    chunks = chunk_text(doc[\"text\"])\n\n    for i, chunk in enumerate(chunks):\n        embedding = embed_text(chunk)\n\n        collection.add(\n            ids=[f\"{doc['id']}_chunk_{i}\"],\n            embeddings=[embedding],\n            documents=[chunk],\n            metadatas=[{\n                \"source\": doc[\"source\"],\n                \"chunk_index\": i\n            }]\n        )\n```\n\nThis code:\n\n- Splits each document into chunks\n- Embeds each chunk\n- Stores the chunk, embedding, and metadata in Chroma\n\n---\n\n## 5. Retrieve relevant chunks\n\n```python\ndef retrieve_context(query, top_k=3):\n    query_embedding = embed_text(query)\n\n    results = collection.query(\n        query_embeddings=[query_embedding],\n        n_results=top_k\n    )\n\n    return results\n```\n\nExample:\n\n```python\nquery = \"What is RAG?\"\nresults = retrieve_context(query)\n\nfor doc, metadata in zip(results[\"documents\"][0], results[\"metadatas\"][0]):\n    print(\"Source:\", metadata[\"source\"])\n    print(doc)\n    print(\"---\")\n```\n\n---\n\n## 6. Generate an answer using retrieved context\n\n```python\ndef answer_question(query):\n    results = retrieve_context(query, top_k=3)\n\n    retrieved_chunks = results[\"documents\"][0]\n    metadatas = results[\"metadatas\"][0]\n\n    context = \"\\n\\n\".join(\n        [\n            f\"Source: {metadata['source']}\\nContent: {chunk}\"\n            for chunk, metadata in zip(retrieved_chunks, metadatas)\n        ]\n    )\n\n    prompt = f\"\"\"\nYou are a helpful assistant. Answer the question using only the context below.\nIf the answer is not in the context, say you don't know.\n\nContext:\n{context}\n\nQuestion:\n{query}\n\nAnswer:\n\"\"\"\n\n    response = client.chat.completions.create(\n        model=\"gpt-4.1-mini\",\n        messages=[\n            {\"role\": \"system\", \"content\": \"You answer questions using retrieved context.\"},\n            {\"role\": \"user\", \"content\": prompt}\n        ],\n        temperature=0\n    )\n\n    return response.choices[0].message.content\n```\n\nUsage:\n\n```python\nprint(answer_question(\"What is RAG?\"))\n```\n\n---\n\n## 7. Important RAG design choices\n\n### Chunk size\n\nA common starting point:\n\n```text\n500-1,000 tokens per chunk\n50-150 tokens overlap\n```\n\nToo small:\n\n- Context may be incomplete\n\nToo large:\n\n- Retrieval becomes noisy\n- More expensive\n- Less precise\n\n---\n\n### Metadata\n\nStore metadata with every chunk:\n\n```json\n{\n  \"source\": \"employee_handbook.pdf\",\n  \"page\": 12,\n  \"section\": \"Benefits\",\n  \"created_at\": \"2025-01-10\"\n}\n```\n\nThis lets you:\n\n- Show citations\n- Filter by document type\n- Filter by user permissions\n- Debug bad answers\n\n---\n\n### Retrieval parameters\n\nCommon defaults:\n\n```python\ntop_k = 3 to 10\n```\n\nIf results are poor, try:\n\n- Increasing `top_k`\n- Better chunking\n- Better embedding model\n- Hybrid search\n- Reranking\n\n---\n\n## 8. Production improvements\n\nFor a more robust RAG system, add:\n\n### Hybrid search\n\nCombine:\n\n- Vector search for semantic similarity\n- Keyword/BM25 search for exact terms\n\nThis helps with names, IDs, acronyms, error codes, and technical terms.\n\n---\n\n### Reranking\n\nAfter retrieving, rerank results with a cross-encoder or reranking model.\n\nPipeline:\n\n```text\nRetrieve top 20 chunks\n   ↓\nRerank top 20\n   ↓\nKeep best 5\n   ↓\nSend to LLM\n```\n\nThis often improves answer quality significantly.\n\n---\n\n### Citations\n\nAsk the model to cite sources:\n\n```text\nAnswer using the context. Include citations in the format [source].\n```\n\nExample output:\n\n```text\nRAG combines retrieval from external documents with language model generation [rag_intro.txt].\n```\n\n---\n\n### Access control\n\nIf users should only access certain documents, filter retrieval by metadata:\n\n```python\ncollection.query(\n    query_embeddings=[query_embedding],\n    n_results=5,\n    where={\"department\": \"finance\"}\n)\n```\n\n---\n\n### Hallucination control\n\nUse a strict prompt:\n\n```text\nUse only the provided context.\nIf the context does not contain the answer, say \"I don't know.\"\nDo not guess.\n```\n\nAlso consider returning a confidence score based on retrieval similarity.\n\n---\n\n## 9. Minimal RAG flow\n\n```python\nquery = \"Your user question\"\n\n# 1. Embed query\nquery_embedding = embed_text(query)\n\n# 2. Retrieve similar chunks\nresults = collection.query(\n    query_embeddings=[query_embedding],\n    n_results=5\n)\n\n# 3. Build context\ncontext = \"\\n\\n\".join(results[\"documents\"][0])\n\n# 4. Ask LLM\nresponse = client.chat.completions.create(\n    model=\"gpt-4.1-mini\",\n    messages=[\n        {\n            \"role\": \"system\",\n            \"content\": \"Answer only using the provided context.\"\n        },\n        {\n            \"role\": \"user\",\n            \"content\": f\"Context:\\n{context}\\n\\nQuestion:\\n{query}\"\n        }\n    ]\n)\n\nprint(response.choices[0].message.content)\n```\n\n---\n\n## 10. Summary\n\nTo implement RAG with a vector database:\n\n1. Load your documents.\n2. Split them into overlapping chunks.\n3. Embed each chunk.\n4. Store embeddings, text, and metadata in a vector DB.\n5. Embed each user query.\n6. Retrieve the most similar chunks.\n7. Pass retrieved context to an LLM.\n8. Generate an answer with citations.\n9. Add reranking, filters, monitoring, and evaluations for production.",
+      "usage": {
+        "prompt_tokens": 17,
+        "completion_tokens": 1970,
+        "total_tokens": 1987,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 71,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "latency_ms": 21426
+    },
+    {
+      "query_id": "q004",
+      "language": "en",
+      "category": "technical",
+      "query": "How do I implement RAG with a vector database?",
+      "system": "Claude",
+      "provider": "anthropic",
+      "model_requested": "claude-opus-4-8",
+      "status": "ok",
+      "model_used": "claude-opus-4-8",
+      "response": "# Implementing RAG with a Vector Database\n\nHere's a practical guide to building a Retrieval-Augmented Generation (RAG) system.\n\n## Core Components\n\n1. **Document loader** - ingest your data\n2. **Text splitter** - chunk documents\n3. **Embedding model** - convert text to vectors\n4. **Vector database** - store and search vectors\n5. **LLM** - generate answers from retrieved context\n\n## Basic Implementation (Python)\n\n### 1. Install dependencies\n```bash\npip install openai chromadb sentence-transformers\n```\n\n### 2. Chunk and embed documents\n```python\nfrom sentence_transformers import SentenceTransformer\nimport chromadb\n\n# Initialize embedding model\nembedder = SentenceTransformer('all-MiniLM-L6-v2')\n\n# Initialize vector DB (persistent)\nclient = chromadb.PersistentClient(path=\"./chroma_db\")\ncollection = client.get_or_create_collection(\"my_docs\")\n\n# Simple chunking function\ndef chunk_text(text, chunk_size=500, overlap=50):\n    chunks = []\n    start = 0\n    while start < len(text):\n        end = start + chunk_size\n        chunks.append(text[start:end])\n        start += chunk_size - overlap\n    return chunks\n\n# Ingest documents\ndocuments = [\"Your long document text here...\", \"Another document...\"]\nfor doc_id, doc in enumerate(documents):\n    chunks = chunk_text(doc)\n    embeddings = embedder.encode(chunks).tolist()\n    collection.add(\n        documents=chunks,\n        embeddings=embeddings,\n        ids=[f\"doc{doc_id}_chunk{i}\" for i in range(len(chunks))]\n    )\n```\n\n### 3. Retrieve and generate\n```python\nfrom openai import OpenAI\n\nllm = OpenAI()  # set OPENAI_API_KEY env var\n\ndef rag_query(question, top_k=3):\n    # Embed the question\n    q_embedding = embedder.encode([question]).tolist()\n\n    # Retrieve relevant chunks\n    results = collection.query(\n        query_embeddings=q_embedding,\n        n_results=top_k\n    )\n    context = \"\\n\\n\".join(results['documents'][0])\n\n    # Build prompt\n    prompt = f\"\"\"Answer the question using ONLY the context below.\nIf the answer isn't in the context, say you don't know.\n\nContext:\n{context}\n\nQuestion: {question}\"\"\"\n\n    response = llm.chat.completions.create(\n        model=\"gpt-4o-mini\",\n        messages=[{\"role\": \"user\", \"content\": prompt}]\n    )\n    return response.choices[0].message.content\n\nprint(rag_query(\"What is the main topic?\"))\n```\n\n## Vector Database Options\n\n| Database | Best for |\n|----------|----------|\n| **Chroma** | Local dev, prototyping |\n| **Pinecone** | Managed, production scale |\n| **Weaviate** | Hybrid search, self-hosted |\n| **Qdrant** | Performance, filtering |\n| **pgvector** | Already using Postgres |\n| **FAISS** | In-memory, max control |\n\n## Key Tips for Better Results\n\n- **Chunking strategy matters** — try semantic or sentence-based splitting instead of fixed-size (e.g., LangChain's `RecursiveCharacterTextSplitter`)\n- **Add metadata** to chunks (source, date) for filtering and citations\n- **Hybrid search** — combine vector search with keyword (BM25) search for better recall\n- **Reranking** — use a cross-encoder (e.g., Cohere Rerank) to reorder retrieved results\n- **Evaluate** with tools like RAGAS to measure retrieval and answer quality\n- **Tune `top_k`** — too few misses context, too many adds noise\n\n## Frameworks to Speed Things Up\n\n- **LangChain** — comprehensive, lots of integrations\n- **LlamaIndex** — purpose-built for RAG, great for indexing\n\nWould you like me to go deeper on any part — chunking strategies, a specific vector DB, or production considerations like scaling and caching?",
+      "usage": {
+        "input_tokens": 20,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 1363,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 16132
+    },
+    {
+      "query_id": "q004",
+      "language": "en",
+      "category": "technical",
+      "query": "How do I implement RAG with a vector database?",
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model_requested": "sonar",
+      "status": "ok",
+      "model_used": "sonar",
+      "response": "To implement **RAG with a vector database**, build a pipeline with three main stages: **ingest and chunk documents**, **store embeddings in a vector DB**, and **retrieve the most relevant chunks at query time and send them to the LLM**.[1][8][14]\n\nA practical production flow is usually:\n\n- **Ingest documents** from PDFs, HTML, docs, databases, or other sources, then clean and split them into smaller chunks.[1][14][15]\n- **Create embeddings** for each chunk with an embedding model, then store the vectors plus metadata in a vector database.[1][3][8][10]\n- **Index for retrieval** using similarity search such as k-NN or ANN, often with metadata filters.[4][11]\n- **At query time**, embed the user question, search the vector DB for the nearest chunks, and optionally use hybrid search combining keyword search and vector search.[1][12]\n- **Rerank retrieved results** to improve relevance before sending the best chunks to the LLM.[1][12]\n- **Augment the prompt** with the retrieved context and have the LLM generate the answer.[8][10][14]\n\nA simple implementation looks like this:\n\n1. **Prepare data**\n   - Extract text from your source documents.\n   - Split text into semantically meaningful chunks rather than arbitrary fixed sizes when possible.[1][15]\n\n2. **Embed and store**\n   - Convert each chunk into an embedding vector.\n   - Store:\n     - the vector\n     - the original text chunk\n     - metadata such as source, page, timestamp, author, or document type[8][11]\n\n3. **Query**\n   - Convert the user question into an embedding.\n   - Retrieve top-\\(k\\) similar chunks from the vector DB.[4][8]\n\n4. **Optionally improve retrieval**\n   - Use **hybrid search**: BM25/keyword search + vector search.[1][12]\n   - Apply **reranking** to reorder candidates by relevance.[1][12]\n\n5. **Generate answer**\n   - Put the retrieved chunks into the prompt as context.\n   - Ask the LLM to answer using only that context, ideally with citations or source labels.[8][10]\n\nA minimal pseudo-architecture is:\n\n```text\nDocuments → chunking → embeddings → vector DB\nUser question → embedding → similarity search → top chunks\nTop chunks + question → LLM → answer\n```\n\nIf you want a concrete stack, common choices are:\n\n- **Vector DB**: Qdrant, pgvector/Postgres, Chroma, Milvus, Weaviate\n- **Embedding model**: OpenAI embeddings, sentence-transformers, or other domain-specific encoders\n- **Orchestration**: LangChain or LlamaIndex\n- **Retriever improvements**: hybrid search and rerankers[3][5][11][13][14]\n\nA useful rule of thumb is that basic RAG is “split → embed → store → retrieve → generate,” while better production RAG is “smart chunking → embedding → vector DB → hybrid search → reranking → generation.”[1]\n\nIf you want, I can also give you:\n- a **Python example with Qdrant**\n- a **Postgres/pgvector example**\n- a **LangChain or LlamaIndex implementation**\n- a **production checklist for RAG tuning**",
+      "usage": {
+        "completion_tokens": 743,
+        "cost": {
+          "input_tokens_cost": 1e-05,
+          "output_tokens_cost": 0.00074,
+          "request_cost": 0.005,
+          "total_cost": 0.00575
+        },
+        "prompt_tokens": 11,
+        "search_context_size": "low",
+        "total_tokens": 754
+      },
+      "latency_ms": 9858,
+      "citations": [
+        "https://arte.itlibra.com/en/articles/rag-vector-database-implementation-guide",
+        "https://medium.com/data-science/how-to-implement-graph-rag-using-knowledge-graphs-and-vector-databases-60bb69a22759",
+        "https://learnopencv.com/vector-db-and-rag-pipeline-for-document-rag/",
+        "https://writer.com/engineering/rag-vector-database/",
+        "https://dev.to/nikhilwagh/retrieval-augmented-generation-rag-with-vector-databases-powering-context-aware-ai-in-2025-4930",
+        "https://medium.com/@yogi_r/retrieval-augmented-generation-rag-with-pgvector-vector-database-0d741e14d62f",
+        "https://www.meilisearch.com/blog/vector-dbs-rag",
+        "https://www.ibm.com/think/topics/rag-vector-database",
+        "https://praveenng.medium.com/creating-a-vector-database-for-rag-471aca771bce",
+        "https://objectbox.io/retrieval-augmented-generation-rag-with-vector-databases-expanding-ai-capabilities/",
+        "https://medium.com/@prakash1402/the-complete-guide-to-rag-part-ii-setup-design-and-application-cb0b415106e3",
+        "https://www.digitalapplied.com/blog/vector-databases-rag-applications-guide",
+        "https://github.com/applied-artificial-intelligence/claude-code-toolkit/blob/main/skills/rag-implementation/SKILL.md",
+        "https://github.com/microsoft/generative-ai-for-beginners/blob/main/15-rag-and-vector-databases/README.md?WT.mc_id=academic-105485-koreyst",
+        "https://galileo.ai/blog/rag-implementation-strategy-step-step-process-ai-excellence",
+        "https://www.zenml.io/blog/vector-databases-for-rag"
+      ]
+    },
+    {
+      "query_id": "q005",
+      "language": "ja",
+      "category": "people",
+      "query": "日本の代表的なAI研究者を5人挙げて",
+      "system": "Gemini",
+      "provider": "google",
+      "model_requested": "gemini-3.5-flash",
+      "status": "ok",
+      "model_used": "gemini-3.5-flash",
+      "response": "日本のAI（人工知能）研究を牽引し、世界的にも高く評価されている代表的な研究者を5人紹介します。歴史的な先駆者から、現代のディープラーニング（深層学習）ブームを引っ張るリーダーまで幅広く選出しました。\n\n---\n\n### 1. 福島 邦彦（ふくしま くにひこ）\n* **現職/経歴:** NHK放送技術研究所、大阪大学教授などを経て、現在はファジィシステム研究所特別研究員。\n* **専門分野:** 神経回路モデル、画像認識\n* **功績:**\n  * **「ネオコグニトロン（Neocognitron）」**の開発者として世界的に有名です。これは1979年に彼が提唱した視覚パターンの認識モデルで、現在のディープラーニング（深層学習）の核心技術である**「畳み込みニューラルネットワーク（CNN）」の直接の起源**となりました。\n  * AIの歴史における世界的な超重要人物であり、2021年には「国際ニューラルネットワーク学会（INNS）」から最高賞を授与されています。\n\n### 2. 松尾 豊（まつお ゆたか）\n* **現職/経歴:** 東京大学大学院工学系研究科 教授、一般社団法人日本ディープラーニング協会（JDLA）理事長。\n* **専門分野:** 人工知能、ウェブマイニング、ディープラーニング\n* **功績:**\n  * 日本における**現代のディープラーニング（第3次AIブーム）の第一人者・啓発者**です。著書『人工知能は人間を超えるか』はベストセラーとなり、一般社会にAIの可能性を広く伝えました。\n  * 政府の「AI戦略会議」の座長を務めるなど、日本のAI政策や産業育成、スタートアップ支援（多数の東大発AIベンチャーを創出）に極めて大きな影響力を持っています。\n\n### 3. 杉山 将（すぎやま まさし）\n* **現職/経歴:** 理化学研究所革新知能統合研究センター（AIP）センター長、東京大学大学院新領域創成科学研究科 教授。\n* **専門分野:** 機械学習の基礎理論、統計的機械学習\n* **功績:**\n  * 日本の**機械学習理論研究のトップランナー**です。データが不足している状況や、ノイズが多い環境でも正しく学習できる「弱教師あり学習」などの研究で世界的な成果を上げています。\n  * 世界最高峰のAI国際会議（NeurIPSやICMLなど）でプログラム委員長や領域チェアを歴任し、日本の学術界を牽引しています。\n\n### 4. 北野 宏明（きたの ひろあき）\n* **現職/経歴:** ソニーグループ株式会社 代表取締役専務兼CTO、ソニーコンピュータサイエンス研究所（Sony CSL）所長、沖縄科学技術大学院大学（OIST）教授。\n* **専門分野:** 人工知能、システムバイオロジー、ロボティクス\n* **功績:**\n  * 自律型ロボットの世界的競技大会**「ロボカップ（RoboCup）」の提唱者**の一人として有名です。\n  * ソニーの犬型ロボット「AIBO」の開発などにも関わり、AIとロボティクスの融合、さらに「AIを用いた科学的発見（AI for Science）」の推進において世界的なリーダーシップを発揮しています。\n\n### 5. 辻井 潤一（つじい じゅんいち）\n* **現職/経歴:** 産業技術総合研究所 人工知能研究センター（AIRC）名誉センター長、東京大学名誉教授、マンチェスター大学教授。\n* **専門分野:** 自然言語処理、機械翻訳、情報抽出\n* **功績:**\n  * **自然言語処理（NLP）分野における日本の世界的権威**です。現在のChatGPTなどに繋がる、コンピュータに言葉を理解させる研究（機械翻訳や構文解析など）を黎明期から支えてきました。\n  * 計算言語学の国際学会（ACL）の会長を務めるなど国際的な知名度が高く、産総研のAI研究センターの初代センター長として、日本のAI研究の基盤を構築しました。\n\n---\n\nこの5人は、基礎理論（福島・杉山）、応用と産業振興（松尾）、言語処理（辻井）、ロボティクスとシステム（北野）というように、それぞれ異なる重要な役割を担って日本のAI分野を支えています。",
+      "usage": {
+        "promptTokenCount": 10,
+        "candidatesTokenCount": 1011,
+        "totalTokenCount": 2047,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 10
+          }
+        ],
+        "thoughtsTokenCount": 1026,
+        "serviceTier": "standard"
+      },
+      "latency_ms": 9512
+    },
+    {
+      "query_id": "q005",
+      "language": "ja",
+      "category": "people",
+      "query": "日本の代表的なAI研究者を5人挙げて",
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model_requested": "gpt-5.5",
+      "status": "ok",
+      "model_used": "gpt-5.5-2026-04-23",
+      "response": "日本の代表的なAI研究者として、例えば以下の5人が挙げられます。\n\n1. **甘利俊一（あまり しゅんいち）**  \n   - 神経回路網、情報幾何、機械学習理論の世界的研究者。  \n   - ニューラルネットワーク研究の基礎に大きく貢献。\n\n2. **松尾豊（まつお ゆたか）**  \n   - 東京大学教授。  \n   - ディープラーニング、Webマイニング、AI社会実装の分野で著名。\n\n3. **杉山将（すぎやま まさし）**  \n   - 東京大学・理化学研究所の研究者。  \n   - 機械学習、統計的学習理論、弱教師あり学習などで国際的に活躍。\n\n4. **辻井潤一（つじい じゅんいち）**  \n   - 自然言語処理、計算言語学の分野で著名。  \n   - 機械翻訳やバイオメディカル自然言語処理に貢献。\n\n5. **長尾真（ながお まこと）**  \n   - 機械翻訳、自然言語処理、人工知能研究の草分け的存在。  \n   - 例文ベース機械翻訳などで知られる。\n\n「代表的」の基準によっては、ロボティクス、画像認識、強化学習などの分野から別の研究者を挙げることもできます。",
+      "usage": {
+        "prompt_tokens": 21,
+        "completion_tokens": 536,
+        "total_tokens": 557,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "audio_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 153,
+          "audio_tokens": 0,
+          "accepted_prediction_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "latency_ms": 9718
+    },
+    {
+      "query_id": "q005",
+      "language": "ja",
+      "category": "people",
+      "query": "日本の代表的なAI研究者を5人挙げて",
+      "system": "Claude",
+      "provider": "anthropic",
+      "model_requested": "claude-opus-4-8",
+      "status": "ok",
+      "model_used": "claude-opus-4-8",
+      "response": "日本の代表的なAI研究者を5人挙げますが、正確な情報提供のため、いくつか注意点をお伝えします。\n\n## 代表的とされる研究者の例\n\n1. **松尾豊**（東京大学教授）\n   - ディープラーニング研究の第一人者として広く知られる\n   - 日本ディープラーニング協会の理事長\n\n2. **甘利俊一**（東京大学名誉教授）\n   - 数理脳科学・情報幾何学の分野で世界的に著名\n   - ニューラルネットワーク理論への貢献\n\n3. **中島秀之**（札幌市立大学など）\n   - 人工知能全般、認知科学の研究者\n\n4. **辻井潤一**（産業技術総合研究所など）\n   - 自然言語処理の分野で著名\n\n5. **石黒浩**（大阪大学教授）\n   - アンドロイド・ロボット研究で世界的に知られる\n\n## ご留意いただきたい点\n\n- 「代表的」の基準（研究分野、影響力、知名度など）によって選ばれる人物は変わります\n- AIは細分化された分野（機械学習、自然言語処理、ロボティクス、コンピュータビジョン等）が多く、各分野に著名な研究者がいます\n- 詳細な業績や最新の所属については、公式サイト等でご確認されることをお勧めします\n\n特定の分野に興味がおありでしたら、その分野に絞ってお答えできます。",
+      "usage": {
+        "input_tokens": 25,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 0
+        },
+        "output_tokens": 486,
+        "output_tokens_details": {
+          "thinking_tokens": 0
+        },
+        "service_tier": "standard",
+        "inference_geo": "global"
+      },
+      "latency_ms": 9212
+    },
+    {
+      "query_id": "q005",
+      "language": "ja",
+      "category": "people",
+      "query": "日本の代表的なAI研究者を5人挙げて",
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model_requested": "sonar",
+      "status": "ok",
+      "model_used": "sonar",
+      "response": "日本の代表的なAI研究者としては、**松尾豊**、**石黒浩**、**原田達也**、**山岸順一**、**小野順貴**が挙げられます。[1][6][15]\n\n補足すると、検索結果では**松尾豊**が日本のAI研究の第一人者として繰り返し取り上げられており、**石黒浩**はロボティクスとAIの分野で知られています。[2][3][6]  \nまた、**山岸順一**と**小野順貴**は、国際的なAI研究者リストにも掲載された研究者として紹介されています。[1][11][18]\n\n必要なら次に、  \n- **学術寄りの5人**  \n- **生成AIで有名な5人**  \n- **若手を含めた5人**  \nのように分けて挙げられます。",
+      "usage": {
+        "completion_tokens": 227,
+        "cost": {
+          "input_tokens_cost": 1e-05,
+          "output_tokens_cost": 0.00023,
+          "request_cost": 0.005,
+          "total_cost": 0.00524
+        },
+        "prompt_tokens": 13,
+        "search_context_size": "low",
+        "total_tokens": 240
+      },
+      "latency_ms": 3742,
+      "citations": [
+        "https://www.businessinsider.jp/article/206227/",
+        "https://www.genspark.ai/spark/%E6%97%A5%E6%9C%AC%E3%81%AEai%E7%A0%94%E7%A9%B6%E3%81%AE%E8%91%97%E5%90%8D%E4%BA%BA/a3781dec-e037-46ff-a641-27e88db3034b",
+        "https://note.com/ai_frontline/n/ndd3a5c200505",
+        "https://ja.wikipedia.org/wiki/Category:%E6%97%A5%E6%9C%AC%E3%81%AE%E4%BA%BA%E5%B7%A5%E7%9F%A5%E8%83%BD%E5%AD%A6%E8%80%85",
+        "https://data.wingarc.com/ai-history-5-87367",
+        "https://news.yahoo.co.jp/expert/articles/32cf015b01a236fa326b4bb7ed55ef71fece1359",
+        "https://www.airc.aist.go.jp/cvrt/",
+        "https://www.appier.com/ja-jp/press-media/introducing-japanese-artificial-intelligence-researchers-active-in-the-world-ai-talent-interview-series-2nd-distribution-starts",
+        "https://nissenad-digitalhub.com/articles/university-ai-research-2/",
+        "https://note.com/got/n/na0278e38c97f",
+        "https://otafuku-lab.co/aizine/ai-japan-0331/",
+        "https://www.riken.jp/research/labs/aip/",
+        "https://qiita.com/Rowing0914/items/e1f161e7178e6debc32f",
+        "https://note.com/ai_frontline/n/n1585f94b004d",
+        "https://www.ai.u-tokyo.ac.jp/ja/organization/organization-s4-tab1",
+        "http://shota-imai.com/",
+        "https://gendai.media/articles/-/145014",
+        "https://www.hottolink.co.jp/blog/20200213_106809/",
+        "https://www8.cao.go.jp/cstp/ai/index.html",
+        "https://www.soumu.go.jp/johotsusintokei/whitepaper/ja/r07/html/nd112130.html"
+      ]
+    }
+  ]
+}
