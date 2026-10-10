@@ -52,3 +52,9 @@ None.
 
 - Exact request and response timestamps, verified provider model identifiers, request parameters, and standalone raw/structured responses were not preserved consistently for Day 1–Day 13. The audit records these as provenance limitations rather than reconstructing them.
 - Historical manual/web-interface provenance statements remain inside original observation artifacts and metadata to avoid silently rewriting the historical record. They must be read together with the repository-level provenance correction.
+
+## Model metadata correction on 11 October 2026
+
+The investigator confirmed unchanged model selection and instructed that the initial collector configuration be treated as the correct notation: `gpt-5.5`, `claude-opus-4-8`, `gemini-3.5-flash`, and `sonar`. These selected-model IDs supersede differing report-header labels. See [MODEL_SELECTION_CORRECTION.md](./paper-b/MODEL_SELECTION_CORRECTION.md) and [model-selection.json](./paper-b/model-selection.json).
+
+This updates the model-selection interpretation of the earlier audit. The earliest retained configuration was committed on 29 July in Asia/Tokyo, after the final declared included date; complete transaction-level authentication remains unavailable. The correction is attributed to investigator confirmation and the retained configuration, not reconstructed requests. Original dated artifacts, behavioral results, and the published v1.0.0 release are retained.

@@ -69,14 +69,18 @@ Each run should preserve, where available:
 - normalized response hash;
 - correction status.
 
-For Days 7–13, the recorded labels used in the observation files are:
+### Corrected model selection for Days 1–13
 
-| System | Recorded label / mode |
+**Model metadata correction — 11 October 2026:** the investigator has confirmed unchanged model selection and designated the initial collector configuration as the correct notation for the 13-wave, 244-response corpus.
+
+| System | Corrected selected API model ID |
 |---|---|
-| OpenAI ChatGPT | GPT 5.5 |
-| Anthropic Claude | Claude Opus 4.8 |
-| Google Gemini | Gemini 3.5 Flash |
-| Perplexity | Perplexity Web Search |
+| OpenAI ChatGPT | `gpt-5.5` |
+| Anthropic Claude | `claude-opus-4-8` |
+| Google Gemini | `gemini-3.5-flash` |
+| Perplexity | `sonar` |
+
+Use these model IDs when describing the selected models. Differing historical header labels are superseded metadata, not evidence of a model switch. See the [model selection correction](./paper-b/MODEL_SELECTION_CORRECTION.md) and [machine-readable model registry](./paper-b/model-selection.json) for the initial configuration, investigator confirmation, preserved historical labels, and request-level verification limits.
 
 Grok and all Grok outputs are excluded from the official Day 7–Day 13 observation sets, cumulative counts, and claim-status updates.
 

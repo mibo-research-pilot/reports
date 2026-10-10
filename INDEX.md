@@ -2,6 +2,8 @@
 
 This index lists every preserved official observation report. Artifact completeness varies by Day and is reported without assuming that missing files once existed. See [`paper-b/provenance-matrix.csv`](./paper-b/provenance-matrix.csv).
 
+**Model metadata correction — 11 October 2026:** the [initial configuration model IDs](./paper-b/MODEL_SELECTION_CORRECTION.md) are the investigator-confirmed notation for the selected models across all 13 included waves. Earlier model names in report headers are superseded metadata and do not establish a model-switch event. Historical reports and their counts remain preserved.
+
 ## Paper B included observations
 
 | Day | Date | Report | Included observations | Cumulative | Record note |

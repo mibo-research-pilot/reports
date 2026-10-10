@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "correction_date": "2026-10-11",
+  "correction_type": "investigator_confirmed_model_selection_metadata",
+  "scope": {
+    "first_day": 1,
+    "last_day": 13,
+    "first_date": "2026-05-05",
+    "last_date": "2026-07-28",
+    "timezone": "Asia/Tokyo",
+    "included_responses": 244
+  },
+  "selection_changed": false,
+  "selection_rationale": "Pragmatic selection of models regarded by the investigator as commonly used at the time; no measured popularity ranking is asserted.",
+  "canonical_models": [
+    {
+      "system": "Gemini",
+      "provider": "google",
+      "model": "gemini-3.5-flash"
+    },
+    {
+      "system": "ChatGPT",
+      "provider": "openai",
+      "model": "gpt-5.5"
+    },
+    {
+      "system": "Claude",
+      "provider": "anthropic",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "system": "Perplexity",
+      "provider": "perplexity",
+      "model": "sonar"
+    }
+  ],
+  "canonical_source": {
+    "repository": "mibo-research-pilot/reports",
+    "path": "scripts/observation_config.json",
+    "commit": "aeddf8ef53b99a4e0667ed2c56ce00bd6cc30d49",
+    "blob_sha": "00877c42d3da4c1ccd9ac039660fffcfaa0e6556",
+    "commit_time_utc": "2026-07-28T16:10:09Z",
+    "commit_time_asia_tokyo": "2026-07-29T01:10:09+09:00",
+    "url": "https://github.com/mibo-research-pilot/reports/blob/aeddf8ef53b99a4e0667ed2c56ce00bd6cc30d49/scripts/observation_config.json"
+  },
+  "authority": "On 2026-10-11 the investigator clarified that selection had not changed and instructed that the initial collector configuration be treated as the correct model notation.",
+  "superseded_historical_labels": [
+    {
+      "system": "ChatGPT",
+      "label": "GPT-5.4",
+      "canonical_model": "gpt-5.5"
+    },
+    {
+      "system": "Claude",
+      "label": "Claude Opus 4.7 / claude-opus-4-7",
+      "canonical_model": "claude-opus-4-8"
+    },
+    {
+      "system": "Gemini",
+      "label": "Gemini 3.0 Flash",
+      "canonical_model": "gemini-3.5-flash"
+    },
+    {
+      "system": "Perplexity",
+      "label": "Perplexity Web Search / Web search mode",
+      "canonical_model": "sonar"
+    }
+  ],
+  "interpretation": "Use canonical_models to describe the selected API models for the included 13 waves. Differing historical header labels are superseded metadata and must not be used to infer a model-switch event.",
+  "verification_scope": "Investigator-confirmed metadata correction. The earliest retained configuration was committed after the final declared observation date. This correction does not authenticate each historical request, reconstruct missing parameters, or establish immutable served backend snapshots.",
+  "preservation": "Historical reports, dated packets, raw outputs, counts, coding, and the published v1.0.0 release are preserved. New observations and retrospective transactions are not created by this correction."
+}

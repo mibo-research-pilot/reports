@@ -76,11 +76,11 @@
     },
     {
       "path": "paper-b/README.md",
-      "sha256": "dcb8e21651eb4db48bc120fd71af8738f915b5b47ec83a69b5cd2ecaa9ef2194"
+      "sha256": "e1b475eaf896c6fe099652e0ab3fa9e02a59e9f4c026c99eb2025812e8a69e9b"
     },
     {
       "path": "paper-b/evidence-manifest.json",
-      "sha256": "1b1d1375fe3f0ba26622624fd3c62424aba4342d6fc83620dc6d566fabbaca7f"
+      "sha256": "73768041d76e8ecde7f3c80dc2a423b87f78ca635bae356b8be97ea9572662f9"
     },
     {
       "path": "paper-b/provenance-matrix.csv",
